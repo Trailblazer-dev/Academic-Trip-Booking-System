@@ -6937,3 +6937,650 @@ java.net.UnknownHostException: javaee.github.io
 	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:16:11.945
+!MESSAGE [Info] Document is null for editor: login.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:16:11.945
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/login.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:16:14.332
+!MESSAGE [Info] Document is null for editor: LoginServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:16:14.333
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/LoginServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:16:16.118
+!MESSAGE [Info] Document is null for editor: addTrip.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:16:16.118
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/lecturer/addTrip.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:20:35.006
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:22:47.042
+!MESSAGE [Info] Document is null for editor: DatabaseUtil.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:22:47.042
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/util/DatabaseUtil.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:22:48.456
+!MESSAGE [Info] Document is null for editor: AddTripServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:22:48.456
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/AddTripServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:23:20.181
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:23:25.183
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:23:27.055
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 1767 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:23:27.055
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:23:27.055
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [0f8c8d15-0ee4-4e5f-8a0d-5be5aa4bc1eb] model deployment ID: [d124-20250130152752]
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 12:23:45.165
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:23:46.631
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 1346 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:23:46.631
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:23:46.631
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [a7b19565-0640-4e7a-80d4-210898fa2477] model deployment ID: [d110-20250128181550]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:53.323
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 642 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:53.323
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [413f41c2-be54-44c1-919e-7185fcec67b4] model deployment ID: [d133-20250131001027]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:53.323
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:54.855
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 1038 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:54.855
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:54.856
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [2e262877-9170-42dc-80ae-567414dc31d7] model deployment ID: [d109-20250128042432]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:57.256
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:57.256
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [03e29de2-276e-4a52-90f6-d39297779dde] model deployment ID: [d119-20250130060731]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:57.256
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 694 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:57.717
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 371 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:57.725
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:57.725
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [e520dfb0-2d94-433f-885b-11b2aab4237a] model deployment ID: [d119-20250130060731]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:58.593
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 777 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:58.826
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [2bd6b7af-61e0-4de4-b911-af32d45d4941] model deployment ID: []
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:59.439
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 510 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:59.439
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [3b62275c-92fb-4444-a989-9b601786d389] model deployment ID: [d136-20250131013845]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:59.439
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:59.961
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 425 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:59.961
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [2e38b841-803a-43db-9e18-f08d1a50a30e] model deployment ID: [d120-20250130103741]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:24:59.961
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:25:01.366
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 373 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:25:01.366
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:25:01.366
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [a7674e0b-d132-4980-883f-da9a1967a53f] model deployment ID: [d131-20250130215129]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:25.396
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 2579 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:25.396
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:25.397
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [905579c2-4d2c-4416-9b82-3fae38684e47] model deployment ID: [d169-20250212052825]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:25.862
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:25.863
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [4fecbc46-0b0f-4cc9-a6c7-f7b3f9648006] model deployment ID: [d153-20250211144344]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:25.863
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 376 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:26.776
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 722 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:26.776
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:26.776
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [6b4646b7-f6d3-4e44-875a-e91592542937] model deployment ID: [d176-20250212085104]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:27.604
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 727 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:27.630
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:27.630
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [9f9d4db3-a1b5-4a41-94c3-78a3fcedfd28] model deployment ID: [d171-20250212052825]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:28.292
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 571 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:28.296
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:28.297
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [d92779b1-0610-41fd-b789-09a4f0f5368f] model deployment ID: [d158-20250211233228]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:29.119
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 726 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:29.144
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:29.144
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [1f4ed378-78e9-47f0-93bc-dc352b6ed4dc] model deployment ID: [d158-20250211233228]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:30.641
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:30.641
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [c3b97b7b-54eb-4d46-a3b2-c53e72eea885] model deployment ID: [d158-20250211233228]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:30.641
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 363 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:33.345
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 581 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:33.345
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:33.346
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [769d8a4b-dd7e-44a2-b5aa-19eb50153270] model deployment ID: [d152-20250211144344]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:39.775
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 346 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:39.793
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:39.793
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [482380b1-3477-416f-9549-83c4b3c3d196] model deployment ID: [d176-20250212085104]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:43.380
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 1136 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:43.381
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:43.381
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [4211ce00-651b-422f-8c3d-64880a78b2a2] model deployment ID: [d176-20250212085104]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:44.181
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 382 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:44.182
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:30:44.182
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [1c4b0be0-15b7-4cde-943f-26ecfb52feba] model deployment ID: [d176-20250212085104]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:32:38.380
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 2926 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:32:38.389
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:32:38.390
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [f5e2dbcc-d987-439a-989f-50d1b878a1b0] model deployment ID: [d161-20250212010321]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:32:45.460
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 3725 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:32:45.566
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:32:45.566
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [641a7de2-2dc8-4def-abdb-5b1e76983d1e] model deployment ID: [d171-20250212052825]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:33:28.831
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 675 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:33:28.833
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [fc35149c-c685-4bad-8e3f-e0d85de5b5ff] model deployment ID: [d158-20250211233228]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:33:28.833
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:33:30.787
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 1095 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:33:30.788
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:33:30.788
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [ca93426f-3a4d-4924-b7ee-ddee588ca4ef] model deployment ID: [d158-20250211233228]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:11.224
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:11.224
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [5fd3b78e-b27f-4ca5-8d63-78e016954e8b] model deployment ID: [d176-20250212085104]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:11.224
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 638 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:11.935
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 613 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:11.957
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:11.958
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [b8f5ff43-22e5-4f76-b856-734723b26a85] model deployment ID: [d153-20250211144344]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:12.601
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 536 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:12.602
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:12.602
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [0c61dad5-d378-4979-bcc9-fbfbb2774673] model deployment ID: [d158-20250211233228]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:13.205
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 501 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:13.213
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:13.213
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [707989c5-b5e2-467f-85b5-999ce6df0cce] model deployment ID: [d152-20250211144344]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:14.532
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 380 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:14.532
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [9e36a6a5-5976-4561-af73-0c2fb25e031d] model deployment ID: [d158-20250211233228]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 12:34:14.532
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 10001 2025-02-26 13:06:58.743
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: java.net.UnknownHostException: docs.oracle.com
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:903)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1084)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:743)
+	at org.eclipse.jdt.core.manipulation.internal.javadoc.CoreJavadocAccess.getHTMLContent(CoreJavadocAccess.java:234)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:49)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:717)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.net.UnknownHostException: docs.oracle.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1252)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1138)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1690)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1614)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:836)
+	... 11 more
+Caused by: java.net.UnknownHostException: docs.oracle.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1252)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1138)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1690)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1614)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:836)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1084)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:743)
+	at org.eclipse.jdt.core.manipulation.internal.javadoc.CoreJavadocAccess.getHTMLContent(CoreJavadocAccess.java:234)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:49)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:717)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1008 2025-02-26 13:06:58.743
+!MESSAGE docs.oracle.com
+!STACK 0
+java.net.UnknownHostException: docs.oracle.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1252)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1138)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1690)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1614)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:836)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1084)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:743)
+	at org.eclipse.jdt.core.manipulation.internal.javadoc.CoreJavadocAccess.getHTMLContent(CoreJavadocAccess.java:234)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:49)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:717)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 10001 2025-02-26 13:07:08.701
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: java.net.UnknownHostException: docs.oracle.com
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:903)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1084)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1041)
+	at org.eclipse.jdt.core.manipulation.internal.javadoc.CoreJavadocAccess.getHTMLContent(CoreJavadocAccess.java:234)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:49)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:717)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.net.UnknownHostException: docs.oracle.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1252)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1138)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1690)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1614)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:836)
+	... 11 more
+Caused by: java.net.UnknownHostException: docs.oracle.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1252)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1138)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1690)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1614)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:836)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1084)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1041)
+	at org.eclipse.jdt.core.manipulation.internal.javadoc.CoreJavadocAccess.getHTMLContent(CoreJavadocAccess.java:234)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:49)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:717)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1008 2025-02-26 13:07:08.701
+!MESSAGE docs.oracle.com
+!STACK 0
+java.net.UnknownHostException: docs.oracle.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1252)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1138)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1690)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1614)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:836)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1084)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1041)
+	at org.eclipse.jdt.core.manipulation.internal.javadoc.CoreJavadocAccess.getHTMLContent(CoreJavadocAccess.java:234)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:49)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:717)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:58.839
+!MESSAGE [Info] Document is null for editor: web.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:58.840
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/WEB-INF/web.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:58.916
+!MESSAGE [Info] Document is null for editor: assignDriverVehicle.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:58.916
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/assignDriverVehicle.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:58.955
+!MESSAGE [Info] Document is null for editor: assignResources.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:58.955
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/assignResources.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:58.989
+!MESSAGE [Info] Document is null for editor: index.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:58.989
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/index.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.033
+!MESSAGE [Info] Document is null for editor: viewAssignments.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.033
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/viewAssignments.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.068
+!MESSAGE [Info] Document is null for editor: DriverDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.068
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/DriverDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.101
+!MESSAGE [Info] Document is null for editor: Course.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.101
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/model/Course.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.130
+!MESSAGE [Info] Document is null for editor: CourseDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.131
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/CourseDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.160
+!MESSAGE [Info] Document is null for editor: AddDriverServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.160
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/AddDriverServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.190
+!MESSAGE [Info] Document is null for editor: DatabaseUtil.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.190
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/util/DatabaseUtil.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.238
+!MESSAGE [Info] Document is null for editor: AddTripServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.238
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/AddTripServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.303
+!MESSAGE [Info] Document is null for editor: login.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:09:59.303
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/login.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:10:35.745
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:10:35.748
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 14:10:38.062
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 14:10:38.789
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:57:35.556
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:57:40.558
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 14:58:03.326
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 14:58:06.482
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 3030 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 14:58:06.483
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 14:58:06.483
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [aa4b8736-3d2f-40a1-b445-a5551dab14b1] model deployment ID: [d170-20250212052825]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 15:01:25.332
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 1485 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 15:01:25.332
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [7343946b-3036-41ec-a52b-1a58ef6d3ce5] model deployment ID: [d181-20250212112757]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 15:01:25.332
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 15:01:26.152
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 15:01:26.152
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [8cd390bd-a6d1-46c3-a20f-af7019822839] model deployment ID: [d151-20250211144344]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 15:01:26.152
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 725 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 15:17:40.858
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 2315 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 15:17:40.858
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [c30f6a37-9b94-4cc1-b9e0-fa64b972698b] model deployment ID: [d122-20250130125908]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 15:17:40.858
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 15:19:38.442
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 15:19:38.442
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [ab44644f-af97-4a97-9580-9c7e314e6660] model deployment ID: [d110-20250128181550]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-26 15:19:38.442
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 677 ms

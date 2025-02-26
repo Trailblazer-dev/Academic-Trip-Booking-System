@@ -71,7 +71,7 @@ public class DriverVehicleDAO {
                     assignment.setAssignmentStart(LocalDate.parse(startDateStr, formatter));
                 }
 
-                String endDateStr = resultSet.getString("assignment_end");
+                String endDateStr = resultSet.getString("assigment_end");
                 if (endDateStr != null) {
                     assignment.setAssignmentEnd(LocalDate.parse(endDateStr, formatter));
                 }
