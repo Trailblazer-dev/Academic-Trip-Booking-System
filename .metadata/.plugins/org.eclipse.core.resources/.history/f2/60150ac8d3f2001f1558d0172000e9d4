@@ -1,0 +1,42 @@
+package com.academictrip.controller;
+
+import com.academictrip.dao.DriverVehicleDAO;
+import com.academictrip.dao.TripDAO;
+import com.academictrip.model.DriverVehicle;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.time.LocalDate;
+
+public class AssignDriverVehicleServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        
+        String driverId = request.getParameter("driverId");
+        String vehicleId = request.getParameter("vehicleId");
+        String tripId = request.getParameter("tripId"); // Added trip ID parameter
+
+        DriverVehicle assignment = new DriverVehicle();
+        assignment.setDriverId(driverId);
+        assignment.setVehicleId(vehicleId);
+        assignment.setAssignmentStart(LocalDate.now().toString()); // Set current date
+        assignment.setAssignmentEnd(null); // Can be set later
+
+        try {
+            DriverVehicleDAO driverVehicleDAO = new DriverVehicleDAO();
+            String driverVehicleId = driverVehicleDAO.insertAssignment(assignment);
+            
+            // Update Trip with driver_vehicle_id
+            TripDAO tripDAO = new TripDAO();
+            tripDAO.updateTripDriverVehicle(tripId, driverVehicleId);
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            response.sendRedirect("/transport/error.jsp");
+            return;
+        }
+        
+        response.sendRedirect("/transport/viewAssignments.jsp");
+    }
+}

@@ -1,0 +1,34 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Add Trip</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+    <h1>Add New Trip</h1>
+    <form action="${pageContext.request.contextPath}/AddTripServlet" method="post">
+        <!-- Trip Details -->
+        Start Date: <input type="date" name="startDate" required><br>
+        End Date: <input type="date" name="endDate" required><br>
+        
+        <!-- Incharge Details -->
+        Incharge First Name: <input type="text" name="inchargeFirstName" required><br>
+        Incharge Last Name: <input type="text" name="inchargeLastName" required><br>
+        Incharge Phone: <input type="tel" name="inchargePhone" required><br>
+        Incharge Email: <input type="email" name="inchargeEmail" required><br>
+        
+        <!-- Group Details -->
+        Group Name: <input type="text" name="groupName" required><br>
+        Student Count: <input type="number" name="studentCount" required><br>
+        
+        <!-- Course & Faculty -->
+        Course Name: <input type="text" name="courseName" required><br>
+        Faculty Name: <input type="text" name="facultyName" required><br>
+        
+        <!-- Destination -->
+        Destination Name: <input type="text" name="destinationName" required><br>
+        
+        <input type="submit" value="Submit Trip">
+    </form>
+</body>
+</html>

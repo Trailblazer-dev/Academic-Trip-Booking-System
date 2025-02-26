@@ -1,0 +1,136 @@
+
+Feb 20, 2025 05:13:07.11 NEW SESSION
+Feb 20, 2025 05:13:07.15 Opening in existing browser session.
+
+Feb 23, 2025 23:16:19.65 NEW SESSION
+Feb 23, 2025 23:16:19.68 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Feb 23, 2025 23:16:20.13 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Feb 23, 2025 23:16:20.18 [25789:25789:0223/231620.188671:ERROR:viz_main_impl.cc(185)] Exiting GPU process due to errors during initialization
+Feb 23, 2025 23:16:21.62 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Feb 23, 2025 23:16:21.76 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Feb 23, 2025 23:16:21.79 [25920:25920:0223/231621.799215:ERROR:viz_main_impl.cc(185)] Exiting GPU process due to errors during initialization
+Feb 23, 2025 23:16:21.94 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Feb 23, 2025 23:16:22.05 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Feb 23, 2025 23:16:22.19 [25855:10:0223/231622.198252:ERROR:command_buffer_proxy_impl.cc(125)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+Feb 23, 2025 23:16:22.61 [25938:25938:0223/231622.600852:ERROR:gl_utils.cc(431)] [.WebGL-0x21b4000dcd00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+Feb 23, 2025 23:16:22.96 [25938:25938:0223/231622.964391:ERROR:gl_utils.cc(431)] [.WebGL-0x21b4000dcd00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+Feb 23, 2025 23:16:23.16 [25938:25938:0223/231623.161566:ERROR:gl_utils.cc(431)] [.WebGL-0x21b4000dcd00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+Feb 23, 2025 23:16:26.07 Created TensorFlow Lite XNNPACK delegate for CPU.
+Feb 23, 2025 23:16:26.08 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Feb 23, 2025 23:16:26.38 [25738:25771:0223/231626.381349:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 23, 2025 23:16:47.44 [25738:25771:0223/231647.439372:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 23, 2025 23:17:29.80 [25738:25771:0223/231729.801174:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 23, 2025 23:19:23.52 [25738:25771:0223/231923.527943:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 23, 2025 23:23:09.54 [25738:25771:0223/232309.544594:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 23, 2025 23:30:14.67 [25738:25771:0223/233014.676376:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 23, 2025 23:31:28.13 [25738:25771:0223/233128.129158:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Feb 23, 2025 23:32:02.87 [25738:25771:0223/233202.878582:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Feb 23, 2025 23:32:02.89 [25738:25771:0223/233202.884176:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Feb 24, 2025 04:33:32.96 [25738:25771:0224/043332.963314:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Feb 24, 2025 04:34:25.10 [25738:25771:0224/043425.099775:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+
+Feb 24, 2025 20:22:35.55 NEW SESSION
+Feb 24, 2025 20:22:35.58 Opening in existing browser session.
+Feb 24, 2025 21:40:51.50 Opening in existing browser session.
+Feb 24, 2025 21:57:05.12 Opening in existing browser session.
+Feb 24, 2025 22:10:20.95 Opening in existing browser session.
+Feb 24, 2025 22:18:06.87 Opening in existing browser session.
+Feb 25, 2025 05:46:21.19 Opening in existing browser session.
+Feb 25, 2025 06:16:04.58 Opening in existing browser session.
+Feb 25, 2025 06:20:03.34 Opening in existing browser session.
+Feb 25, 2025 12:27:32.99 Opening in existing browser session.
+Feb 25, 2025 13:01:02.97 Opening in existing browser session.
+Feb 25, 2025 15:00:47.59 Opening in existing browser session.
+Feb 25, 2025 15:12:46.07 Opening in existing browser session.
+Feb 25, 2025 15:20:23.00 Opening in existing browser session.
+Feb 25, 2025 15:58:56.82 Opening in existing browser session.
+Feb 25, 2025 16:02:23.92 Opening in existing browser session.
+
+Feb 25, 2025 16:06:26.33 NEW SESSION
+Feb 25, 2025 16:06:26.34 Opening in existing browser session.
+Feb 25, 2025 16:10:34.57 Opening in existing browser session.
+Feb 25, 2025 16:19:22.80 Opening in existing browser session.
+Feb 25, 2025 16:23:22.89 Opening in existing browser session.
+
+Feb 25, 2025 16:25:21.65 NEW SESSION
+Feb 25, 2025 16:25:21.70 Opening in existing browser session.
+Feb 25, 2025 16:32:10.90 Opening in existing browser session.
+Feb 25, 2025 16:50:39.30 Opening in existing browser session.
+
+Feb 25, 2025 17:30:06.94 NEW SESSION
+Feb 25, 2025 17:30:06.98 Opening in existing browser session.
+Feb 25, 2025 17:38:28.33 Opening in existing browser session.
+Feb 25, 2025 17:40:16.27 Opening in existing browser session.
+
+Feb 25, 2025 18:20:17.79 NEW SESSION
+Feb 25, 2025 18:20:17.80 Opening in existing browser session.
+Feb 25, 2025 18:41:37.16 Opening in existing browser session.
+Feb 25, 2025 18:44:30.02 Opening in existing browser session.
+Feb 25, 2025 18:48:52.21 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Feb 25, 2025 18:48:52.36 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Feb 25, 2025 18:48:52.37 [194473:194473:0225/184852.371002:ERROR:viz_main_impl.cc(185)] Exiting GPU process due to errors during initialization
+Feb 25, 2025 18:48:52.79 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Feb 25, 2025 18:48:52.91 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Feb 25, 2025 18:48:52.93 [194603:194603:0225/184852.932735:ERROR:viz_main_impl.cc(185)] Exiting GPU process due to errors during initialization
+Feb 25, 2025 18:48:53.03 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Feb 25, 2025 18:48:53.10 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Feb 25, 2025 18:48:53.17 [194537:11:0225/184853.166719:ERROR:command_buffer_proxy_impl.cc(125)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+Feb 25, 2025 18:48:53.47 [194621:194621:0225/184853.475994:ERROR:gl_utils.cc(431)] [.WebGL-0x25d4000dc600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+Feb 25, 2025 18:48:53.77 [194621:194621:0225/184853.771024:ERROR:gl_utils.cc(431)] [.WebGL-0x25d4000dc600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+Feb 25, 2025 18:48:53.89 [194621:194621:0225/184853.889947:ERROR:gl_utils.cc(431)] [.WebGL-0x25d4000dc600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+Feb 25, 2025 18:48:57.39 Created TensorFlow Lite XNNPACK delegate for CPU.
+Feb 25, 2025 18:48:57.39 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Feb 25, 2025 18:48:57.82 [194424:194455:0225/184857.822942:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 25, 2025 18:49:24.08 [194424:194455:0225/184924.087873:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 25, 2025 18:50:05.41 [194424:194455:0225/185005.415712:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 25, 2025 18:52:00.28 [194424:194455:0225/185200.286539:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 25, 2025 18:55:27.86 [194424:194455:0225/185527.861219:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 25, 2025 18:59:16.90 Opening in existing browser session.
+Feb 25, 2025 19:03:01.99 [194424:194455:0225/190301.998730:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 25, 2025 19:04:15.56 Opening in existing browser session.
+Feb 25, 2025 19:11:02.53 Opening in existing browser session.
+Feb 25, 2025 19:24:37.82 Opening in existing browser session.
+Feb 25, 2025 19:43:59.59 Opening in existing browser session.
+Feb 25, 2025 19:51:29.39 Opening in existing browser session.
+
+Feb 25, 2025 21:27:45.88 NEW SESSION
+Feb 25, 2025 21:27:45.89 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Feb 25, 2025 21:27:46.05 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Feb 25, 2025 21:27:49.27 Created TensorFlow Lite XNNPACK delegate for CPU.
+Feb 25, 2025 21:27:49.27 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Feb 25, 2025 21:27:49.50 [7947:7978:0225/212749.507388:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 25, 2025 21:28:12.72 [7947:7978:0225/212812.719976:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 25, 2025 21:28:58.56 [7947:7978:0225/212858.558541:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 25, 2025 21:30:44.92 [7947:7978:0225/213044.929108:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 25, 2025 21:33:51.11 [7947:7978:0225/213351.117208:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 25, 2025 21:39:18.10 [7947:7978:0225/213918.108143:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 25, 2025 21:48:53.60 Opening in existing browser session.
+Feb 25, 2025 21:49:56.04 Opening in existing browser session.
+Feb 25, 2025 21:54:36.11 Opening in existing browser session.
+Feb 25, 2025 22:05:50.62 Opening in existing browser session.
+Feb 25, 2025 22:50:22.50 Opening in existing browser session.
+Feb 25, 2025 23:02:54.13 [7947:7978:0225/230254.127152:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Feb 25, 2025 23:03:12.10 [7947:7978:0225/230312.082451:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Feb 25, 2025 23:03:17.55 [7947:7978:0225/230317.554744:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Feb 25, 2025 23:31:31.09 [7947:7978:0225/233131.090708:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Feb 26, 2025 01:27:30.18 [7947:7978:0226/012730.188214:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Feb 26, 2025 04:35:10.09 [7947:7978:0226/043510.097089:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Feb 26, 2025 05:38:32.15 [7947:7947:0226/053832.156206:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+Feb 26, 2025 05:38:32.15 [7947:7947:0226/053832.157060:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+Feb 26, 2025 05:38:32.15 [7947:7947:0226/053832.157891:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+Feb 26, 2025 05:40:05.69 Opening in existing browser session.
+Feb 26, 2025 05:46:55.32 [7947:7947:0226/054655.237537:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+Feb 26, 2025 05:46:55.32 [7947:7947:0226/054655.242620:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+Feb 26, 2025 05:46:55.32 [7947:7947:0226/054655.243530:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+Feb 26, 2025 05:52:52.94 [7947:7947:0226/055252.946033:ERROR:CONSOLE(1)] "Extension server error: Operation failed: http://localhost:8082/AcademicTripSystem/ has no execution context", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+Feb 26, 2025 05:52:52.97 [7947:7947:0226/055252.974207:ERROR:CONSOLE(1)] "Received error with code E_FAILED while checking if react has loaded: "Operation failed: %s"", source: chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/main.js (1)
+Feb 26, 2025 05:53:20.92 Opening in existing browser session.
+Feb 26, 2025 06:00:34.53 [7947:7947:0226/060034.534880:ERROR:CONSOLE(1)] "Cannot find context with specified id", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+Feb 26, 2025 06:00:34.53 [7947:7947:0226/060034.535765:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+Feb 26, 2025 06:25:22.05 [7947:7947:0226/062522.053463:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+Feb 26, 2025 06:25:22.05 [7947:7947:0226/062522.054745:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+Feb 26, 2025 06:25:22.05 [7947:7947:0226/062522.054885:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+Feb 26, 2025 06:36:57.20 Opening in existing browser session.
+Feb 26, 2025 06:45:39.80 Opening in existing browser session.
+Feb 26, 2025 06:46:16.98 [7947:7947:0226/064616.978041:ERROR:CONSOLE(1)] "Extension server error: Operation failed: http://localhost:8082/AcademicTripSystem/j_security_check has no execution context", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+Feb 26, 2025 06:47:20.22 Opening in existing browser session.

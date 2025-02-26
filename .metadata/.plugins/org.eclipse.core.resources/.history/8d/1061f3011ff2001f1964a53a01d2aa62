@@ -1,0 +1,5 @@
+package com.academictrip.util;
+
+public class DatabaseUtil {
+
+}

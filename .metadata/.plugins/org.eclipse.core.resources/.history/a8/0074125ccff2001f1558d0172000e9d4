@@ -1,0 +1,5 @@
+package com.academictrip.model;
+
+public class Faculty {
+
+}

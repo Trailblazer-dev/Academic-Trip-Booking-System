@@ -1,0 +1,29 @@
+package com.academictrip.controller;
+
+import com.academictrip.dao.DriverVehicleDAO;
+import com.academictrip.model.DriverVehicle;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/AssignDriverVehicleServlet")
+public class AssignDriverVehicleServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String tripId = request.getParameter("tripId");
+        String driverId = request.getParameter("driverId");
+        String vehicleId = request.getParameter("vehicleId");
+
+        DriverVehicle assignment = new DriverVehicle(tripId, driverId, vehicleId);
+        DriverVehicleDAO driverVehicleDAO = new DriverVehicleDAO();
+        try {
+            driverVehicleDAO.insertAssignment(assignment);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("transport/viewAssignments.jsp");
+    }
+}

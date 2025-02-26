@@ -1,0 +1,9 @@
+INDEX VERSION 1.134
+/home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2688160176.index
+/AcademicTripSystem/src/main/java
+/home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/843550564.index
+/AcademicTripSystem/src/main/java
+/home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2301001084.index
+/AcademicTripSystem/src/main/java
+/home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/6312660.index
+/Demo/src/main/java

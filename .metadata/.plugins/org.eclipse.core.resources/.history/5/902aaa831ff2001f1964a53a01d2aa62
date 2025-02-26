@@ -1,0 +1,31 @@
+package com.academictrip.controller;
+
+import com.academictrip.model.Trip;
+import com.academictrip.model.TripDAO;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/AddTripServlet")
+public class AddTripServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String tripId = request.getParameter("tripId");
+        String startDate = request.getParameter("startDate");
+        String endDate = request.getParameter("endDate");
+        String destinationId = request.getParameter("destinationId");
+        String inchargeGroupId = request.getParameter("inchargeGroupId");
+
+        Trip trip = new Trip(tripId, startDate, endDate, destinationId, inchargeGroupId);
+        TripDAO tripDAO = new TripDAO();
+        try {
+            tripDAO.insertTrip(trip);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("lecturer/viewTimetable.jsp");
+    }
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Server">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Listener" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="className" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="GlobalNamingResources">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Resource">
+								<xs:complexType>
+									<xs:attribute name="auth" use="required" />
+									<xs:attribute name="description" use="required" />
+									<xs:attribute name="factory" use="required" />
+									<xs:attribute name="name" use="required" />
+									<xs:attribute name="pathname" use="required" />
+									<xs:attribute name="type" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Service">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Connector">
+								<xs:complexType>
+									<xs:attribute name="connectionTimeout" type="xs:integer" use="required" />
+									<xs:attribute name="maxParameterCount" type="xs:integer" use="required" />
+									<xs:attribute name="port" type="xs:integer" use="required" />
+									<xs:attribute name="protocol" use="required" />
+									<xs:attribute name="redirectPort" type="xs:integer" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Engine">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Realm">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Realm">
+														<xs:complexType>
+															<xs:attribute name="className" use="required" />
+															<xs:attribute name="resourceName" use="required" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="className" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Host">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Valve">
+														<xs:complexType>
+															<xs:attribute name="className" use="required" />
+															<xs:attribute name="directory" use="required" />
+															<xs:attribute name="pattern" use="required" />
+															<xs:attribute name="prefix" use="required" />
+															<xs:attribute name="suffix" use="required" />
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="Context">
+														<xs:complexType>
+															<xs:attribute name="docBase" use="required" />
+															<xs:attribute name="path" use="required" />
+															<xs:attribute name="reloadable" type="xs:boolean" use="required" />
+															<xs:attribute name="source" use="required" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="appBase" use="required" />
+												<xs:attribute name="autoDeploy" type="xs:boolean" use="required" />
+												<xs:attribute name="name" use="required" />
+												<xs:attribute name="unpackWARs" type="xs:boolean" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="defaultHost" use="required" />
+									<xs:attribute name="name" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="name" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="port" type="xs:integer" use="required" />
+			<xs:attribute name="shutdown" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

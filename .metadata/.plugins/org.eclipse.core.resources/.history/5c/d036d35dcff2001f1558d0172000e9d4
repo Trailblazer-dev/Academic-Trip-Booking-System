@@ -1,0 +1,33 @@
+package com.academictrip.model;
+
+public class DriverVehicle {
+    private String driverVehicleId;
+    private String driverId;
+    private String vehicleId;
+    private String assignmentStart;
+    private String assignmentEnd;
+
+    // Constructors
+    public DriverVehicle() {}
+
+    public DriverVehicle(String driverId, String vehicleId) {
+        this.driverId = driverId;
+        this.vehicleId = vehicleId;
+    }
+
+    // Getters and Setters
+    public String getDriverVehicleId() { return driverVehicleId; }
+    public void setDriverVehicleId(String driverVehicleId) { this.driverVehicleId = driverVehicleId; }
+
+    public String getDriverId() { return driverId; }
+    public void setDriverId(String driverId) { this.driverId = driverId; }
+
+    public String getVehicleId() { return vehicleId; }
+    public void setVehicleId(String vehicleId) { this.vehicleId = vehicleId; }
+
+    public String getAssignmentStart() { return assignmentStart; }
+    public void setAssignmentStart(String assignmentStart) { this.assignmentStart = assignmentStart; }
+
+    public String getAssignmentEnd() { return assignmentEnd; }
+    public void setAssignmentEnd(String assignmentEnd) { this.assignmentEnd = assignmentEnd; }
+}

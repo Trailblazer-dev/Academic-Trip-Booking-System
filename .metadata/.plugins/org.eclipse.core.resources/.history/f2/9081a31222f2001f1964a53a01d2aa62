@@ -1,0 +1,20 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Add Trip</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+    <h1>Add New Trip</h1>
+    <form action="../AddTripServlet" method="post">
+        Trip ID: <input type="text" name="tripId" required><br>
+        Start Date: <input type="date" name="startDate" required><br>
+        End Date: <input type="date" name="endDate" required><br>
+        Destination ID: <input type="text" name="destinationId" required><br>
+        Incharge Group ID: <input type="text" name="inchargeGroupId" required><br>
+        <input type="submit" value="Add Trip">
+    </form>
+    <br>
+    <a href="../lecturer/viewTimetable.jsp">View Timetable</a>
+</body>
+</html>

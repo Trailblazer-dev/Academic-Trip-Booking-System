@@ -1,0 +1,24 @@
+package com.academictrip.dao;
+
+import java.sql.SQLException;
+
+public class FacultyDAO {
+    // Auto-generate faculty_id (e.g., FAC001)
+    private String generateFacultyId() throws SQLException {
+        String prefix = "FAC";
+        String sql = "SELECT MAX(faculty_id) AS max_id FROM Faculty";
+        // ... similar to earlier ID generation logic ...
+    }
+
+    public void insertFaculty(Faculty faculty) throws SQLException {
+        String facultyId = generateFacultyId();
+        faculty.setFacultyId(facultyId);
+        String sql = "INSERT INTO Faculty (faculty_id, name) VALUES (?, ?)";
+        // ... execute insert ...
+    }
+
+    public Faculty findFacultyByName(String name) throws SQLException {
+        String sql = "SELECT * FROM Faculty WHERE name = ?";
+        // ... execute query and return Faculty object ...
+    }
+}

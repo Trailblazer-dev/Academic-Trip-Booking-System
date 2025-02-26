@@ -1,0 +1,26 @@
+<%@ page import="com.academictrip.dao.TripDAO" %>
+<%@ page import="com.academictrip.model.Trip" %>
+<%@ page import="java.util.List" %>
+<!-- ... -->
+<table>
+    <tr>
+        <th>Trip ID</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Destination</th>
+        <th>Incharge Group</th>
+    </tr>
+    <%
+        TripDAO tripDAO = new TripDAO();
+        List<Trip> trips = tripDAO.getAllTrips();
+        for (Trip trip : trips) {
+    %>
+    <tr>
+        <td><%= trip.getTripId() %></td>
+        <td><%= trip.getStartDate() %></td>
+        <td><%= trip.getEndDate() %></td>
+        <td><%= trip.getDestinationId() %></td>
+        <td><%= trip.getInchargeGroupId() %></td>
+    </tr>
+    <% } %>
+</table>
