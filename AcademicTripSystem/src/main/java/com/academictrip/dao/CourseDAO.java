@@ -1,8 +1,12 @@
 package com.academictrip.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import com.academictrip.model.Course;
 import com.academictrip.util.DatabaseUtil;
-import java.sql.*;
 
 public class CourseDAO {
     // Generate course_id (e.g., COU001)
@@ -14,7 +18,9 @@ public class CourseDAO {
              ResultSet rs = stmt.executeQuery()) {
             if (rs.next()) {
                 String maxId = rs.getString("max_id");
-                if (maxId == null) return prefix + "001";
+                if (maxId == null) {
+					return prefix + "001";
+				}
                 int numericPart = Integer.parseInt(maxId.replace(prefix, ""));
                 return String.format("%s%03d", prefix, numericPart + 1);
             }

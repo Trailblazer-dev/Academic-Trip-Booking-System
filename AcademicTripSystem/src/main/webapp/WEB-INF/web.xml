@@ -5,11 +5,12 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <!-- ========== SERVLETS ========== -->
-   
-
-    <!-- (Other servlets similarly configured) -->
-    <!-- Servlet Declarations -->
+    <!-- ===== Servlet Declarations ===== 
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.academictrip.controller.LoginServlet</servlet-class>
+    </servlet>
+    -->
     <servlet>
         <servlet-name>AddDriverServlet</servlet-name>
         <servlet-class>com.academictrip.controller.AddDriverServlet</servlet-class>
@@ -22,8 +23,15 @@
         <servlet-name>AssignResourcesServlet</servlet-name>
         <servlet-class>com.academictrip.controller.AssignResourcesServlet</servlet-class>
     </servlet>
+    <!-- (Add any additional servlets here as needed) -->
 
-    <!-- Servlet Mappings -->
+    <!-- ===== Servlet Mappings ===== 
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    -->
+    
     <servlet-mapping>
         <servlet-name>AddDriverServlet</servlet-name>
         <url-pattern>/transport/addDriver</url-pattern>
@@ -37,52 +45,9 @@
         <url-pattern>/transport/assignResources</url-pattern>
     </servlet-mapping>
 
-    <!-- ========== SECURITY ========== -->
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>Transport Manager Area</web-resource-name>
-            <url-pattern>/transport/*</url-pattern>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>transport_manager</role-name>
-        </auth-constraint>
-    </security-constraint>
-
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>Academic Trip Booking</web-resource-name>
-            <url-pattern>/academictrip/*</url-pattern>
-            <url-pattern>/lecturer/*</url-pattern> <!-- Added to protect lecturer paths -->
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>lecturer</role-name>
-        </auth-constraint>
-    </security-constraint>
-
-    <!-- Define roles -->
-    <security-role>
-        <role-name>transport_manager</role-name>
-    </security-role>
-    <security-role>
-        <role-name>lecturer</role-name>
-    </security-role>
-
-    <!-- Login configuration -->
-    <login-config>
-        <auth-method>FORM</auth-method>
-        <form-login-config>
-            <form-login-page>/login.jsp</form-login-page>
-            <form-error-page>/loginError.jsp</form-error-page>
-        </form-login-config>
-    </login-config>
-
-    <!-- Welcome files -->
+    <!-- ===== Welcome Files ===== -->
     <welcome-file-list>
-        <welcome-file>login.jsp</welcome-file> <!-- Public login page -->
+        <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
-    
-    <session-config>
-    <session-timeout>30</session-timeout> <!-- Time in minutes -->
-</session-config>
 
 </web-app>

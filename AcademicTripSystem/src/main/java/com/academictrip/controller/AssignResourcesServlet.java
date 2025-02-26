@@ -21,11 +21,12 @@ import com.academictrip.model.DriverVehicle;
 public class AssignResourcesServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String tripId = request.getParameter("tripId");
         String driverId = request.getParameter("driverId");
         String vehicleId = request.getParameter("vehicleId");
-        
+
         try {
             // Create assignment
             DriverVehicle assignment = new DriverVehicle();
@@ -33,12 +34,12 @@ public class AssignResourcesServlet extends HttpServlet {
             assignment.setVehicleId(vehicleId);
             assignment.setAssignmentStart(LocalDate.now());
             assignment.setAssignmentEnd(LocalDate.now().plusDays(7));
-            
+
             String dvId = new DriverVehicleDAO().insertAssignment(assignment);
-            
+
             // Update trip
             new TripDAO().updateTripDriverVehicle(tripId, dvId);
-            
+
             response.sendRedirect("transport/assignResources.jsp");
         } catch (SQLException e) {
             request.setAttribute("error", e.getMessage());

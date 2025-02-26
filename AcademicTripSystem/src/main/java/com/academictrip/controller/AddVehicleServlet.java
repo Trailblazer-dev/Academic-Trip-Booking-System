@@ -20,6 +20,7 @@ import com.academictrip.model.Vehicle;
 public class AddVehicleServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Vehicle vehicle = new Vehicle();
         vehicle.setMake(request.getParameter("make"));
@@ -27,7 +28,7 @@ public class AddVehicleServlet extends HttpServlet {
         vehicle.setYear(LocalDate.parse(request.getParameter("year")));
         vehicle.setCapacity(Integer.parseInt(request.getParameter("capacity")));
         vehicle.setPlateNumber(request.getParameter("plate"));
-        
+
         try {
             new VehicleDAO().insertVehicle(vehicle);
             response.sendRedirect("transport/manageVehicles.jsp");

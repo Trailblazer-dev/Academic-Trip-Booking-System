@@ -16,13 +16,14 @@ import com.academictrip.model.Driver;
 public class AddDriverServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Driver driver = new Driver();
         driver.setFirstname(request.getParameter("firstName"));
         driver.setLastname(request.getParameter("lastName"));
         driver.setPhoneNumber(Integer.parseInt(request.getParameter("phone")));
         driver.setEmail(request.getParameter("email"));
-        
+
         try {
             new DriverDAO().insertDriver(driver);
             response.sendRedirect("transport/manageDrivers.jsp");

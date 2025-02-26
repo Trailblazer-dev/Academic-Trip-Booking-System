@@ -1,12 +1,17 @@
 package com.academictrip.dao;
 
-import com.academictrip.model.DriverVehicle;
-import com.academictrip.util.DatabaseUtil;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.time.format.DateTimeFormatter;
+
+import com.academictrip.model.DriverVehicle;
+import com.academictrip.util.DatabaseUtil;
 
 public class DriverVehicleDAO {
 	private String generateDriverVehicleId() throws SQLException {
@@ -17,30 +22,32 @@ public class DriverVehicleDAO {
              ResultSet resultSet = statement.executeQuery()) {
             if (resultSet.next()) {
                 String maxId = resultSet.getString("max_id");
-                if (maxId == null) return prefix + "001";
+                if (maxId == null) {
+					return prefix + "001";
+				}
                 int numericPart = Integer.parseInt(maxId.replace(prefix, ""));
                 return String.format("%s%03d", prefix, numericPart + 1);
             }
             return prefix + "001";
         }
     }
-	
+
     // Insert a new assignment
 	public String insertAssignment(DriverVehicle assignment) throws SQLException {
         String driverVehicleId = generateDriverVehicleId();
         String sql = "INSERT INTO Driver_Vehicle (driver_vehicle_id, driver_id, vehicle_id, assignment_start, assigment_end) " +
                 "VALUES (?, ?, ?, ?, ?)";
-        
+
         try (Connection conn = DatabaseUtil.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-            
+
             stmt.setString(1, driverVehicleId);
             stmt.setString(2, assignment.getDriverId());
             stmt.setString(3, assignment.getVehicleId());
             stmt.setDate(4, Date.valueOf(LocalDate.now())); // assignment_start
             stmt.setDate(5, Date.valueOf(LocalDate.now().plusDays(1))); // assignment_end (example)
             stmt.executeUpdate();
-            
+
             return driverVehicleId;
         }
     }

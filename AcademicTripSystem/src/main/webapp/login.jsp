@@ -8,19 +8,19 @@
 <body class="bg-gray-100 flex items-center justify-center h-screen">
     <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md">
         <h1 class="block text-gray-700 text-2xl font-bold mb-6 text-center">Login</h1>
-        <form method="post" action="${pageContext.request.contextPath}/j_security_check">
+        <form method="post" action="LoginServlet">
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="j_username">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                     Username
                 </label>
-                <input type="text" name="j_username" id="j_username" placeholder="Enter your username"
+                <input type="text" name="username" id="username" placeholder="Enter your username"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="j_password">
                     Password
                 </label>
-                <input type="password" name="j_password" id="j_password" placeholder="Enter your password"
+                <input type="password" name="password" id="password" placeholder="Enter your password"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="flex items-center justify-between">

@@ -1,15 +1,38 @@
 package com.academictrip.controller;
 
-import com.academictrip.dao.*;
-import com.academictrip.model.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.academictrip.dao.CourseDAO;
+import com.academictrip.dao.DestinationDAO;
+import com.academictrip.dao.DriverVehicleDAO;
+import com.academictrip.dao.FacultyDAO;
+import com.academictrip.dao.InchargeDAO;
+import com.academictrip.dao.InchargeGroupDAO;
+import com.academictrip.dao.TripDAO;
+import com.academictrip.dao.TripGroupDAO;
+import com.academictrip.model.Course;
+import com.academictrip.model.Destination;
+import com.academictrip.model.DriverVehicle;
+import com.academictrip.model.Faculty;
+import com.academictrip.model.Incharge;
+import com.academictrip.model.InchargeGroup;
+import com.academictrip.model.Trip;
+import com.academictrip.model.TripGroup;
+
+
+@WebServlet("/AddTripServlet")
 
 public class AddTripServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Get all form parameters
         String startDate = request.getParameter("startDate");
@@ -24,7 +47,7 @@ public class AddTripServlet extends HttpServlet {
         String facultyName = request.getParameter("facultyName");
         String destinationName = request.getParameter("destinationName");
 
-        
+
         try {
         	 System.out.println("=== STARTING TRIP CREATION ===");
             // 1. Faculty
@@ -59,7 +82,7 @@ public class AddTripServlet extends HttpServlet {
                 inchargeDAO.insertIncharge(incharge); // Auto-generates incharge_id
             }
 
-            
+
             // 5. Destination
             DestinationDAO destinationDAO = new DestinationDAO();
             Destination destination = destinationDAO.findDestinationByName(destinationName);
@@ -76,7 +99,7 @@ public class AddTripServlet extends HttpServlet {
             tripGroup.setStudentNumber(studentCount);
             tripGroup.setCourseId(course.getCourseId());
             tripGroupDAO.insertTripGroup(tripGroup);
-            
+
             // 4. Incharge_Group
             InchargeGroupDAO inchargeGroupDAO = new InchargeGroupDAO();
             InchargeGroup group = new InchargeGroup();
@@ -101,18 +124,18 @@ public class AddTripServlet extends HttpServlet {
             trip.setDestinationId(destination.getDestinationId());
 
             tripDAO.insertTrip(trip); // This now generates trip_id
-            
-      
+
+
 
             response.sendRedirect(request.getContextPath() + "/success.jsp");
-            
-            
+
+
          // After each DAO operation
             System.out.println("Inserted Faculty: " + faculty);
             System.out.println("Inserted Course: " + course);
             System.out.println("Inserted Incharge: " + incharge);
             System.out.println("Inserted Destination: " + destination);
-            
+
             System.out.println("=== TRIP CREATION SUCCESSFUL ===");
 
         } catch (SQLException e) {

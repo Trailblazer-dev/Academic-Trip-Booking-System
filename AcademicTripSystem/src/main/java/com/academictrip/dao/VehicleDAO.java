@@ -1,13 +1,18 @@
 package com.academictrip.dao;
 
-import com.academictrip.model.Vehicle;
-import com.academictrip.util.DatabaseUtil;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.academictrip.model.Vehicle;
+import com.academictrip.util.DatabaseUtil;
+
 public class VehicleDAO {
-    
+
     // Generate vehicle_id (e.g., VEH001)
     private String generateVehicleId() throws SQLException {
         String prefix = "VEH";
@@ -15,10 +20,12 @@ public class VehicleDAO {
         try (Connection conn = DatabaseUtil.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
-            
+
             if (rs.next()) {
                 String maxId = rs.getString(1);
-                if (maxId == null) return prefix + "001";
+                if (maxId == null) {
+					return prefix + "001";
+				}
                 int numericPart = Integer.parseInt(maxId.replace(prefix, ""));
                 return String.format("%s%03d", prefix, numericPart + 1);
             }
@@ -29,20 +36,20 @@ public class VehicleDAO {
     public void insertVehicle(Vehicle vehicle) throws SQLException {
         String vehicleId = generateVehicleId();
         vehicle.setVehicleId(vehicleId);
-        
+
         String sql = "INSERT INTO Vehicle (vehicle_id, make, model, year, capacity, plate_number) "
                    + "VALUES (?, ?, ?, ?, ?, ?)";
-        
+
         try (Connection conn = DatabaseUtil.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-            
+
             stmt.setString(1, vehicle.getVehicleId());
             stmt.setString(2, vehicle.getMake());
             stmt.setString(3, vehicle.getModel());
             stmt.setDate(4, Date.valueOf(vehicle.getYear()));
             stmt.setInt(5, vehicle.getCapacity());
             stmt.setString(6, vehicle.getPlateNumber());
-            
+
             stmt.executeUpdate();
         }
     }
@@ -52,7 +59,7 @@ public class VehicleDAO {
         try (Connection conn = DatabaseUtil.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
-            
+
             if (rs.next()) {
                 return new Vehicle(
                     rs.getString("vehicle_id"),
