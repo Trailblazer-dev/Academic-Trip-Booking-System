@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="servlet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="servlet-name" type="xs:string" />
+				<xs:element name="servlet-class" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="servlet-mapping">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="servlet-name" type="xs:string" />
+				<xs:element name="url-pattern" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="security-constraint">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="web-resource-collection">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="web-resource-name" type="xs:string" />
+							<xs:element name="url-pattern" maxOccurs="unbounded" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="auth-constraint">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="role-name" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="security-role">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="role-name" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="login-config">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="auth-method" type="xs:string" />
+				<xs:element name="form-login-config">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="form-login-page" type="xs:string" />
+							<xs:element name="form-error-page" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="welcome-file-list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="welcome-file" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="session-config">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="session-timeout" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="web-app" />
+</xs:schema>

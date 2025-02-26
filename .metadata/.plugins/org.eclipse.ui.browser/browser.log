@@ -134,3 +134,47 @@ Feb 26, 2025 06:36:57.20 Opening in existing browser session.
 Feb 26, 2025 06:45:39.80 Opening in existing browser session.
 Feb 26, 2025 06:46:16.98 [7947:7947:0226/064616.978041:ERROR:CONSOLE(1)] "Extension server error: Operation failed: http://localhost:8082/AcademicTripSystem/j_security_check has no execution context", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
 Feb 26, 2025 06:47:20.22 Opening in existing browser session.
+Feb 26, 2025 07:17:19.60 Opening in existing browser session.
+Feb 26, 2025 07:24:22.80 Opening in existing browser session.
+Feb 26, 2025 07:26:47.72 Opening in existing browser session.
+Feb 26, 2025 07:51:54.36 Opening in existing browser session.
+Feb 26, 2025 07:56:23.07 Opening in existing browser session.
+Feb 26, 2025 08:00:39.09 [7993:7993:0226/080039.085901:ERROR:shared_image_manager.cc(250)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+Feb 26, 2025 08:00:59.33 Opening in existing browser session.
+
+Feb 26, 2025 08:03:47.47 NEW SESSION
+Feb 26, 2025 08:03:47.48 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Feb 26, 2025 08:03:47.53 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Feb 26, 2025 08:03:51.89 Created TensorFlow Lite XNNPACK delegate for CPU.
+Feb 26, 2025 08:03:51.89 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Feb 26, 2025 08:03:52.19 [44023:44053:0226/080352.195141:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 26, 2025 08:04:22.34 [44023:44053:0226/080422.344278:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 26, 2025 08:05:13.38 [44023:44053:0226/080513.384458:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 26, 2025 08:07:03.82 [44023:44053:0226/080703.820107:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 26, 2025 08:10:31.03 [44023:44053:0226/081031.037511:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 26, 2025 08:17:13.89 [44023:44053:0226/081713.894949:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Feb 26, 2025 08:32:06.55 Fontconfig error: Cannot load default config file: No such file: (null)
+Feb 26, 2025 08:32:06.58 [44023:44023:0226/083206.583681:ERROR:CONSOLE(1)] "Ignoring unauthorized client request from null", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+Feb 26, 2025 08:37:37.43 [44023:44053:0226/083737.438914:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Feb 26, 2025 09:29:14.19 [44023:44053:0226/092914.190945:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Feb 26, 2025 09:29:14.19 [44023:44053:0226/092914.194853:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Feb 26, 2025 09:43:11.18 [44023:44053:0226/094311.183203:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Feb 26, 2025 09:47:07.47 Opening in existing browser session.
+Feb 26, 2025 09:49:54.20 Opening in existing browser session.
+Feb 26, 2025 09:54:43.48 [44023:44053:0226/095443.486316:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Feb 26, 2025 09:55:26.07 Opening in existing browser session.
+Feb 26, 2025 09:58:09.35 Opening in existing browser session.
+Feb 26, 2025 10:02:53.34 Opening in existing browser session.
+Feb 26, 2025 10:06:19.71 [44023:44053:0226/100619.710189:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Feb 26, 2025 10:08:21.72 Opening in existing browser session.
+Feb 26, 2025 10:14:02.78 [44023:44053:0226/101402.785005:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Feb 26, 2025 10:14:02.78 [44023:44053:0226/101402.786396:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Feb 26, 2025 10:16:10.69 [44023:44062:0226/101610.691595:ERROR:get_updates_processor.cc(266)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_NAME_NOT_RESOLVED)
+Feb 26, 2025 10:16:59.71 [44075:44087:0226/101659.711964:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -100
+Feb 26, 2025 10:16:59.71 [44075:44087:0226/101659.712210:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -100
+Feb 26, 2025 10:18:01.31 Opening in existing browser session.
+
+Feb 26, 2025 10:27:36.54 NEW SESSION
+Feb 26, 2025 10:27:36.61 Opening in existing browser session.
+Feb 26, 2025 11:07:42.82 Opening in existing browser session.
+Feb 26, 2025 11:11:12.75 Opening in existing browser session.

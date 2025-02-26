@@ -3,3 +3,8 @@
 1740339063360	Rename package 'academictrip'
 1740339886278	Rename type 'Driver_Vehicle'
 1740340055615	Move compilation unit
+1740550853323	Move 'web.xml' to 'lib'
+1740554128946	Move 'web.xml' to 'WEB-INF'
+1740554262007	Move 'web.xml' to 'lib'
+1740554425607	Move 'web.xml' to 'WEB-INF'
+1740554666123	Delete element
