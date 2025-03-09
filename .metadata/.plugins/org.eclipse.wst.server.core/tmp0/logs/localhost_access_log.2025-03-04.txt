@@ -1,0 +1,17 @@
+127.0.0.1 - - [04/Mar/2025:16:11:11 +0300] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:11:49 +0300] "GET /AcademicTripSystem/ HTTP/1.1" 200 1700
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:11:50 +0300] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:12:13 +0300] "POST /AcademicTripSystem/LoginServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:12:13 +0300] "GET /AcademicTripSystem/loginError.jsp HTTP/1.1" 200 673
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:12:14 +0300] "GET /AcademicTripSystem/login.jsp HTTP/1.1" 200 1700
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:12:24 +0300] "POST /AcademicTripSystem/LoginServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:12:25 +0300] "GET /AcademicTripSystem/lecturer/addTrip.jsp HTTP/1.1" 200 4550
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:12:25 +0300] "GET /AcademicTripSystem/css/styles.css HTTP/1.1" 404 792
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:15:52 +0300] "POST /AcademicTripSystem/LoginServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:15:52 +0300] "GET /AcademicTripSystem/transport/index.jsp HTTP/1.1" 200 1207
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:15:59 +0300] "GET /AcademicTripSystem/transport/manageDrivers.jsp HTTP/1.1" 200 1983
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:16:03 +0300] "GET /AcademicTripSystem/transport/manageVehicles.jsp HTTP/1.1" 200 2276
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:16:07 +0300] "GET /AcademicTripSystem/transport/assignResources.jsp HTTP/1.1" 200 2964
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:16:13 +0300] "GET /AcademicTripSystem/transport/assignDriverVehicle.jsp HTTP/1.1" 200 1752
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:16:17 +0300] "GET /AcademicTripSystem/transport/viewAssignments.jsp HTTP/1.1" 200 2921
+0:0:0:0:0:0:0:1 - - [04/Mar/2025:16:16:17 +0300] "GET /AcademicTripSystem/css/styles.css HTTP/1.1" 404 792

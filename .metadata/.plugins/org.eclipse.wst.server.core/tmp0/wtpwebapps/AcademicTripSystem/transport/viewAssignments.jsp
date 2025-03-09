@@ -30,6 +30,7 @@
                         for (DriverVehicle assignment : assignments) {
                     %>
                     <tr class="hover:bg-gray-100">
+                    	
                         <td class="px-6 py-4 whitespace-nowrap"><%= assignment.getDriverId() %></td>
                         <td class="px-6 py-4 whitespace-nowrap"><%= assignment.getVehicleId() %></td>
                     </tr>

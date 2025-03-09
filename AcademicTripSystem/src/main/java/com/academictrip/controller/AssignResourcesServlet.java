@@ -17,7 +17,7 @@ import com.academictrip.model.DriverVehicle;
 /**
  * Servlet implementation class AssignResourcesServlet
  */
-@WebServlet("/AssignResourcesServlet")
+//@WebServlet("/AssignResourcesServlet")
 public class AssignResourcesServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -40,7 +40,7 @@ public class AssignResourcesServlet extends HttpServlet {
             // Update trip
             new TripDAO().updateTripDriverVehicle(tripId, dvId);
 
-            response.sendRedirect("transport/assignResources.jsp");
+            response.sendRedirect(request.getContextPath() +"/transport/assignResources.jsp");
         } catch (SQLException e) {
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/error.jsp").forward(request, response);

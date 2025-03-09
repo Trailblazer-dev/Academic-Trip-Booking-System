@@ -179,3 +179,89 @@ Feb 26, 2025 10:27:36.61 Opening in existing browser session.
 Feb 26, 2025 11:07:42.82 Opening in existing browser session.
 Feb 26, 2025 11:11:12.75 Opening in existing browser session.
 Feb 26, 2025 15:02:45.72 Opening in existing browser session.
+
+Mar 04, 2025 16:11:48.05 NEW SESSION
+Mar 04, 2025 16:11:48.16 Opening in existing browser session.
+
+Mar 05, 2025 12:13:16.76 NEW SESSION
+Mar 05, 2025 12:13:16.79 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 05, 2025 12:13:16.87 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Mar 05, 2025 12:13:20.30 [5644:5676:0305/121320.308261:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 05, 2025 12:13:20.31 [5644:5676:0305/121320.310230:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 05, 2025 12:13:20.38 Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 05, 2025 12:13:20.38 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Mar 05, 2025 12:13:42.40 [5644:5676:0305/121342.409019:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 05, 2025 12:13:46.20 [5644:5676:0305/121346.200009:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+
+Mar 06, 2025 07:20:31.38 NEW SESSION
+Mar 06, 2025 07:20:31.40 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 06, 2025 07:20:31.58 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Mar 06, 2025 07:20:35.08 Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 06, 2025 07:20:35.08 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Mar 06, 2025 07:20:35.46 [2732:2763:0306/072035.465366:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 06, 2025 07:20:57.52 [2732:2763:0306/072057.529032:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 06, 2025 07:21:56.55 [2732:2763:0306/072156.555780:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 06, 2025 07:23:23.66 [2732:2763:0306/072323.668995:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 06, 2025 07:23:31.47 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 06, 2025 07:23:31.52 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 06, 2025 07:23:31.52 [2732:2732:0306/072331.528357:ERROR:service_client.cc(36)] Unexpected on_device_model service disconnect: 
+Mar 06, 2025 07:26:19.46 [2732:2763:0306/072619.464002:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 06, 2025 07:28:17.01 [2732:2732:0306/072817.018002:ERROR:atom_cache.cc(230)] Add chromium/x-internal-source-rfh-token to kAtomsToCache
+Mar 06, 2025 07:32:07.72 [2732:2763:0306/073207.721665:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Mar 06, 2025 07:33:49.99 [2732:2763:0306/073349.992028:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 06, 2025 07:43:31.77 [2732:2763:0306/074331.770423:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Mar 06, 2025 08:28:32.94 [2732:2763:0306/082832.945527:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Mar 06, 2025 08:28:33.24 [2784:2790:0306/082833.248378:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:28:33.55 [2784:2790:0306/082833.553347:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:28:33.55 [2732:2763:0306/082833.553537:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -101
+Mar 06, 2025 08:29:25.24 [2732:2763:0306/082925.247449:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+Mar 06, 2025 08:30:17.60 [2784:2790:0306/083017.601785:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:30:17.77 [2784:2790:0306/083017.773377:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:30:17.77 [2732:2763:0306/083017.773598:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -101
+Mar 06, 2025 08:32:21.94 [2732:2763:0306/083221.947480:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+Mar 06, 2025 08:33:55.59 [2784:2790:0306/083355.599177:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:33:56.08 [2784:2790:0306/083356.087160:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:33:56.08 [2732:2763:0306/083356.087354:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -101
+Mar 06, 2025 08:34:27.21 [2732:2763:0306/083427.218286:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+Mar 06, 2025 08:36:17.57 [2784:2790:0306/083617.576595:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:36:17.93 [2784:2790:0306/083617.931797:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:36:17.93 [2732:2763:0306/083617.932068:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -101
+Mar 06, 2025 08:36:55.93 [2784:2790:0306/083655.937383:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:36:56.36 [2784:2790:0306/083656.368461:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:36:56.36 [2732:2763:0306/083656.368718:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -101
+Mar 06, 2025 08:37:28.24 [2732:2763:0306/083728.240241:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+Mar 06, 2025 08:39:14.70 [2784:2790:0306/083914.702784:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:39:14.89 [2784:2790:0306/083914.891411:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:39:19.79 [2784:2790:0306/083919.797972:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:39:19.91 [2784:2790:0306/083919.918655:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:39:26.09 [2784:2790:0306/083926.091525:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:39:26.16 [2784:2790:0306/083926.162067:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:39:34.58 [2784:2790:0306/083934.589594:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:39:34.73 [2784:2790:0306/083934.733434:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:39:46.81 [2784:2790:0306/083946.812754:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:39:46.88 [2784:2790:0306/083946.883725:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:39:54.14 [2732:2763:0306/083954.145409:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 06, 2025 08:40:06.64 [2784:2790:0306/084006.640555:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:40:06.75 [2784:2790:0306/084006.752218:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:40:06.75 [2732:2763:0306/084006.752438:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -101
+Mar 06, 2025 08:43:35.13 [2732:2763:0306/084335.130424:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+Mar 06, 2025 08:53:35.46 [2784:2790:0306/085335.464349:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:53:35.69 [2784:2790:0306/085335.690223:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 06, 2025 08:53:35.69 [2732:2763:0306/085335.690437:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -101
+Mar 06, 2025 09:19:47.23 [2732:2763:0306/091947.239250:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 06, 2025 09:32:18.66 [2732:2763:0306/093218.666290:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Mar 06, 2025 09:43:46.82 [2732:2763:0306/094346.825534:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Mar 06, 2025 09:53:43.52 [2732:2763:0306/095343.521781:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Mar 06, 2025 09:53:43.57 [2732:2763:0306/095343.572954:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 06, 2025 20:17:39.78 [2732:2758:0306/201739.786110:ERROR:get_updates_processor.cc(266)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+
+Mar 09, 2025 20:01:42.65 NEW SESSION
+Mar 09, 2025 20:01:42.67 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 09, 2025 20:01:42.79 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Mar 09, 2025 20:01:48.68 Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 09, 2025 20:01:48.68 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Mar 09, 2025 20:01:48.87 [74827:74857:0309/200148.871750:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 09, 2025 20:02:16.56 [74827:74857:0309/200216.563971:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 09, 2025 20:03:01.53 [74827:74857:0309/200301.529962:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 09, 2025 20:04:26.80 [74827:74827:0309/200426.799745:ERROR:atom_cache.cc(230)] Add chromium/from-privileged to kAtomsToCache
+Mar 09, 2025 20:04:27.66 [74827:74857:0309/200427.663295:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT

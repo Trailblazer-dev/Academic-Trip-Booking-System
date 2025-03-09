@@ -7,7 +7,7 @@
 <body class="bg-gray-100 flex items-center justify-center h-screen">
     <div class="max-w-lg w-full bg-white shadow-lg rounded-lg p-8">
         <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Driver Management</h1>
-        <form action="AddDriverServlet" method="post" class="space-y-4">
+        <form action="${pageContext.request.contextPath}/transport/addDriver" method="post" class="space-y-4">
             <div>
                 <label for="firstName" class="block text-gray-700 font-medium mb-1">First Name</label>
                 <input type="text" name="firstName" id="firstName" required 

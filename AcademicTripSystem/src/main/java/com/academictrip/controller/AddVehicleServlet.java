@@ -16,7 +16,7 @@ import com.academictrip.model.Vehicle;
 /**
  * Servlet implementation class AddVehicleServlet
  */
-@WebServlet("/AddVehicleServlet")
+//@WebServlet("/AddVehicleServlet")
 public class AddVehicleServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -31,7 +31,7 @@ public class AddVehicleServlet extends HttpServlet {
 
         try {
             new VehicleDAO().insertVehicle(vehicle);
-            response.sendRedirect("transport/manageVehicles.jsp");
+            response.sendRedirect(request.getContextPath()+"/transport/manageVehicles.jsp");
         } catch (SQLException e) {
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/error.jsp").forward(request, response);

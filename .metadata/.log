@@ -7584,3 +7584,974 @@ java.net.UnknownHostException: docs.oracle.com
 
 !ENTRY org.eclipse.lsp4e 1 0 2025-02-26 15:19:38.442
 !MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 677 ms
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.051
+!MESSAGE [Info] Document is null for editor: DriverDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.052
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/DriverDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.102
+!MESSAGE [Info] Document is null for editor: DriverVehicle.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.102
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/model/DriverVehicle.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.148
+!MESSAGE [Info] Document is null for editor: DriverVehicleDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.148
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/DriverVehicleDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.199
+!MESSAGE [Info] Document is null for editor: manageVehicles.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.199
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/manageVehicles.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.238
+!MESSAGE [Info] Document is null for editor: manageDrivers.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.239
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/manageDrivers.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.269
+!MESSAGE [Info] Document is null for editor: index.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.269
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/index.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.291
+!MESSAGE [Info] Document is null for editor: Trip.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.292
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/model/Trip.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.364
+!MESSAGE [Info] Document is null for editor: viewAssignments.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-02-26 15:24:31.366
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/viewAssignments.jsp
+!SESSION 2025-03-04 14:15:16.943 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-04 14:15:21.518
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-04 14:15:27.931
+!MESSAGE Logback config file: /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 14:15:35.104
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 14:15:35.181
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 14:15:35.390
+!MESSAGE [Info] No proxy data found
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-04 14:15:38.831
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-04 14:15:39.396
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-04 14:15:39.413
+!MESSAGE [Error]	[lsp] Request checkStatus: FetchError: getaddrinfo ENOTFOUND api.github.com
+    at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:99:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22)
+    at fetchCopilotToken (/snapshot/copilot-client/lib/src/auth/copilotToken.ts:199:16)
+    at authFromGitHubToken (/snapshot/copilot-client/lib/src/auth/copilotToken.ts:132:22)
+    at /snapshot/copilot-client/lib/src/auth/copilotTokenManager.ts:82:33 {
+  type: 'system',
+  _name: 'FetchError',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  erroredSysCall: 'getaddrinfo'
+}
+
+!ENTRY com.microsoft.copilot.eclipse 4 0 2025-03-04 14:15:39.416
+!MESSAGE [Error] org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request checkStatus failed with message: getaddrinfo ENOTFOUND api.github.com
+!STACK 0
+java.util.concurrent.CompletionException: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request checkStatus failed with message: getaddrinfo ENOTFOUND api.github.com
+	at java.base/java.util.concurrent.CompletableFuture.encodeRelay(CompletableFuture.java:368)
+	at java.base/java.util.concurrent.CompletableFuture.completeRelay(CompletableFuture.java:377)
+	at java.base/java.util.concurrent.CompletableFuture$UniRelay.tryFire(CompletableFuture.java:1097)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:314)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request checkStatus failed with message: getaddrinfo ENOTFOUND api.github.com
+	... 11 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-04 14:15:54.525
+!MESSAGE [Error]	[default] Error sending telemetry FetchError: getaddrinfo ENOTFOUND copilot-telemetry.githubusercontent.com
+    at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:99:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22) {
+  type: 'system',
+  _name: 'FetchError',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  erroredSysCall: 'getaddrinfo'
+}
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 10001 2025-03-04 14:19:16.897
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: java.net.UnknownHostException: javaee.github.io
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:903)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1084)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1041)
+	at org.eclipse.jdt.core.manipulation.internal.javadoc.CoreJavadocAccess.getHTMLContent(CoreJavadocAccess.java:234)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:49)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:717)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.net.UnknownHostException: javaee.github.io
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1252)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1138)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1690)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1614)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:836)
+	... 11 more
+Caused by: java.net.UnknownHostException: javaee.github.io
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1252)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1138)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1690)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1614)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:836)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1084)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1041)
+	at org.eclipse.jdt.core.manipulation.internal.javadoc.CoreJavadocAccess.getHTMLContent(CoreJavadocAccess.java:234)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:49)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:717)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1008 2025-03-04 14:19:16.899
+!MESSAGE javaee.github.io
+!STACK 0
+java.net.UnknownHostException: javaee.github.io
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1252)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1138)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1690)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1614)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:836)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1084)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1041)
+	at org.eclipse.jdt.core.manipulation.internal.javadoc.CoreJavadocAccess.getHTMLContent(CoreJavadocAccess.java:234)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:49)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:717)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 10001 2025-03-04 14:19:40.286
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: java.net.UnknownHostException: javaee.github.io
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:903)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1084)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:743)
+	at org.eclipse.jdt.core.manipulation.internal.javadoc.CoreJavadocAccess.getHTMLContent(CoreJavadocAccess.java:234)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:49)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:717)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.net.UnknownHostException: javaee.github.io
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1252)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1138)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1690)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1614)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:836)
+	... 11 more
+Caused by: java.net.UnknownHostException: javaee.github.io
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1252)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1138)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1690)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1614)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:836)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1084)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:743)
+	at org.eclipse.jdt.core.manipulation.internal.javadoc.CoreJavadocAccess.getHTMLContent(CoreJavadocAccess.java:234)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:49)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:717)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1008 2025-03-04 14:19:40.287
+!MESSAGE javaee.github.io
+!STACK 0
+java.net.UnknownHostException: javaee.github.io
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1252)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1138)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1690)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1614)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:836)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1084)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:743)
+	at org.eclipse.jdt.core.manipulation.internal.javadoc.CoreJavadocAccess.getHTMLContent(CoreJavadocAccess.java:234)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:49)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:717)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 14:52:00.576
+!MESSAGE [Info] Document is null for editor: AddDriverServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 14:52:00.581
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/AddDriverServlet.java
+!SESSION 2025-03-04 16:09:59.754 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-04 16:10:05.013
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-04 16:10:09.763
+!MESSAGE Logback config file: /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 16:10:21.724
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 16:10:21.893
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 16:10:22.096
+!MESSAGE [Info] No proxy data found
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-04 16:10:25.815
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-04 16:10:26.948
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 16:17:48.932
+!MESSAGE [Info] Document is null for editor: AddDriverServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 16:17:48.940
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/AddDriverServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 16:17:48.994
+!MESSAGE [Info] Document is null for editor: login.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 16:17:48.994
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/login.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 16:17:49.033
+!MESSAGE [Info] Document is null for editor: UserDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 16:17:49.033
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/UserDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 16:17:49.108
+!MESSAGE [Info] Document is null for editor: LoginServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 16:17:49.108
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/LoginServlet.java
+!SESSION 2025-03-04 20:59:20.243 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-04 20:59:24.813
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-04 21:00:31.952
+!MESSAGE Logback config file: /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 21:00:42.594
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 21:00:42.673
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-04 21:00:42.875
+!MESSAGE [Info] No proxy data found
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-04 21:00:46.343
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-04 21:00:47.289
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+!SESSION 2025-03-05 07:49:26.624 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-05 07:49:33.013
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-03-05 07:50:03.747
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-05 07:50:04.585
+!MESSAGE Logback config file: /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 07:50:15.036
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 07:50:15.148
+!MESSAGE [Info] No proxy data found
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 07:50:15.174
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-05 07:50:20.180
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-05 07:50:21.700
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 07:55:34.622
+!MESSAGE [Info] Java format preference cache for AcademicTripSystem is updated. key: org.eclipse.jdt.core.formatter.tabulation.char, new value: tab
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 07:55:34.623
+!MESSAGE [Info] Java format preference cache for AcademicTripSystem is updated. key: org.eclipse.jdt.core.formatter.tabulation.size, new value: 4
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 11:32:42.647
+!MESSAGE [Info] Document is null for editor: login.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 11:32:42.648
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/login.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 11:32:42.698
+!MESSAGE [Info] Document is null for editor: Course.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 11:32:42.699
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/model/Course.java
+!SESSION 2025-03-05 12:12:20.222 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-05 12:12:24.592
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-05 12:12:34.658
+!MESSAGE Logback config file: /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 12:12:44.678
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 12:12:44.811
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 12:12:44.904
+!MESSAGE [Info] No proxy data found
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-05 12:12:48.488
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-05 12:12:49.603
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-05 12:12:49.621
+!MESSAGE [Error]	[lsp] Request checkStatus: FetchError: getaddrinfo ENOTFOUND api.github.com
+    at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:99:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22)
+    at fetchCopilotToken (/snapshot/copilot-client/lib/src/auth/copilotToken.ts:199:16)
+    at authFromGitHubToken (/snapshot/copilot-client/lib/src/auth/copilotToken.ts:132:22)
+    at /snapshot/copilot-client/lib/src/auth/copilotTokenManager.ts:82:33 {
+  type: 'system',
+  _name: 'FetchError',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  erroredSysCall: 'getaddrinfo'
+}
+
+!ENTRY com.microsoft.copilot.eclipse 4 0 2025-03-05 12:12:49.623
+!MESSAGE [Error] org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request checkStatus failed with message: getaddrinfo ENOTFOUND api.github.com
+!STACK 0
+java.util.concurrent.CompletionException: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request checkStatus failed with message: getaddrinfo ENOTFOUND api.github.com
+	at java.base/java.util.concurrent.CompletableFuture.encodeRelay(CompletableFuture.java:368)
+	at java.base/java.util.concurrent.CompletableFuture.completeRelay(CompletableFuture.java:377)
+	at java.base/java.util.concurrent.CompletableFuture$UniRelay.tryFire(CompletableFuture.java:1097)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:314)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request checkStatus failed with message: getaddrinfo ENOTFOUND api.github.com
+	... 11 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-05 12:13:04.687
+!MESSAGE [Error]	[default] Error sending telemetry FetchError: getaddrinfo ENOTFOUND copilot-telemetry.githubusercontent.com
+    at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:99:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22) {
+  type: 'system',
+  _name: 'FetchError',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  erroredSysCall: 'getaddrinfo'
+}
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 12:13:48.861
+!MESSAGE [Info] Document is null for editor: Course.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-05 12:13:48.861
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/model/Course.java
+
+!ENTRY org.eclipse.debug.core 4 125 2025-03-05 12:13:49.894
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+!SESSION 2025-03-06 07:15:57.527 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-06 07:16:03.162
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-06 07:16:33.214
+!MESSAGE Logback config file: /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 07:16:42.720
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 07:16:42.813
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 07:16:43.053
+!MESSAGE [Info] No proxy data found
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:16:46.962
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:16:47.587
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-06 07:16:47.608
+!MESSAGE [Error]	[lsp] Request checkStatus: FetchError: getaddrinfo ENOTFOUND api.github.com
+    at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:99:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22)
+    at fetchCopilotToken (/snapshot/copilot-client/lib/src/auth/copilotToken.ts:199:16)
+    at authFromGitHubToken (/snapshot/copilot-client/lib/src/auth/copilotToken.ts:132:22)
+    at /snapshot/copilot-client/lib/src/auth/copilotTokenManager.ts:82:33 {
+  type: 'system',
+  _name: 'FetchError',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  erroredSysCall: 'getaddrinfo'
+}
+
+!ENTRY com.microsoft.copilot.eclipse 4 0 2025-03-06 07:16:47.611
+!MESSAGE [Error] org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request checkStatus failed with message: getaddrinfo ENOTFOUND api.github.com
+!STACK 0
+java.util.concurrent.CompletionException: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request checkStatus failed with message: getaddrinfo ENOTFOUND api.github.com
+	at java.base/java.util.concurrent.CompletableFuture.encodeRelay(CompletableFuture.java:368)
+	at java.base/java.util.concurrent.CompletableFuture.completeRelay(CompletableFuture.java:377)
+	at java.base/java.util.concurrent.CompletableFuture$UniRelay.tryFire(CompletableFuture.java:1097)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:314)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request checkStatus failed with message: getaddrinfo ENOTFOUND api.github.com
+	... 11 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-06 07:17:02.690
+!MESSAGE [Error]	[default] Error sending telemetry FetchError: getaddrinfo ENOTFOUND copilot-telemetry.githubusercontent.com
+    at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:99:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22) {
+  type: 'system',
+  _name: 'FetchError',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  erroredSysCall: 'getaddrinfo'
+}
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 07:30:25.984
+!MESSAGE [Info] Document is null for editor: UserDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 07:30:25.985
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/UserDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 07:30:27.453
+!MESSAGE [Info] Document is null for editor: Course.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 07:30:27.455
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/model/Course.java
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-03-06 07:30:37.752
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-03-06 07:30:37.753
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-03-06 07:30:37.756
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-03-06 07:30:37.757
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-03-06 07:30:37.779
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-03-06 07:30:37.791
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 07:30:52.701
+!MESSAGE [Info] Java format preference cache for AcademicTripSystem is updated. key: org.eclipse.jdt.core.formatter.tabulation.char, new value: tab
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 07:30:52.701
+!MESSAGE [Info] Java format preference cache for AcademicTripSystem is updated. key: org.eclipse.jdt.core.formatter.tabulation.size, new value: 4
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:31:21.335
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 1156 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:31:21.336
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [6b433f16-2658-4009-b98d-25856ef87f96] model deployment ID: [d155-20250211162841]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:31:21.337
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 07:31:50.974
+!MESSAGE [Info] Language ID not found for extension: xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 07:34:25.122
+!MESSAGE [Info] Language ID not found for extension: jsp
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:37:08.191
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 1558 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:37:08.192
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:37:08.192
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [a2bda97c-ed7a-4c0f-b7e7-cc061769b012] model deployment ID: [d152-20250305074753]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:46:17.043
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 1321 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:46:17.043
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [3caf1fac-59b0-4803-b979-e89e18bcb366] model deployment ID: [d264-20250305133648]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:46:17.044
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:48:38.121
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 1057 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:48:38.121
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [f736298f-2e70-4b83-9016-23615c0405a6] model deployment ID: [d166-20250212035820]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:48:38.121
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:48:38.622
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 392 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:48:38.623
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:48:38.623
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [cd2ed853-2aef-43dd-9b4c-f60d4c943d73] model deployment ID: [d158-20250211233228]
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 07:50:20.384
+!MESSAGE [Info] Document is null for editor: Driver.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 07:50:20.384
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/model/Driver.java
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:58:22.974
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 969 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:58:22.974
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [96d9acad-5d91-4b2a-a44e-001bda1d4e15] model deployment ID: [d264-20250305133648]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-06 07:58:22.974
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:00:47.989
+!MESSAGE [Info] Document is null for editor: DriverDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:00:47.989
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/DriverDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:00:52.104
+!MESSAGE [Info] Document is null for editor: index.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:00:52.105
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/index.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:00:55.954
+!MESSAGE [Info] Document is null for editor: login.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:00:55.954
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/login.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:06:30.382
+!MESSAGE [Info] Document is null for editor: assignDriverVehicle.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:06:30.382
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/assignDriverVehicle.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:22:11.650
+!MESSAGE [Info] Document is null for editor: AddDriverServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:22:11.651
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/AddDriverServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:22:33.508
+!MESSAGE [Info] Document is null for editor: DriverDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:22:33.508
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/DriverDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:22:35.254
+!MESSAGE [Info] Document is null for editor: Driver.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:22:35.255
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/model/Driver.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:22:38.507
+!MESSAGE [Info] Document is null for editor: LoginServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:22:38.508
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/LoginServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:24:19.438
+!MESSAGE [Info] Document is null for editor: AddDriverServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:24:19.438
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/AddDriverServlet.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-06 08:26:50.593
+!MESSAGE [Error]	[default] Error sending telemetry FetchError: The pending stream has been canceled (caused by: Client network socket disconnected before secure TLS connection was established)
+    at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:99:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22) {
+  type: 'system',
+  _name: 'FetchError',
+  code: 'ERR_HTTP2_STREAM_CANCEL',
+  errno: undefined,
+  erroredSysCall: undefined
+}
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-06 08:27:12.094
+!MESSAGE [Error]	[default] Error sending telemetry FetchError: The pending stream has been canceled (caused by: Client network socket disconnected before secure TLS connection was established)
+    at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:99:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22) {
+  type: 'system',
+  _name: 'FetchError',
+  code: 'ERR_HTTP2_STREAM_CANCEL',
+  errno: undefined,
+  erroredSysCall: undefined
+}
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:31:45.996
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:33:26.546
+!MESSAGE [Info] Document is null for editor: manageVehicles.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:33:26.547
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/manageVehicles.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:33:28.538
+!MESSAGE [Info] Document is null for editor: AddVehicleServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:33:28.538
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/AddVehicleServlet.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-06 08:34:02.788
+!MESSAGE [Error]	[default] Error sending telemetry FetchError: Client network socket disconnected before secure TLS connection was established
+    at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:99:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22) {
+  type: 'system',
+  _name: 'FetchError',
+  code: 'ECONNRESET',
+  errno: undefined,
+  erroredSysCall: undefined
+}
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:34:31.819
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-06 08:40:15.487
+!MESSAGE [Error]	[default] Error sending telemetry FetchError: The pending stream has been canceled (caused by: read ETIMEDOUT)
+    at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:99:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22) {
+  type: 'system',
+  _name: 'FetchError',
+  code: 'ERR_HTTP2_STREAM_CANCEL',
+  errno: undefined,
+  erroredSysCall: undefined
+}
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:51:56.031
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-06 08:52:00.072
+!MESSAGE [Error]	[default] Error sending telemetry FetchError: read ETIMEDOUT
+    at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:99:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22) {
+  type: 'system',
+  _name: 'FetchError',
+  code: 'ETIMEDOUT',
+  errno: -110,
+  erroredSysCall: 'read'
+}
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-06 08:52:01.033
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-06 08:53:51.057
+!MESSAGE [Error]	[lsp] Request getCompletions: HttpTimeoutError: Request to <https://api.github.com/copilot_internal/v2/token> timed out after 120000ms
+    at /snapshot/copilot-client/lib/src/network/helix.ts:96:19
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22)
+    ... 2 lines matching cause stack trace ...
+    at /snapshot/copilot-client/lib/src/auth/copilotTokenManager.ts:82:33 {
+  cause: AbortError: The operation was aborted.
+      at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:96:13)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+      at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22)
+      at fetchCopilotToken (/snapshot/copilot-client/lib/src/auth/copilotToken.ts:199:16)
+      at authFromGitHubToken (/snapshot/copilot-client/lib/src/auth/copilotToken.ts:132:22)
+      at /snapshot/copilot-client/lib/src/auth/copilotTokenManager.ts:82:33 {
+    type: 'aborted',
+    _name: 'AbortError'
+  }
+}
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-06 08:53:51.057
+!MESSAGE [Error]	[lsp] Request getCompletions: HttpTimeoutError: Request to <https://api.github.com/copilot_internal/v2/token> timed out after 120000ms
+    at /snapshot/copilot-client/lib/src/network/helix.ts:96:19
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22)
+    ... 2 lines matching cause stack trace ...
+    at /snapshot/copilot-client/lib/src/auth/copilotTokenManager.ts:82:33 {
+  cause: AbortError: The operation was aborted.
+      at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:96:13)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+      at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22)
+      at fetchCopilotToken (/snapshot/copilot-client/lib/src/auth/copilotToken.ts:199:16)
+      at authFromGitHubToken (/snapshot/copilot-client/lib/src/auth/copilotToken.ts:132:22)
+      at /snapshot/copilot-client/lib/src/auth/copilotTokenManager.ts:82:33 {
+    type: 'aborted',
+    _name: 'AbortError'
+  }
+}
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-06 09:25:41.443
+!MESSAGE [Error]	[default] Error sending telemetry FetchError: read ENETUNREACH
+    at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:99:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22) {
+  type: 'system',
+  _name: 'FetchError',
+  code: 'ENETUNREACH',
+  errno: -101,
+  erroredSysCall: 'read'
+}
+!SESSION 2025-03-09 20:00:28.557 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-09 20:00:37.777
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-03-09 20:00:43.653
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-09 20:00:44.992
+!MESSAGE Logback config file: /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-09 20:00:58.889
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-09 20:00:58.987
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-09 20:00:59.336
+!MESSAGE [Info] No proxy data found
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-09 20:01:06.287
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-09 20:01:11.372
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates

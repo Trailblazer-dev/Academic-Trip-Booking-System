@@ -4,12 +4,12 @@ public class Driver {
     private String driverId;
     private String firstname;
     private String lastname;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
 
     // Constructors
     public Driver() {}
-    public Driver(String driverId, String firstname, String lastname, int phoneNumber, String email) {
+    public Driver(String driverId, String firstname, String lastname, String phoneNumber, String email) {
         this.driverId = driverId;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -24,8 +24,8 @@ public class Driver {
     public void setFirstname(String firstname) { this.firstname = firstname; }
     public String getLastname() { return lastname; }
     public void setLastname(String lastname) { this.lastname = lastname; }
-    public int getPhoneNumber() { return phoneNumber; }
-    public void setPhoneNumber(int phoneNumber) { this.phoneNumber = phoneNumber; }
+    public String getPhoneNumber() { return phoneNumber; }
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 

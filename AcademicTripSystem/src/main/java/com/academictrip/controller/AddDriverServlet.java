@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.academictrip.dao.DriverDAO;
 import com.academictrip.model.Driver;
 
-@WebServlet("/AddDriverServlet")
+//@WebServlet("/AddDriverServlet")
 public class AddDriverServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -21,12 +21,12 @@ public class AddDriverServlet extends HttpServlet {
         Driver driver = new Driver();
         driver.setFirstname(request.getParameter("firstName"));
         driver.setLastname(request.getParameter("lastName"));
-        driver.setPhoneNumber(Integer.parseInt(request.getParameter("phone")));
+        driver.setPhoneNumber(request.getParameter("phone"));
         driver.setEmail(request.getParameter("email"));
 
         try {
             new DriverDAO().insertDriver(driver);
-            response.sendRedirect("transport/manageDrivers.jsp");
+            response.sendRedirect(request.getContextPath() +"/transport/manageDrivers.jsp");
         } catch (SQLException e) {
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/error.jsp").forward(request, response);

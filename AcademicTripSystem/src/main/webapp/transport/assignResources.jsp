@@ -10,7 +10,7 @@
 <body class="bg-gray-100">
     <div class="max-w-lg mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
         <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Assign Driver & Vehicle</h1>
-        <form action="AssignResourcesServlet" method="post" class="space-y-4">
+        <form action="${pageContext.request.contextPath}/transport/assignResources" method="post" class="space-y-4">
             <div>
                 <label for="tripId" class="block text-gray-700 font-medium mb-1">Select Trip</label>
                 <select name="tripId" id="tripId" required class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-300">

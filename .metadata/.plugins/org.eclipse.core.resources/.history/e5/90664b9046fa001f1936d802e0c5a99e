@@ -1,0 +1,35 @@
+package com.academictrip.controller;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.academictrip.dao.DriverDAO;
+import com.academictrip.model.Driver;
+
+//@WebServlet("/AddDriverServlet")
+public class AddDriverServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Driver driver = new Driver();
+        driver.setFirstname(request.getParameter("firstName"));
+        driver.setLastname(request.getParameter("lastName"));
+        driver.setPhoneNumber(Integer.parseInt(request.getParameter("phone")));
+        driver.setEmail(request.getParameter("email"));
+
+        try {
+            new DriverDAO().insertDriver(driver);
+            response.sendRedirect("transport/manageDrivers.jsp");
+        } catch (SQLException e) {
+            request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("/error.jsp").forward(request, response);
+        }
+    }
+}

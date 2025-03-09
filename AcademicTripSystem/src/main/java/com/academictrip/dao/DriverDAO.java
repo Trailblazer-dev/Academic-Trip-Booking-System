@@ -45,7 +45,7 @@ public class DriverDAO {
             stmt.setString(1, driver.getDriverId());
             stmt.setString(2, driver.getFirstname());
             stmt.setString(3, driver.getLastname());
-            stmt.setInt(4, driver.getPhoneNumber());
+            stmt.setString(4, driver.getPhoneNumber());
             stmt.setString(5, driver.getEmail());
 
             stmt.executeUpdate();
@@ -63,7 +63,7 @@ public class DriverDAO {
                     rs.getString("driver_id"),
                     rs.getString("firstname"),
                     rs.getString("lastname"),
-                    rs.getInt("phone_number"),
+                    rs.getString("phone_number"),
                     rs.getString("email")
                 );
             }
@@ -81,7 +81,7 @@ public class DriverDAO {
                     rs.getString("driver_id"),
                     rs.getString("firstname"),
                     rs.getString("lastname"),
-                    rs.getInt("phone_number"),
+                    rs.getString("phone_number"),
                     rs.getString("email")
                 ));
             }
