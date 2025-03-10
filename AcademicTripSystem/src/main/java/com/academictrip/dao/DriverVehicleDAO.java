@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class DriverVehicleDAO {
         }
     }
 
-    // Insert a new assignment
+    // Insert a new assignment - fix column name to assigment_end (note the spelling)
 	public String insertAssignment(DriverVehicle assignment) throws SQLException {
         String driverVehicleId = generateDriverVehicleId();
         String sql = "INSERT INTO Driver_Vehicle (driver_vehicle_id, driver_id, vehicle_id, assignment_start, assigment_end) " +
@@ -44,17 +43,20 @@ public class DriverVehicleDAO {
             stmt.setString(1, driverVehicleId);
             stmt.setString(2, assignment.getDriverId());
             stmt.setString(3, assignment.getVehicleId());
-            stmt.setDate(4, Date.valueOf(LocalDate.now())); // assignment_start
-            stmt.setDate(5, Date.valueOf(LocalDate.now().plusDays(1))); // assignment_end (example)
+            stmt.setDate(4, assignment.getAssignmentStart() != null ?
+                            Date.valueOf(assignment.getAssignmentStart()) :
+                            Date.valueOf(LocalDate.now())); // assignment_start
+            stmt.setDate(5, assignment.getAssignmentEnd() != null ?
+                            Date.valueOf(assignment.getAssignmentEnd()) :
+                            Date.valueOf(LocalDate.now().plusDays(7))); // assigment_end (note the spelling)
             stmt.executeUpdate();
 
             return driverVehicleId;
         }
     }
 
-    // Get all assignments
+    // Get all assignments - fix column name to assigment_end (note the spelling)
     public List<DriverVehicle> getAllAssignments() throws SQLException {
-    	 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); // Adjust based on your DB date format
         List<DriverVehicle> assignments = new ArrayList<>();
         String sql = "SELECT * FROM Driver_Vehicle";
         try (Connection connection = DatabaseUtil.getConnection();
@@ -65,15 +67,17 @@ public class DriverVehicleDAO {
                 assignment.setDriverVehicleId(resultSet.getString("driver_vehicle_id"));
                 assignment.setDriverId(resultSet.getString("driver_id"));
                 assignment.setVehicleId(resultSet.getString("vehicle_id"));
-                // Convert String to LocalDate
-                String startDateStr = resultSet.getString("assignment_start");
-                if (startDateStr != null) {
-                    assignment.setAssignmentStart(LocalDate.parse(startDateStr, formatter));
+
+                // Properly handle DATE type fields
+                Date startDate = resultSet.getDate("assignment_start");
+                if (startDate != null) {
+                    assignment.setAssignmentStart(startDate.toLocalDate());
                 }
 
-                String endDateStr = resultSet.getString("assigment_end");
-                if (endDateStr != null) {
-                    assignment.setAssignmentEnd(LocalDate.parse(endDateStr, formatter));
+                // Use correct column name: assigment_end (note the spelling)
+                Date endDate = resultSet.getDate("assigment_end");
+                if (endDate != null) {
+                    assignment.setAssignmentEnd(endDate.toLocalDate());
                 }
 
                 assignments.add(assignment);
@@ -82,17 +86,169 @@ public class DriverVehicleDAO {
         return assignments;
     }
 
-//    // Generate a new driver_vehicle_id (e.g., DV001)
-//    private String generateNewId(Connection connection) throws SQLException {
-//        String sql = "SELECT MAX(CAST(SUBSTRING(driver_vehicle_id, 3) AS UNSIGNED)) AS max_id FROM Driver_Vehicle";
-//        try (PreparedStatement statement = connection.prepareStatement(sql);
-//             ResultSet resultSet = statement.executeQuery()) {
-//            if (resultSet.next()) {
-//                int maxId = resultSet.getInt("max_id");
-//                return String.format("DV%03d", maxId + 1);
-//            } else {
-//                return "DV001";
-//            }
-//        }
-//    }
+    /**
+     * Creates a new driver-vehicle assignment and returns the generated ID
+     */
+    public String createAssignment(String driverId, String vehicleId) throws SQLException {
+        // Generate a new driver_vehicle_id
+        String driverVehicleId = generateDriverVehicleId();
+
+        // Make sure to include assignment_start and assigment_end fields as they're NOT NULL
+        String sql = "INSERT INTO Driver_Vehicle (driver_vehicle_id, driver_id, vehicle_id, assignment_start, assigment_end) VALUES (?, ?, ?, ?, ?)";
+
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, driverVehicleId);
+            stmt.setString(2, driverId);
+            stmt.setString(3, vehicleId);
+            // Set default dates for the assignment (current date to one month later)
+            LocalDate today = LocalDate.now();
+            stmt.setDate(4, Date.valueOf(today));  // assignment_start
+            stmt.setDate(5, Date.valueOf(today.plusMonths(1)));  // assigment_end (note the spelling)
+
+            stmt.executeUpdate();
+        }
+
+        return driverVehicleId;
+    }
+
+    /**
+     * Get assignment by its ID
+     */
+    public DriverVehicle getAssignmentByDriverVehicleId(String id) throws SQLException {
+        String sql = "SELECT * FROM Driver_Vehicle WHERE driver_vehicle_id = ?";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, id);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    DriverVehicle dv = new DriverVehicle();
+                    dv.setDriverVehicleId(rs.getString("driver_vehicle_id"));
+                    dv.setDriverId(rs.getString("driver_id"));
+                    dv.setVehicleId(rs.getString("vehicle_id"));
+                    dv.setAssignmentStart(rs.getDate("assignment_start").toLocalDate());
+                    dv.setAssignmentEnd(rs.getDate("assigment_end").toLocalDate()); // Fixed column name
+                    return dv;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Get assignment for a specific trip
+     */
+    public DriverVehicle getAssignmentByTripId(String tripId) throws SQLException {
+        String sql = "SELECT dv.* FROM Driver_Vehicle dv " +
+                     "JOIN Trip t ON t.driver_vehicle_id = dv.driver_vehicle_id " +
+                     "WHERE t.trip_id = ?";
+
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, tripId);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    DriverVehicle dv = new DriverVehicle();
+                    dv.setDriverVehicleId(rs.getString("driver_vehicle_id"));
+                    dv.setDriverId(rs.getString("driver_id"));
+                    dv.setVehicleId(rs.getString("vehicle_id"));
+                    dv.setAssignmentStart(rs.getDate("assignment_start").toLocalDate());
+                    dv.setAssignmentEnd(rs.getDate("assigment_end").toLocalDate()); // Fixed column name
+                    return dv;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Update an existing driver-vehicle assignment
+     * @param assignment The assignment with updated values
+     * @return true if update was successful, false otherwise
+     * @throws SQLException if a database error occurs
+     */
+    public boolean updateAssignment(DriverVehicle assignment) throws SQLException {
+        String sql = "UPDATE Driver_Vehicle SET driver_id = ?, vehicle_id = ?, " +
+                     "assignment_start = ?, assigment_end = ? " +
+                     "WHERE driver_vehicle_id = ?";
+
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, assignment.getDriverId());
+            stmt.setString(2, assignment.getVehicleId());
+            stmt.setDate(3, assignment.getAssignmentStart() != null ?
+                            Date.valueOf(assignment.getAssignmentStart()) : null);
+            stmt.setDate(4, assignment.getAssignmentEnd() != null ?
+                            Date.valueOf(assignment.getAssignmentEnd()) : null);
+            stmt.setString(5, assignment.getDriverVehicleId());
+
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
+        }
+    }
+
+    /**
+     * Deletes a driver-vehicle assignment by ID
+     *
+     * @param driverVehicleId The ID of the assignment to delete
+     * @return true if deletion was successful, false otherwise
+     * @throws SQLException If a database error occurs
+     */
+    public boolean deleteAssignment(String driverVehicleId) throws SQLException {
+        String sql = "DELETE FROM driver_vehicle WHERE driver_vehicle_id = ?";
+
+        try (Connection connection = DatabaseUtil.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
+            statement.setString(1, driverVehicleId);
+
+            int rowsAffected = statement.executeUpdate();
+            return rowsAffected > 0;
+        }
+    }
+
+    /**
+     * Get an assignment by its ID - correctly handles Date to LocalDate conversion
+     * @param id the assignment ID
+     * @return DriverVehicle object or null if not found
+     * @throws SQLException if a database error occurs
+     */
+    public DriverVehicle getAssignmentById(String id) throws SQLException {
+        String sql = "SELECT * FROM Driver_Vehicle WHERE driver_vehicle_id = ?";
+
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, id);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    DriverVehicle assignment = new DriverVehicle();
+                    assignment.setDriverVehicleId(rs.getString("driver_vehicle_id"));
+                    assignment.setDriverId(rs.getString("driver_id"));
+                    assignment.setVehicleId(rs.getString("vehicle_id"));
+
+                    // Convert java.sql.Date to java.time.LocalDate before setting
+                    java.sql.Date startDate = rs.getDate("assignment_start");
+                    if (startDate != null) {
+                        assignment.setAssignmentStart(startDate.toLocalDate());
+                    }
+
+                    // Note the misspelling in the database column name (assigment_end)
+                    java.sql.Date endDate = rs.getDate("assigment_end");
+                    if (endDate != null) {
+                        assignment.setAssignmentEnd(endDate.toLocalDate());
+                    }
+
+                    return assignment;
+                }
+            }
+        }
+
+        return null;
+    }
 }

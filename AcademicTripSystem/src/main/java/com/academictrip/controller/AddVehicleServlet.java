@@ -14,27 +14,58 @@ import com.academictrip.dao.VehicleDAO;
 import com.academictrip.model.Vehicle;
 
 /**
- * Servlet implementation class AddVehicleServlet
+ * Servlet to handle adding new vehicles
+ * 
+ * FIXED: Renamed servlet mapping to avoid conflict with another servlet
  */
-//@WebServlet("/AddVehicleServlet")
+@WebServlet("/transport/addVehicleAction")
 public class AddVehicleServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Vehicle vehicle = new Vehicle();
-        vehicle.setMake(request.getParameter("make"));
-        vehicle.setModel(request.getParameter("model"));
-        vehicle.setYear(LocalDate.parse(request.getParameter("year")));
-        vehicle.setCapacity(Integer.parseInt(request.getParameter("capacity")));
-        vehicle.setPlateNumber(request.getParameter("plate"));
+    @Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Get parameters from the form
+        String make = request.getParameter("make");
+        String model = request.getParameter("model");
+        String yearStr = request.getParameter("year");
+        String capacity = request.getParameter("capacity");
+        String registration = request.getParameter("registration");
+
+        // Validate input
+        if (make == null || model == null || yearStr == null || capacity == null || registration == null) {
+            request.getSession().setAttribute("errorMessage", "All fields are required");
+            response.sendRedirect(request.getContextPath() + "/transport/manageVehicles.jsp");
+            return;
+        }
 
         try {
-            new VehicleDAO().insertVehicle(vehicle);
-            response.sendRedirect(request.getContextPath()+"/transport/manageVehicles.jsp");
+            // Create vehicle object
+            Vehicle vehicle = new Vehicle();
+            vehicle.setMake(make);
+            vehicle.setModel(model);
+
+            // Parse year into LocalDate (January 1st of the year)
+            int yearInt = Integer.parseInt(yearStr);
+            vehicle.setYear(LocalDate.of(yearInt, 1, 1));
+
+            vehicle.setCapacity(Integer.parseInt(capacity));
+            vehicle.setPlateNumber(registration);
+
+            // Insert vehicle into database
+            VehicleDAO vehicleDAO = new VehicleDAO();
+            vehicleDAO.insertVehicle(vehicle);
+
+            request.getSession().setAttribute("successMessage", "Vehicle added successfully");
+        } catch (NumberFormatException e) {
+            request.getSession().setAttribute("errorMessage", "Invalid number format");
         } catch (SQLException e) {
-            request.setAttribute("error", e.getMessage());
-            request.getRequestDispatcher("/error.jsp").forward(request, response);
+            request.getSession().setAttribute("errorMessage", "Database error: " + e.getMessage());
+        } catch (Exception e) {
+            request.getSession().setAttribute("errorMessage", "Unexpected error: " + e.getMessage());
         }
+
+        // Redirect back to the manage vehicles page
+        response.sendRedirect(request.getContextPath() + "/transport/manageVehicles.jsp");
     }
 }

@@ -61,4 +61,52 @@ public class TripGroupDAO {
             }
         }
     }
+
+    public TripGroup getTripGroupById(String groupId) throws SQLException {
+        String sql = "SELECT * FROM Trip_Group WHERE group_id = ?";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, groupId);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    TripGroup group = new TripGroup();
+                    group.setGroupId(rs.getString("group_id"));
+                    group.setGroupName(rs.getString("group_name"));
+                    group.setStudentNumber(rs.getInt("student_number"));
+                    group.setCourseId(rs.getString("course_id"));
+                    return group;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Retrieve a trip group by its ID
+     * @param groupId The ID of the trip group
+     * @return The trip group object or null if not found
+     * @throws SQLException if a database access error occurs
+     */
+    public TripGroup getGroupById(String groupId) throws SQLException {
+        String sql = "SELECT * FROM Trip_Group WHERE group_id = ?";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, groupId);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    TripGroup group = new TripGroup();
+                    group.setGroupId(rs.getString("group_id"));
+                    group.setGroupName(rs.getString("group_name"));
+                    group.setStudentNumber(rs.getInt("student_number"));
+                    group.setCourseId(rs.getString("course_id"));
+                    return group;
+                }
+            }
+        }
+        return null;
+    }
 }

@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
             if ("lecturer".equalsIgnoreCase(user.getRole())) {
                 response.sendRedirect("lecturer/addTrip.jsp");
             } else if ("transport".equalsIgnoreCase(user.getRole())) {
-                response.sendRedirect("transport/index.jsp");
+                response.sendRedirect("transport/dashboard.jsp");
             } else {
                 response.sendRedirect("loginError.jsp");
             }

@@ -1,38 +1,375 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.academictrip.model.*" %>
+<%@ page import="com.academictrip.dao.*" %>
+<%@ page import="java.util.*" %>
+
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Manage Drivers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Drivers | Academic Trip System</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="max-w-lg w-full bg-white shadow-lg rounded-lg p-8">
-        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Driver Management</h1>
-        <form action="${pageContext.request.contextPath}/transport/addDriver" method="post" class="space-y-4">
-            <div>
-                <label for="firstName" class="block text-gray-700 font-medium mb-1">First Name</label>
-                <input type="text" name="firstName" id="firstName" required 
-                       class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300">
+<body class="bg-gray-50">
+    <jsp:include page="../includes/transportHeader.jsp" />
+    
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold text-gray-800">
+                <i class="fas fa-users mr-2 text-blue-600"></i>Manage Drivers
+            </h1>
+            <button id="addDriverBtn" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg flex items-center transition-all duration-300 transform hover:scale-105">
+                <i class="fas fa-plus-circle mr-2"></i> Add New Driver
+            </button>
+        </div>
+        
+        <!-- Dashboard Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-blue-500">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-blue-100 mr-4">
+                        <i class="fas fa-user text-xl text-blue-500"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">Total Drivers</h3>
+                        <% 
+                            DriverDAO driverDAO = new DriverDAO();
+                            int totalDrivers = driverDAO.getAllDrivers().size();
+                        %>
+                        <p class="text-2xl font-bold text-gray-800"><%= totalDrivers %></p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <label for="lastName" class="block text-gray-700 font-medium mb-1">Last Name</label>
-                <input type="text" name="lastName" id="lastName" required 
-                       class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300">
+            
+            <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-green-500">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-green-100 mr-4">
+                        <i class="fas fa-check-circle text-xl text-green-500"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">Active Assignments</h3>
+                        <% 
+                            DriverVehicleDAO dvDAO = new DriverVehicleDAO();
+                            int activeAssignments = dvDAO.getAllAssignments().size();
+                        %>
+                        <p class="text-2xl font-bold text-gray-800"><%= activeAssignments %></p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <label for="phone" class="block text-gray-700 font-medium mb-1">Phone</label>
-                <input type="tel" name="phone" id="phone" required 
-                       class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300">
+            
+            <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-purple-500">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-purple-100 mr-4">
+                        <i class="fas fa-calendar-alt text-xl text-purple-500"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">Available Drivers</h3>
+                        <p class="text-2xl font-bold text-gray-800"><%= totalDrivers - activeAssignments %></p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <label for="email" class="block text-gray-700 font-medium mb-1">Email</label>
-                <input type="email" name="email" id="email" required 
-                       class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300">
+        </div>
+        
+        <!-- Search & Filter Bar -->
+        <div class="bg-white p-4 rounded-lg shadow mb-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="relative w-full md:w-64 mb-4 md:mb-0">
+                    <input type="text" id="driverSearch" placeholder="Search drivers..." 
+                           class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+                <div class="flex space-x-4">
+                    <select id="filterStatus" class="rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Available</option>
+                    </select>
+                    <button id="refreshBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-700 py-2 px-4 rounded-lg">
+                        <i class="fas fa-sync-alt mr-2"></i> Refresh
+                    </button>
+                </div>
             </div>
-            <div class="text-center">
-                <input type="submit" value="Add Driver" 
-                       class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition duration-200">
+        </div>
+        
+        <!-- Driver List -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="overflow-x-auto">
+                <table id="driversTable" class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Driver ID</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <% 
+                            List<Driver> drivers = driverDAO.getAllDrivers();
+                            // Get map of driver IDs to assignment status
+                            Map<String, Boolean> driverAssignmentMap = new HashMap<>();
+                            List<DriverVehicle> assignments = dvDAO.getAllAssignments();
+                            
+                            for (DriverVehicle dv : assignments) {
+                                driverAssignmentMap.put(dv.getDriverId(), true);
+                            }
+                            
+                            for (Driver driver : drivers) {
+                                boolean isAssigned = driverAssignmentMap.containsKey(driver.getDriverId());
+                        %>
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= driver.getDriverId() %></td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-blue-500"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900"><%= driver.getFirstname() %> <%= driver.getLastname() %></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= driver.getPhoneNumber() %></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= driver.getEmail() %></td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
+                                      <%= isAssigned ? "bg-green-100 text-green-800" : "bg-yellow-100 text-yellow-800" %>">
+                                    <%= isAssigned ? "Active" : "Available" %>
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <div class="flex space-x-2">
+                                    <button onclick="openEditModal('<%=driver.getDriverId()%>', '<%=driver.getFirstname()%>', '<%=driver.getLastname()%>', '<%=driver.getPhoneNumber()%>', '<%=driver.getEmail()%>')" class="text-indigo-600 hover:text-indigo-900">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </button>
+                                    <button onclick="confirmDelete('<%=driver.getDriverId()%>', '<%=driver.getFirstname()%> <%=driver.getLastname()%>')" class="text-red-600 hover:text-red-900">
+                                        <i class="fas fa-trash-alt"></i> Delete
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
             </div>
-        </form>
+        </div>
     </div>
+    
+    <!-- Add Driver Modal -->
+    <div id="addDriverModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto hidden h-full w-full">
+        <div class="relative top-20 mx-auto p-5 border w-full max-w-md shadow-lg rounded-md bg-white">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-medium text-gray-900">Add New Driver</h3>
+                <button id="closeAddModal" class="text-gray-400 hover:text-gray-500">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="addDriverForm" action="../AddDriverServlet" method="post">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="firstName">First Name</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                           id="firstName" name="firstName" type="text" placeholder="First Name">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="lastName">Last Name</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                           id="lastName" name="lastName" type="text" placeholder="Last Name">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">Phone Number</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                           id="phone" name="phone" type="text" placeholder="Phone Number">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                           id="email" name="email" type="email" placeholder="Email">
+                </div>
+                <div class="flex items-center justify-end">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+                            type="submit">
+                        Add Driver
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- View Driver Modal -->
+    <div id="viewDriverModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto hidden h-full w-full">
+        <div class="relative top-20 mx-auto p-5 border w-full max-w-md shadow-lg rounded-md bg-white">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-medium text-gray-900">Driver Details</h3>
+                <button id="closeViewModal" class="text-gray-400 hover:text-gray-500">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <div class="flex justify-center mb-4">
+                    <div class="h-24 w-24 rounded-full bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-user text-4xl text-blue-500"></i>
+                    </div>
+                </div>
+                <div id="driverDetails" class="space-y-4">
+                    <!-- Driver details will be populated here via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add Delete Confirmation Modal -->
+    <div id="deleteModal" class="fixed z-10 inset-0 overflow-y-auto hidden">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75" onclick="closeModal('deleteModal')"></div>
+            </div>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <i class="fas fa-exclamation-triangle text-red-600"></i>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                Delete Driver
+                            </h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500" id="deleteConfirmationText">
+                                    Are you sure you want to delete this driver? This action cannot be undone.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form id="deleteDriverForm" action="${pageContext.request.contextPath}/transport/deleteDriver" method="post">
+                    <input type="hidden" id="deleteDriverId" name="driverId">
+                    <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                        <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                            Delete
+                        </button>
+                        <button type="button" onclick="closeModal('deleteModal')" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <jsp:include page="../includes/footer.jsp" />
+    
+    <script>
+        $(document).ready(function() {
+            // Initialize DataTable
+            $('#driversTable').DataTable({
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "searching": true,
+                "lengthChange": true,
+                "pageLength": 10,
+                "language": {
+                    "search": "",
+                    "searchPlaceholder": "Search drivers..."
+                },
+                "dom": '<"top"f>rt<"bottom"lip><"clear">'
+            });
+            
+            // Add Driver Modal
+            $('#addDriverBtn').click(function() {
+                $('#addDriverModal').removeClass('hidden');
+            });
+            
+            $('#closeAddModal').click(function() {
+                $('#addDriverModal').addClass('hidden');
+            });
+            
+            // View Driver Modal
+            $('.view-driver').click(function() {
+                const driverId = $(this).data('id');
+                
+                // In a real application, fetch driver details via AJAX
+                // For demo, we'll use data from the table
+                const row = $(this).closest('tr');
+                const name = row.find('td:eq(1)').text().trim();
+                const phone = row.find('td:eq(2)').text().trim();
+                const email = row.find('td:eq(3)').text().trim();
+                const status = row.find('td:eq(4)').text().trim();
+                
+                // Populate modal with driver details
+                $('#driverDetails').html(`
+                    <div class="text-center text-xl font-bold mb-2">${name}</div>
+                    <div class="text-center text-gray-500 mb-4">${driverId}</div>
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="flex items-center">
+                            <div class="w-8 text-gray-500"><i class="fas fa-phone"></i></div>
+                            <div>${phone}</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 text-gray-500"><i class="fas fa-envelope"></i></div>
+                            <div>${email}</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 text-gray-500"><i class="fas fa-circle"></i></div>
+                            <div>${status}</div>
+                        </div>
+                    </div>
+                `);
+                
+                $('#viewDriverModal').removeClass('hidden');
+            });
+            
+            $('#closeViewModal').click(function() {
+                $('#viewDriverModal').addClass('hidden');
+            });
+            
+            // Filter functionality
+            $('#filterStatus').change(function() {
+                const value = $(this).val();
+                if (value === "all") {
+                    $('#driversTable tbody tr').show();
+                } else if (value === "active") {
+                    $('#driversTable tbody tr').hide();
+                    $('#driversTable tbody tr:contains("Active")').show();
+                } else if (value === "inactive") {
+                    $('#driversTable tbody tr').hide();
+                    $('#driversTable tbody tr:contains("Available")').show();
+                }
+            });
+            
+            // Refresh button
+            $('#refreshBtn').click(function() {
+                location.reload();
+            });
+            
+            // Close modals when clicking outside
+            $(window).click(function(e) {
+                if ($(e.target).is('#addDriverModal')) {
+                    $('#addDriverModal').addClass('hidden');
+                }
+                if ($(e.target).is('#viewDriverModal')) {
+                    $('#viewDriverModal').addClass('hidden');
+                }
+            });
+        });
+
+        function confirmDelete(driverId, driverName) {
+            document.getElementById('deleteDriverId').value = driverId;
+            document.getElementById('deleteConfirmationText').textContent = 
+                `Are you sure you want to delete the driver ${driverName}? This action cannot be undone.`;
+            document.getElementById('deleteModal').classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
 </body>
 </html>

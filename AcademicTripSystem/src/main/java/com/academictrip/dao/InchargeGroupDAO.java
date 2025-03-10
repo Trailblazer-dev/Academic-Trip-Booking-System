@@ -61,4 +61,25 @@ public class InchargeGroupDAO {
             }
         }
     }
+
+    // Retrieve InchargeGroup by ID
+    public InchargeGroup getInchargeGroupById(String inchargeGroupId) throws SQLException {
+        String sql = "SELECT * FROM Incharge_Group WHERE incharge_group_id = ?";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, inchargeGroupId);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    InchargeGroup inchargeGroup = new InchargeGroup();
+                    inchargeGroup.setInchargeGroupId(rs.getString("incharge_group_id"));
+                    inchargeGroup.setInchargeId(rs.getString("incharge_id"));
+                    inchargeGroup.setGroupId(rs.getString("group_id"));
+                    return inchargeGroup;
+                }
+            }
+        }
+        return null;
+    }
 }

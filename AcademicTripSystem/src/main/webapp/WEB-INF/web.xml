@@ -15,10 +15,12 @@
         <servlet-name>AddDriverServlet</servlet-name>
         <servlet-class>com.academictrip.controller.AddDriverServlet</servlet-class>
     </servlet>
+    <!--
     <servlet>
         <servlet-name>AddVehicleServlet</servlet-name>
         <servlet-class>com.academictrip.controller.AddVehicleServlet</servlet-class>
     </servlet>
+    -->
     <servlet>
         <servlet-name>AssignResourcesServlet</servlet-name>
         <servlet-class>com.academictrip.controller.AssignResourcesServlet</servlet-class>
@@ -36,10 +38,12 @@
         <servlet-name>AddDriverServlet</servlet-name>
         <url-pattern>/transport/addDriver</url-pattern>
     </servlet-mapping>
+    <!--
     <servlet-mapping>
         <servlet-name>AddVehicleServlet</servlet-name>
         <url-pattern>/transport/addVehicle</url-pattern>
     </servlet-mapping>
+    -->
     <servlet-mapping>
         <servlet-name>AssignResourcesServlet</servlet-name>
         <url-pattern>/transport/assignResources</url-pattern>

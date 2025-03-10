@@ -1,0 +1,146 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.academictrip.model.Trip" %>
+<%@ page import="com.academictrip.dao.TripDAO" %>
+<%@ page import="com.academictrip.model.DriverVehicle" %>
+<%@ page import="com.academictrip.dao.DriverVehicleDAO" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Trip Details | Academic Trip System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <jsp:include page="../includes/transportHeader.jsp" />
+    
+    <div class="container mx-auto px-4 py-6">
+        <h1 class="text-2xl font-bold mb-6">Trip Details</h1>
+        
+        <% 
+        String tripIdParam = request.getParameter("id");
+        if(tripIdParam != null && !tripIdParam.trim().isEmpty()) {
+            try {
+                int tripId = Integer.parseInt(tripIdParam);
+                TripDAO tripDAO = new TripDAO();
+                Trip trip = tripDAO.getTripById(tripId);
+                
+                if(trip != null) {
+                    DriverVehicleDAO driverVehicleDAO = new DriverVehicleDAO();
+                    DriverVehicle assignment = driverVehicleDAO.getAssignmentByTripId(tripId);
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        %>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <p class="text-gray-600">Trip ID:</p>
+                    <p class="font-semibold"><%= trip.getTripId() %></p>
+                </div>
+                <!-- Adjust field names based on your Trip model and database -->
+                <div>
+                    <p class="text-gray-600">Start Date:</p>
+                    <p class="font-semibold"><%= trip.getStartDate() != null ? formatter.format(trip.getStartDate()) : "Not set" %></p>
+                </div>
+                <div>
+                    <p class="text-gray-600">End Date:</p>
+                    <p class="font-semibold"><%= trip.getEndDate() != null ? formatter.format(trip.getEndDate()) : "Not set" %></p>
+                </div>
+                <div>
+                    <p class="text-gray-600">Destination ID:</p>
+                    <p class="font-semibold"><%= trip.getDestinationId() %></p>
+                </div>
+                <div>
+                    <p class="text-gray-600">Incharge Group ID:</p>
+                    <p class="font-semibold"><%= trip.getInchargeGroupId() %></p>
+                </div>
+                <div>
+                    <p class="text-gray-600">Driver Vehicle ID:</p>
+                    <p class="font-semibold"><%= trip.getDriverVehicleId() != null ? trip.getDriverVehicleId() : "Not assigned" %></p>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="text-xl font-bold mb-4">Assignment Details</h2>
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <% if(assignment != null) { %>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Adjust field names based on your DriverVehicle model and database -->
+                    <div>
+                        <p class="text-gray-600">Driver ID:</p>
+                        <p class="font-semibold"><%= assignment.getDriverId() %></p>
+                    </div>
+                    <div>
+                        <p class="text-gray-600">Vehicle ID:</p>
+                        <p class="font-semibold"><%= assignment.getVehicleId() %></p>
+                    </div>
+                    <div>
+                        <p class="text-gray-600">Assignment Start:</p>
+                        <p class="font-semibold"><%= assignment.getAssignmentStart() != null ? formatter.format(assignment.getAssignmentStart()) : "Not set" %></p>
+                    </div>
+                    <div>
+                        <p class="text-gray-600">Assignment End:</p>
+                        <p class="font-semibold"><%= assignment.getAssigmentEnd() != null ? formatter.format(assignment.getAssigmentEnd()) : "Not set" %></p>
+                    </div>
+                </div>
+                <div class="mt-4 flex gap-2">
+                    <a href="viewAssignments.jsp" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
+                        <i class="fas fa-arrow-left mr-1"></i> Back
+                    </a>
+                    <a href="editAssignment.jsp?id=<%= tripId %>" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+                        <i class="fas fa-edit mr-1"></i> Edit Assignment
+                    </a>
+                </div>
+            <% } else { %>
+                <p class="text-red-500">No driver or vehicle has been assigned to this trip yet.</p>
+                <div class="mt-4 flex gap-2">
+                    <a href="viewAssignments.jsp" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
+                        <i class="fas fa-arrow-left mr-1"></i> Back
+                    </a>
+                    <a href="assignResources.jsp?tripId=<%= tripId %>" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">
+                        <i class="fas fa-plus mr-1"></i> Assign Resources
+                    </a>
+                </div>
+            <% } %>
+        </div>
+        
+        <% 
+                } else {
+        %>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                <p>Trip not found with ID: <%= tripIdParam %></p>
+                <a href="viewAssignments.jsp" class="text-blue-500 hover:underline">Return to assignments</a>
+            </div>
+        <%
+                }
+            } catch(NumberFormatException e) {
+        %>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                <p>Invalid trip ID format</p>
+                <a href="viewAssignments.jsp" class="text-blue-500 hover:underline">Return to assignments</a>
+            </div>
+        <%
+            } catch(Exception e) {
+        %>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                <p>Error: <%= e.getMessage() %></p>
+                <pre class="text-xs mt-2"><%= e.toString() %></pre>
+                <a href="viewAssignments.jsp" class="text-blue-500 hover:underline">Return to assignments</a>
+            </div>
+        <%
+            }
+        } else {
+        %>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                <p>No trip ID provided</p>
+                <a href="viewAssignments.jsp" class="text-blue-500 hover:underline">Return to assignments</a>
+            </div>
+        <%
+        }
+        %>
+    </div>
+    
+    <jsp:include page="../includes/footer.jsp" />
+</body>
+</html>

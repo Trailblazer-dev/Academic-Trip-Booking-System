@@ -1,0 +1,300 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.academictrip.dao.DriverVehicleDAO" %>
+<%@ page import="com.academictrip.dao.TripDAO" %>
+<%@ page import="com.academictrip.dao.DriverDAO" %>
+<%@ page import="com.academictrip.dao.VehicleDAO" %>
+<%@ page import="com.academictrip.model.DriverVehicle" %>
+<%@ page import="com.academictrip.model.Trip" %>
+<%@ page import="com.academictrip.model.Driver" %>
+<%@ page import="com.academictrip.model.Vehicle" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.Set" %>
+<%@ page import="java.util.HashSet" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.time.LocalDate" %>
+<%@ page import="java.sql.Date" %>
+
+<html>
+<head>
+    <title>View Assignments | Academic Trip System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <%@ include file="../includes/transportHeader.jsp" %>
+    
+    <div class="container mx-auto px-4 py-6">
+        <h1 class="text-2xl font-bold mb-6">View Trip Assignments</h1>
+        
+        <!-- Add search and filter functionality -->
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+            <form action="viewAssignments.jsp" method="get" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label for="statusFilter" class="block text-sm font-medium text-gray-700">Status</label>
+                        <select id="statusFilter" name="status" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                            <option value="">All Statuses</option>
+                            <option value="upcoming" <%= "upcoming".equals(request.getParameter("status")) ? "selected" : "" %>>Upcoming</option>
+                            <option value="ongoing" <%= "ongoing".equals(request.getParameter("status")) ? "selected" : "" %>>In Progress</option>
+                            <option value="completed" <%= "completed".equals(request.getParameter("status")) ? "selected" : "" %>>Completed</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="driverFilter" class="block text-sm font-medium text-gray-700">Driver</label>
+                        <select id="driverFilter" name="driverId" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                            <option value="">All Drivers</option>
+                            <% 
+                            DriverDAO driverDAO = new DriverDAO();
+                            List<Driver> allDrivers = driverDAO.getAllDrivers();
+                            for(Driver driver : allDrivers) { 
+                            %>
+                                <option value="<%= driver.getDriverId() %>" <%= driver.getDriverId().equals(request.getParameter("driverId")) ? "selected" : "" %>>
+                                    <%= driver.getFirstname() %> <%= driver.getLastname() %>
+                                </option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="dateFilter" class="block text-sm font-medium text-gray-700">Date Range</label>
+                        <input type="date" id="dateFilter" name="dateFilter" 
+                               value="<%= request.getParameter("dateFilter") != null ? request.getParameter("dateFilter") : "" %>"
+                               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                    </div>
+                    <div class="flex items-end">
+                        <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
+                            <i class="fas fa-filter mr-1"></i> Apply Filters
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Display assignments with more efficient database access -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <% 
+            try {
+                TripDAO tripDAO = new TripDAO();
+                DriverVehicleDAO dvDAO = new DriverVehicleDAO();
+                
+                // Get query parameters
+                String statusFilter = request.getParameter("status");
+                String driverIdFilter = request.getParameter("driverId");
+                String dateFilter = request.getParameter("dateFilter");
+                
+                // Get assignments with filtered query
+                List<Trip> assignedTrips = tripDAO.getAssignedTripsWithFilters(statusFilter, driverIdFilter, dateFilter);
+                
+                if(assignedTrips != null && !assignedTrips.isEmpty()) {
+                    LocalDate today = LocalDate.now();
+                    
+                    // Pre-fetch all required driver and vehicle data to avoid N+1 queries
+                    Set<String> driverIds = new HashSet<>();
+                    Set<String> vehicleIds = new HashSet<>();
+                    
+                    for(Trip trip : assignedTrips) {
+                        DriverVehicle dv = dvDAO.getAssignmentByDriverVehicleId(trip.getDriverVehicleId());
+                        if(dv != null) {
+                            driverIds.add(dv.getDriverId());
+                            vehicleIds.add(dv.getVehicleId());
+                        }
+                    }
+                    
+                    Map<String, Driver> driversMap = driverDAO.getDriversByIds(driverIds);
+                    VehicleDAO vehicleDAO = new VehicleDAO();
+                    Map<String, Vehicle> vehiclesMap = vehicleDAO.getVehiclesByIds(vehicleIds);
+            %>
+            
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead>
+                    <tr>
+                        <th>Trip ID</th>
+                        <th>Destination</th>
+                        <th>Date Range</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                <% 
+                    for(Trip trip : assignedTrips) {
+                        DriverVehicle dv = dvDAO.getAssignmentByDriverVehicleId(trip.getDriverVehicleId());
+                        String driverName = "Driver Info Not Available";
+                        String vehicleInfo = "Vehicle Info Not Available";
+                        String vehicleType = "bus"; // Default
+                        
+                        if(dv != null) {
+                            // Get driver info from pre-fetched map
+                            Driver driver = driversMap.get(dv.getDriverId());
+                            if(driver != null) {
+                                driverName = driver.getFirstname() + " " + driver.getLastname();
+                            }
+                            
+                            // Get vehicle info from pre-fetched map
+                            Vehicle vehicle = vehiclesMap.get(dv.getVehicleId());
+                            if(vehicle != null) {
+                                vehicleInfo = vehicle.getMake() + " " + vehicle.getModel();
+                                // Determine vehicle type for icon
+                                if(vehicle.getCapacity() < 5) {
+                                    vehicleType = "car";
+                                } else if(vehicle.getCapacity() < 15) {
+                                    vehicleType = "van";
+                                }
+                            }
+                        }
+                        
+                        // Determine trip status based on dates
+                        String statusClass = "assigned";
+                        String statusText = "Assigned";
+                        
+                        if(trip.getStartDate() != null && trip.getEndDate() != null) {
+                            // startDate and endDate are already LocalDate objects
+                            LocalDate startDate = trip.getStartDate();
+                            LocalDate endDate = trip.getEndDate();
+                            
+                            if(today.isBefore(startDate)) {
+                                statusClass = "upcoming";
+                                statusText = "Upcoming";
+                            } else if(today.isAfter(endDate)) {
+                                statusClass = "completed";
+                                statusText = "Completed";
+                            } else {
+                                statusClass = "ongoing";
+                                statusText = "Ongoing";
+                            }
+                        }
+                %>
+                <tr class="trip-row">
+                    <td><%= trip.getTripId() %></td>
+                    <td><%= trip.getDestinationId() != null ? trip.getDestinationId() : "Not specified" %></td>
+                    <td>
+                        <%= trip.getStartDate() != null ? trip.getStartDate() : "Not set" %> to 
+                        <%= trip.getEndDate() != null ? trip.getEndDate() : "Not set" %>
+                    </td>
+                    <td><span class="trip-status <%= statusClass %>"><%= statusText %></span></td>
+                    <td>
+                        <div class="flex space-x-2">
+                            <a href="tripDetails.jsp?id=<%= trip.getTripId() %>" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="editAssignment.jsp?id=<%= trip.getTripId() %>" class="btn btn-sm btn-warning">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <button type="button" onclick="confirmDelete('<%= trip.getTripId() %>')" class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <% 
+                    }
+                %>
+                </tbody>
+            </table>
+            <% 
+                } else {
+            %>
+                <div class="p-6 text-center">
+                    <p class="text-gray-500"><i class="fas fa-info-circle mr-2"></i>No assignments found.</p>
+                    <% if(statusFilter != null || driverIdFilter != null || dateFilter != null) { %>
+                        <a href="viewAssignments.jsp" class="text-blue-500 hover:underline mt-2 inline-block">
+                            <i class="fas fa-times-circle mr-1"></i>Clear filters
+                        </a>
+                    <% } %>
+                </div>
+            <% 
+                }
+            } catch(Exception e) {
+            %>
+                <div class="p-6 text-center">
+                    <p class="text-red-500"><i class="fas fa-exclamation-triangle mr-2"></i>Error loading assignments: <%= e.getMessage() %></p>
+                    <button onclick="toggleDetails()" class="text-blue-500 hover:underline mt-2">
+                        Show/hide technical details
+                    </button>
+                    <pre id="errorDetails" class="hidden mt-4 text-xs bg-gray-100 p-3 rounded text-left overflow-auto">
+                        <%= e.toString() %>
+                        <% for(StackTraceElement ste : e.getStackTrace()) { %>
+                            <%= ste.toString() %>
+                        <% } %>
+                    </pre>
+                    <script>
+                        function toggleDetails() {
+                            const details = document.getElementById('errorDetails');
+                            details.classList.toggle('hidden');
+                        }
+                    </script>
+                </div>
+            <% 
+            }
+            %>
+        </div>
+    </div>
+    
+    <%@ include file="../includes/footer.jsp" %>
+    
+    <script>
+        function confirmDelete(tripId) {
+            if (confirm('Are you sure you want to delete this assignment?')) {
+                window.location.href = 'deleteAssignment?id=' + tripId;
+            }
+        }
+
+        // Add export functionality
+        function exportToCSV() {
+            const rows = Array.from(document.querySelectorAll('table tr'));
+            let csv = [];
+            
+            rows.forEach(row => {
+                const cols = Array.from(row.querySelectorAll('th,td'))
+                    .map(col => {
+                        // Get text content, remove icons
+                        const text = col.innerText.replace(/[\n\r]+/g, ' ').trim();
+                        // Escape quotes and wrap in quotes - avoid template literals
+                        return '"' + text.replace(/"/g, '""') + '"';
+                    });
+                csv.push(cols.join(','));
+            });
+            
+            const csvContent = csv.join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            
+            const link = document.createElement('a');
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'trip_assignments.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Add print functionality
+        function printAssignments() {
+            window.print();
+        }
+
+        // Add these buttons to the page above the table
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.container');
+            const exportDiv = document.createElement('div');
+            exportDiv.className = 'flex justify-end mb-4';
+            
+            // Avoid template literals in JSP
+            exportDiv.innerHTML = 
+                '<button onclick="exportToCSV()" class="bg-green-600 text-white py-1 px-3 rounded mr-2 hover:bg-green-700">' +
+                '<i class="fas fa-file-csv mr-1"></i> Export CSV' +
+                '</button>' +
+                '<button onclick="printAssignments()" class="bg-purple-600 text-white py-1 px-3 rounded hover:bg-purple-700">' +
+                '<i class="fas fa-print mr-1"></i> Print' +
+                '</button>';
+            
+            const filterDiv = document.querySelector('.bg-white.p-4');
+            container.insertBefore(exportDiv, filterDiv.nextSibling);
+        });
+    </script>
+</body>
+</html>

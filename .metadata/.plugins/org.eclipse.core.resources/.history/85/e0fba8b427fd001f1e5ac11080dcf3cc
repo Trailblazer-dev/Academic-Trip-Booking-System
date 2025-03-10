@@ -1,0 +1,119 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<header class="bg-indigo-700 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex-shrink-0">
+                <a href="${pageContext.request.contextPath}/transport/index.jsp" class="flex items-center">
+                    <i class="fas fa-bus text-white text-2xl mr-2"></i>
+                    <span class="text-white font-bold text-xl">Academic Trip System</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-4">
+                    <li>
+                        <a href="${pageContext.request.contextPath}/transport/index.jsp" 
+                           class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-indigo-600 flex items-center">
+                            <i class="fas fa-home mr-1"></i> Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/transport/manageDrivers.jsp" 
+                           class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-indigo-600 flex items-center">
+                            <i class="fas fa-users mr-1"></i> Manage Drivers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/transport/manageVehicles.jsp" 
+                           class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-indigo-600 flex items-center">
+                            <i class="fas fa-car mr-1"></i> Manage Vehicles
+                        </a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/transport/assignResources.jsp" 
+                           class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-indigo-600 flex items-center">
+                            <i class="fas fa-clipboard-list mr-1"></i> Assign Resources
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- User Menu -->
+            <div class="hidden md:block">
+                <div class="flex items-center">
+                    <div class="relative ml-3">
+                        <button type="button" 
+                                class="max-w-xs flex items-center text-sm rounded-full text-white focus:outline-none"
+                                id="userMenuButton" 
+                                onclick="document.getElementById('userDropdown').classList.toggle('hidden')">
+                            <i class="fas fa-user-circle text-xl"></i>
+                            <span class="ml-2">
+                                <% 
+                                    String username = (session.getAttribute("user") != null) ? 
+                                        ((com.academictrip.model.User)session.getAttribute("user")).getUsername() : 
+                                        "User";
+                                %>
+                                <%= username %>
+                            </span>
+                            <i class="fas fa-chevron-down ml-1"></i>
+                        </button>
+                        
+                        <div id="userDropdown" 
+                             class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" 
+                             role="menu" 
+                             aria-orientation="vertical" 
+                             aria-labelledby="userMenuButton">
+                            <a href="${pageContext.request.contextPath}/logout" 
+                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" 
+                               role="menuitem">
+                                <i class="fas fa-sign-out-alt mr-1"></i> Sign out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button type="button" 
+                        class="bg-indigo-600 inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-indigo-500 focus:outline-none" 
+                        aria-controls="mobile-menu" 
+                        aria-expanded="false"
+                        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="hidden md:hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="${pageContext.request.contextPath}/transport/index.jsp" 
+               class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-indigo-600">
+                <i class="fas fa-home mr-1"></i> Dashboard
+            </a>
+            
+            <a href="${pageContext.request.contextPath}/transport/manageDrivers.jsp" 
+               class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-indigo-600">
+                <i class="fas fa-users mr-1"></i> Manage Drivers
+            </a>
+            
+            <a href="${pageContext.request.contextPath}/transport/manageVehicles.jsp" 
+               class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-indigo-600">
+                <i class="fas fa-car mr-1"></i> Manage Vehicles
+            </a>
+            
+            <a href="${pageContext.request.contextPath}/transport/assignResources.jsp" 
+               class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-indigo-600">
+                <i class="fas fa-clipboard-list mr-1"></i> Assign Resources
+            </a>
+            
+            <a href="${pageContext.request.contextPath}/logout" 
+               class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-indigo-600">
+                <i class="fas fa-sign-out-alt mr-1"></i> Sign out
+            </a>
+        </div>
+    </div>
+</header>

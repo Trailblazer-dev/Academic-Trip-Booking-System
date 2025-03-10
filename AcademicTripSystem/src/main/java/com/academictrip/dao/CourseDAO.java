@@ -58,4 +58,30 @@ public class CourseDAO {
             }
         }
     }
+
+    /**
+     * Retrieve a course by its ID
+     * @param courseId The ID of the course
+     * @return The course object or null if not found
+     * @throws SQLException if a database access error occurs
+     */
+    public Course getCourseById(String courseId) throws SQLException {
+        String sql = "SELECT * FROM Course WHERE course_id = ?";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, courseId);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    Course course = new Course();
+                    course.setCourseId(rs.getString("course_id"));
+                    course.setCourseName(rs.getString("course_name"));
+                    course.setFacultyId(rs.getString("faculty_id"));
+                    return course;
+                }
+            }
+        }
+        return null;
+    }
 }

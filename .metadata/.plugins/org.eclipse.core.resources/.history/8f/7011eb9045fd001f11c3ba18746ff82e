@@ -1,0 +1,326 @@
+package com.academictrip.dao;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.academictrip.model.Trip;
+import com.academictrip.util.DatabaseUtil;
+
+public class TripDAO {
+
+	// Generate the next trip ID (e.g., TRP001)
+	private String generateTripId() throws SQLException {
+        String prefix = "TRP";
+        String sql = "SELECT MAX(trip_id) FROM Trip";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            if (rs.next()) {
+                String maxId = rs.getString(1);
+                if (maxId == null) {
+					return prefix + "001";
+				}
+                int numericPart = Integer.parseInt(maxId.replace(prefix, ""));
+                return String.format("%s%03d", prefix, numericPart + 1);
+            }
+            return prefix + "001";
+        }
+    }
+
+    // Insert a new trip
+	public void insertTrip(Trip trip) throws SQLException {
+        String tripId = generateTripId();
+        trip.setTripId(tripId); // Set generated ID
+
+        String sql = "INSERT INTO Trip (trip_id, start_date, end_date, incharge_group_id, destination_id) "
+                   + "VALUES (?, ?, ?, ?, ?)";
+
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, trip.getTripId());
+            stmt.setDate(2, Date.valueOf(trip.getStartDate()));
+            stmt.setDate(3, Date.valueOf(trip.getEndDate()));
+            stmt.setString(4, trip.getInchargeGroupId());
+            stmt.setString(5, trip.getDestinationId());
+
+            stmt.executeUpdate();
+        }
+    }
+
+    public void updateTripDriverVehicle(String tripId, String driverVehicleId) throws SQLException {
+        String sql = "UPDATE Trip SET driver_vehicle_id = ? WHERE trip_id = ?";
+
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, driverVehicleId);
+            stmt.setString(2, tripId);
+            stmt.executeUpdate();
+        }
+    }
+
+    public Map<String, String> getDriverVehicleToTripMapping() throws SQLException {
+        Map<String, String> dvToTripMap = new HashMap<>();
+        String sql = "SELECT trip_id, driver_vehicle_id FROM Trip WHERE driver_vehicle_id IS NOT NULL";
+        
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+            
+            while (rs.next()) {
+                String tripId = rs.getString("trip_id");
+                String dvId = rs.getString("driver_vehicle_id");
+                dvToTripMap.put(dvId, tripId);
+            }
+        }
+        
+        return dvToTripMap;
+    }
+
+    // Get all trips
+    public List<Trip> getAllTrips() throws SQLException {
+        List<Trip> trips = new ArrayList<>();
+        String sql = "SELECT * FROM Trip";
+        
+        try (Connection connection = DatabaseUtil.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql);
+             ResultSet resultSet = statement.executeQuery()) {
+            
+            while (resultSet.next()) {
+                Trip trip = new Trip();
+                trip.setTripId(resultSet.getString("trip_id"));
+                
+                // Safe handling of start_date
+                java.sql.Date sqlStartDate = resultSet.getDate("start_date");
+                if (!resultSet.wasNull() && sqlStartDate != null) {
+                    trip.setStartDate(sqlStartDate.toLocalDate());
+                }
+                
+                // Safe handling of end_date
+                java.sql.Date sqlEndDate = resultSet.getDate("end_date");
+                if (!resultSet.wasNull() && sqlEndDate != null) {
+                    trip.setEndDate(sqlEndDate.toLocalDate());
+                }
+                
+                trip.setDestinationId(resultSet.getString("destination_id"));
+                trip.setDriverVehicleId(resultSet.getString("driver_vehicle_id"));
+                trip.setInchargeGroupId(resultSet.getString("incharge_group_id"));
+
+                trips.add(trip);
+            }
+        }
+        return trips;
+    }
+
+    public List<Trip> getUnassignedTrips() throws SQLException {
+        List<Trip> trips = new ArrayList<>();
+        String sql = "SELECT * FROM Trip WHERE driver_vehicle_id IS NULL";
+        
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+            
+            while (rs.next()) {
+                Trip trip = new Trip();
+                trip.setTripId(rs.getString("trip_id"));
+                
+                // Safe handling of start_date
+                java.sql.Date startDate = rs.getDate("start_date");
+                if (!rs.wasNull() && startDate != null) {
+                    trip.setStartDate(startDate.toLocalDate());
+                }
+                
+                // Safe handling of end_date
+                java.sql.Date endDate = rs.getDate("end_date");
+                if (!rs.wasNull() && endDate != null) {
+                    trip.setEndDate(endDate.toLocalDate());
+                }
+                
+                trip.setInchargeGroupId(rs.getString("incharge_group_id"));
+                trip.setDriverVehicleId(rs.getString("driver_vehicle_id"));
+                trip.setDestinationId(rs.getString("destination_id"));
+                trips.add(trip);
+            }
+        }
+        return trips;
+    }
+
+    public List<Trip> getRecentlyAssignedTrips(int limit) throws SQLException {
+        List<Trip> trips = new ArrayList<>();
+        String sql = "SELECT * FROM Trip WHERE driver_vehicle_id IS NOT NULL ORDER BY trip_id DESC LIMIT ?";
+        
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setInt(1, limit);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Trip trip = new Trip();
+                    trip.setTripId(rs.getString("trip_id"));
+                    
+                    // Safe handling of start_date
+                    java.sql.Date startDate = rs.getDate("start_date");
+                    if (!rs.wasNull() && startDate != null) {
+                        trip.setStartDate(startDate.toLocalDate());
+                    }
+                    
+                    // Safe handling of end_date
+                    java.sql.Date endDate = rs.getDate("end_date");
+                    if (!rs.wasNull() && endDate != null) {
+                        trip.setEndDate(endDate.toLocalDate());
+                    }
+                    
+                    trip.setInchargeGroupId(rs.getString("incharge_group_id"));
+                    trip.setDriverVehicleId(rs.getString("driver_vehicle_id"));
+                    trip.setDestinationId(rs.getString("destination_id"));
+                    trips.add(trip);
+                }
+            }
+        }
+        return trips;
+    }
+
+    /**
+     * Assigns a driver and vehicle to a trip
+     * @param tripId the trip ID
+     * @param driverId the driver ID
+     * @param vehicleId the vehicle ID
+     * @return true if assignment was successful
+     */
+    public boolean assignResources(String tripId, String driverVehicleId) throws SQLException {
+        boolean success = false;
+        String sql = "UPDATE Trip SET driver_vehicle_id = ? WHERE trip_id = ?";
+        
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setString(1, driverVehicleId);
+            stmt.setString(2, tripId);
+            
+            int rowsAffected = stmt.executeUpdate();
+            success = rowsAffected > 0;
+        }
+        
+        return success;
+    }
+
+    /**
+     * Updates a trip with the assigned driver vehicle ID
+     * @param tripId the trip ID
+     * @param driverVehicleId the driver vehicle ID
+     * @throws SQLException if a database error occurs
+     */
+    public void updateTripAssignment(String tripId, String driverVehicleId) throws SQLException {
+        String sql = "UPDATE Trip SET driver_vehicle_id = ? WHERE trip_id = ?";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, driverVehicleId);
+            stmt.setString(2, tripId);
+            stmt.executeUpdate();
+        }
+    }
+
+    public Trip getTripById(String tripId) throws SQLException {
+        String sql = "SELECT * FROM Trip WHERE trip_id = ?";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, tripId); // Changed to setString
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    Trip trip = new Trip();
+                    trip.setTripId(rs.getString("trip_id"));
+                    trip.setStartDate(rs.getDate("start_date").toLocalDate());
+                    trip.setEndDate(rs.getDate("end_date").toLocalDate());
+                    trip.setInchargeGroupId(rs.getString("incharge_group_id"));
+                    trip.setDriverVehicleId(rs.getString("driver_vehicle_id"));
+                    trip.setDestinationId(rs.getString("destination_id"));
+                    return trip;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Gets assigned trips with filtering options
+     * 
+     * @param statusFilter Filter by trip status (upcoming, ongoing, completed)
+     * @param driverIdFilter Filter by driver ID
+     * @param dateFilter Filter by date
+     * @return List of filtered trips with assignments
+     * @throws SQLException if database error occurs
+     */
+    public List<Trip> getAssignedTripsWithFilters(String statusFilter, String driverIdFilter, String dateFilter) throws SQLException {
+        List<Trip> filteredTrips = new ArrayList<>();
+        
+        StringBuilder sql = new StringBuilder(
+            "SELECT t.*, dv.driver_vehicle_id, dv.driver_id, dv.vehicle_id, " +
+            "dv.assignment_start, dv.assignment_end " +
+            "FROM trip t " +
+            "INNER JOIN driver_vehicle dv ON t.driver_vehicle_id = dv.driver_vehicle_id " +
+            "WHERE t.driver_vehicle_id IS NOT NULL "
+        );
+        
+        List<Object> params = new ArrayList<>();
+        
+        // Apply driver filter if provided
+        if (driverIdFilter != null && !driverIdFilter.isEmpty()) {
+            sql.append("AND dv.driver_id = ? ");
+            params.add(driverIdFilter);
+        }
+        
+        // Apply date filter if provided
+        if (dateFilter != null && !dateFilter.isEmpty()) {
+            LocalDate filterDate = LocalDate.parse(dateFilter);
+            sql.append("AND (? BETWEEN t.start_date AND t.end_date OR ? BETWEEN dv.assignment_start AND dv.assignment_end) ");
+            params.add(filterDate);
+            params.add(filterDate);
+        }
+        
+        // Apply status filter if provided
+        LocalDate today = LocalDate.now();
+        if (statusFilter != null && !statusFilter.isEmpty()) {
+            if ("upcoming".equals(statusFilter)) {
+                sql.append("AND t.start_date > ? ");
+                params.add(today);
+            } else if ("ongoing".equals(statusFilter)) {
+                sql.append("AND ? BETWEEN t.start_date AND t.end_date ");
+                params.add(today);
+            } else if ("completed".equals(statusFilter)) {
+                sql.append("AND t.end_date < ? ");
+                params.add(today);
+            }
+        }
+        
+        sql.append("ORDER BY t.start_date DESC");
+        
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql.toString())) {
+            
+            // Set parameters
+            for (int i = 0; i < params.size(); i++) {
+                stmt.setObject(i + 1, params.get(i));
+            }
+            
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Trip trip = extractTripFromResultSet(rs);
+                    // Also set the driver_vehicle_id directly so we don't need another query
+                    trip.setDriverVehicleId(rs.getString("driver_vehicle_id"));
+                    filteredTrips.add(trip);
+                }
+            }
+        }
+        
+        return filteredTrips;
+    }
+}

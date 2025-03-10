@@ -1,0 +1,278 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.academictrip.model.*" %>
+<%@ page import="com.academictrip.dao.*" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Trip Details | Academic Trip System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <jsp:include page="../includes/transportHeader.jsp" />
+    
+    <div class="container mx-auto px-4 py-6">
+        <h1 class="text-2xl font-bold mb-6">Trip Details</h1>
+        
+        <% 
+        String tripIdParam = request.getParameter("id");
+        if(tripIdParam != null && !tripIdParam.isEmpty()) {
+            try {
+                TripDAO tripDAO = new TripDAO();
+                Trip trip = tripDAO.getTripById(tripIdParam);
+                
+                if(trip != null) {
+                    DriverVehicleDAO driverVehicleDAO = new DriverVehicleDAO();
+                    DriverVehicle assignment = driverVehicleDAO.getAssignmentByTripId(tripIdParam);
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                    
+                    // Get additional information
+                    DestinationDAO destinationDAO = new DestinationDAO();
+                    Destination destination = null;
+                    if(trip.getDestinationId() != null) {
+                        destination = destinationDAO.getDestinationById(trip.getDestinationId());
+                    }
+                    
+                    // Get incharge group information
+                    InchargeGroupDAO inchargeGroupDAO = new InchargeGroupDAO();
+                    InchargeGroup inchargeGroup = null;
+                    Incharge incharge = null;
+                    if(trip.getInchargeGroupId() != null) {
+                        inchargeGroup = inchargeGroupDAO.getInchargeGroupById(trip.getInchargeGroupId());
+                        if(inchargeGroup != null) {
+                            InchargeDAO inchargeDAO = new InchargeDAO();
+                            incharge = inchargeDAO.getInchargeById(inchargeGroup.getInchargeId());
+                        }
+                    }
+                    
+                    // Get trip group and course information
+                    TripGroup tripGroup = null;
+                    Course course = null;
+                    int studentCount = 0;
+                    if(inchargeGroup != null) {
+                        TripGroupDAO tripGroupDAO = new TripGroupDAO();
+                        tripGroup = tripGroupDAO.getGroupById(inchargeGroup.getGroupId());
+                        if(tripGroup != null) {
+                            studentCount = tripGroup.getStudentNumber();
+                            CourseDAO courseDAO = new CourseDAO();
+                            course = courseDAO.getCourseById(tripGroup.getCourseId());
+                        }
+                    }
+                    
+                    // Get driver and vehicle details if assigned
+                    Driver driver = null;
+                    Vehicle vehicle = null;
+                    if(assignment != null) {
+                        DriverDAO driverDAO = new DriverDAO();
+                        VehicleDAO vehicleDAO = new VehicleDAO();
+                        
+                        if(assignment.getDriverId() != null) {
+                            driver = driverDAO.getDriverById(assignment.getDriverId());
+                        }
+                        
+                        if(assignment.getVehicleId() != null) {
+                            vehicle = vehicleDAO.getVehicleById(assignment.getVehicleId());
+                        }
+                    }
+        %>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Main Trip Information -->
+            <div class="md:col-span-2">
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h2 class="text-xl font-bold mb-4 text-blue-800 border-b pb-2">
+                        <i class="fas fa-info-circle mr-2"></i>Trip Information
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-gray-600 font-medium">Trip ID:</p>
+                            <p class="font-semibold"><%= trip.getTripId() %></p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 font-medium">Trip Status:</p>
+                            <p class="<%= trip.getDriverVehicleId() != null ? "text-green-600" : "text-yellow-600" %> font-semibold">
+                                <%= trip.getDriverVehicleId() != null ? "Assigned" : "Pending Assignment" %>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 font-medium">Start Date:</p>
+                            <p class="font-semibold"><%= trip.getStartDate() != null ? formatter.format(trip.getStartDate()) : "Not set" %></p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 font-medium">End Date:</p>
+                            <p class="font-semibold"><%= trip.getEndDate() != null ? formatter.format(trip.getEndDate()) : "Not set" %></p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 font-medium">Duration:</p>
+                            <p class="font-semibold">
+                                <% 
+                                if(trip.getStartDate() != null && trip.getEndDate() != null) {
+                                    long days = java.time.temporal.ChronoUnit.DAYS.between(trip.getStartDate(), trip.getEndDate()) + 1;
+                                    out.print(days + " day" + (days > 1 ? "s" : ""));
+                                } else {
+                                    out.print("Not available");
+                                }
+                                %>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 font-medium">Destination:</p>
+                            <p class="font-semibold"><%= destination != null ? destination.getName() : (trip.getDestinationId() != null ? trip.getDestinationId() : "Not specified") %></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course and Students Information -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h2 class="text-xl font-bold mb-4 text-blue-800 border-b pb-2">
+                        <i class="fas fa-graduation-cap mr-2"></i>Academic Information
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-gray-600 font-medium">Course Name:</p>
+                            <p class="font-semibold"><%= course != null ? course.getCourseName() : "Not available" %></p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 font-medium">Course ID:</p>
+                            <p class="font-semibold"><%= course != null ? course.getCourseId() : "Not available" %></p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 font-medium">Student Group:</p>
+                            <p class="font-semibold"><%= tripGroup != null ? tripGroup.getGroupName() : "Not available" %></p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 font-medium">Number of Students:</p>
+                            <p class="font-semibold"><%= tripGroup != null ? tripGroup.getStudentNumber() : "Not specified" %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar Information -->
+            <div class="md:col-span-1">
+                <!-- Person in Charge -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h2 class="text-xl font-bold mb-4 text-blue-800 border-b pb-2">
+                        <i class="fas fa-user-tie mr-2"></i>Person in Charge
+                    </h2>
+                    <% if(incharge != null) { %>
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-user-tie text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold"><%= incharge.getName() %></p>
+                                <p class="text-sm text-gray-600">Lecturer</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mt-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-gray-500 w-5"></i>
+                                <span class="ml-2"><%= incharge.getPhoneNumber() %></span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-gray-500 w-5"></i>
+                                <span class="ml-2"><%= incharge.getEmail() %></span>
+                            </div>
+                        </div>
+                    <% } else { %>
+                        <p class="text-gray-500 italic">No incharge information available</p>
+                    <% } %>
+                </div>
+                
+                <!-- Assignment Details -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-bold mb-4 text-blue-800 border-b pb-2">
+                        <i class="fas fa-car mr-2"></i>Transport Assignment
+                    </h2>
+                    <% if(assignment != null && driver != null && vehicle != null) { %>
+                        <div class="flex items-center mb-3">
+                            <div class="driver-avatar mr-3">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-lg"><%= driver.getFirstname() %> <%= driver.getLastname() %></h3>
+                                <p class="text-sm text-gray-600"><%= driver.getPhoneNumber() %></p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mb-4">
+                            <div class="vehicle-type <%= vehicle.getType().toLowerCase() %>"></div>
+                            <div class="ml-2">
+                                <h3 class="font-medium"><%= vehicle.getMake() %> <%= vehicle.getModel() %></h3>
+                                <p class="text-sm text-gray-600"><%= vehicle.getPlateNumber() %> (Capacity: <%= vehicle.getCapacity() %>)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2 border-t pt-3">
+                            <p><span class="font-medium">Assignment Period:</span></p>
+                            <p><%= assignment.getAssignmentStart() != null ? formatter.format(assignment.getAssignmentStart()) : "Not specified" %>
+                               to 
+                               <%= assignment.getAssignmentEnd() != null ? formatter.format(assignment.getAssignmentEnd()) : "Not specified" %></p>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <a href="editAssignment.jsp?id=<%= trip.getTripId() %>" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md inline-flex items-center">
+                                <i class="fas fa-edit mr-2"></i> Edit Assignment
+                            </a>
+                        </div>
+                    <% } else { %>
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                            <p class="text-yellow-700">No transport resources assigned yet.</p>
+                            <a href="assignResources.jsp?tripId=<%= trip.getTripId() %>" class="mt-3 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md inline-flex items-center">
+                                <i class="fas fa-plus mr-2"></i> Assign Resources
+                            </a>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="flex justify-between mt-6">
+            <a href="viewAssignments.jsp" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-md inline-flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Assignments
+            </a>
+            
+            <div>
+                <% if(trip.getDriverVehicleId() == null) { %>
+                    <a href="assignResources.jsp?tripId=<%= trip.getTripId() %>" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md inline-flex items-center">
+                        <i class="fas fa-plus mr-2"></i> Assign Resources
+                    </a>
+                <% } %>
+            </div>
+        </div>
+    <% 
+            } else {
+    %>
+        <div class="bg-red-100 border-l-4 border-red-500 p-4 mb-4">
+            <p class="text-red-700">Trip not found.</p>
+            <a href="viewAssignments.jsp" class="mt-3 text-blue-500 hover:underline">Back to assignments</a>
+        </div>
+    <% 
+            }
+        } catch (Exception e) {
+    %>
+        <div class="bg-red-100 border-l-4 border-red-500 p-4 mb-4">
+            <p class="text-red-700">Error retrieving trip details: <%= e.getMessage() %></p>
+            <pre class="text-xs mt-2 text-red-600"><%= e.toString() %></pre>
+            <a href="viewAssignments.jsp" class="mt-3 text-blue-500 hover:underline">Back to assignments</a>
+        </div>
+    <% 
+        }
+    } else {
+    %>
+        <div class="bg-red-100 border-l-4 border-red-500 p-4 mb-4">
+            <p class="text-red-700">Invalid trip ID.</p>
+            <a href="viewAssignments.jsp" class="mt-3 text-blue-500 hover:underline">Back to assignments</a>
+        </div>
+    <% 
+        }
+    %>
+    </div>
+    
+    <jsp:include page="../includes/footer.jsp" />
+</body>
+</html>

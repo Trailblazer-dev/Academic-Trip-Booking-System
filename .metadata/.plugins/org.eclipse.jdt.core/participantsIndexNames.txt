@@ -7,3 +7,5 @@ INDEX VERSION 1.134
 /AcademicTripSystem/src/main/java
 /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/6312660.index
 /Demo/src/main/java
+/home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4244444405.index
+/AcademicTripSystem/src/main/java

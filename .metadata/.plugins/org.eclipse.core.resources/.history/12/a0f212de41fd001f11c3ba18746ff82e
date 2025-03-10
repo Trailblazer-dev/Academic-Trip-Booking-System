@@ -1,0 +1,69 @@
+package com.academictrip.controller;
+
+import java.io.IOException;
+import java.sql.Date;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.academictrip.dao.DriverVehicleDAO;
+import com.academictrip.dao.TripDAO;
+import com.academictrip.model.DriverVehicle;
+
+@WebServlet("/AssignResourcesServlet")
+public class AssignResourcesServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+    
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String tripId = request.getParameter("tripId");
+        String driverId = request.getParameter("driverId");
+        String vehicleId = request.getParameter("vehicleId");
+        String assignmentStartStr = request.getParameter("assignmentStart");
+        String assignmentEndStr = request.getParameter("assignmentEnd");
+        String notes = request.getParameter("notes");
+        
+        try {
+            // Create the driver-vehicle assignment
+            DriverVehicleDAO driverVehicleDAO = new DriverVehicleDAO();
+            DriverVehicle assignment = new DriverVehicle();
+            assignment.setDriverId(driverId);
+            assignment.setVehicleId(vehicleId);
+            
+            // Convert String dates to SQL Dates
+            Date assignmentStart = Date.valueOf(assignmentStartStr);
+            Date assignmentEnd = Date.valueOf(assignmentEndStr);
+            assignment.setAssignmentStart(assignmentStart);
+            assignment.setAssigmentEnd(assignmentEnd);
+            
+            // Insert the assignment and get the generated ID
+            String driverVehicleId = driverVehicleDAO.insertAssignment(assignment);
+            
+            // Update the trip with the driver_vehicle_id
+            TripDAO tripDAO = new TripDAO();
+            tripDAO.updateTripAssignment(tripId, driverVehicleId);
+            
+            // Add success message
+            request.setAttribute("successMessage", "Resources successfully assigned to trip.");
+            request.getRequestDispatcher("/transport/viewAssignments.jsp").forward(request, response);
+            
+        } catch(SQLException e) {
+            // Log the error
+            e.printStackTrace();
+            
+            // Add error message
+            request.setAttribute("errorMessage", "Failed to assign resources: " + e.getMessage());
+            request.getRequestDispatcher("/transport/assignResources.jsp").forward(request, response);
+        } catch(Exception e) {
+            // Log the error
+            e.printStackTrace();
+            
+            // Add error message
+            request.setAttribute("errorMessage", "An unexpected error occurred: " + e.getMessage());
+            request.getRequestDispatcher("/transport/assignResources.jsp").forward(request, response);
+        }
+    }
+}

@@ -1,0 +1,64 @@
+package com.academictrip.controller;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.time.LocalDate;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.academictrip.dao.DriverVehicleDAO;
+import com.academictrip.dao.TripDAO;
+import com.academictrip.model.DriverVehicle;
+
+/**
+ * Servlet implementation class AssignResourcesServlet
+ */
+@WebServlet("/transport/assignResources")
+public class AssignResourcesServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        
+        String tripId = request.getParameter("tripId");
+        String driverId = request.getParameter("driverId");
+        String vehicleId = request.getParameter("vehicleId");
+
+        try {
+            // Create driver-vehicle assignment
+            DriverVehicle assignment = new DriverVehicle();
+            assignment.setDriverId(driverId);
+            assignment.setVehicleId(vehicleId);
+            
+            // Set default assignment period (current date to 7 days later)
+            LocalDate today = LocalDate.now();
+            assignment.setAssignmentStart(today);
+            assignment.setAssignmentEnd(today.plusDays(7));
+
+            // Insert the assignment and get the ID
+            String driverVehicleId = new DriverVehicleDAO().insertAssignment(assignment);
+
+            // Update the trip with the driver_vehicle_id
+            boolean success = new TripDAO().assignResources(tripId, driverVehicleId);
+            
+            if (success) {
+                // Add success message
+                request.setAttribute("successMessage", "Resources successfully assigned to trip " + tripId);
+            } else {
+                request.setAttribute("errorMessage", "Failed to assign resources to trip " + tripId);
+            }
+            
+            // Redirect to the view assignments page
+            response.sendRedirect(request.getContextPath() + "/transport/viewAssignments.jsp");
+            
+        } catch (SQLException e) {
+            request.setAttribute("errorMessage", "Database error: " + e.getMessage());
+            request.getRequestDispatcher("/transport/assignResources.jsp").forward(request, response);
+        }
+    }
+}

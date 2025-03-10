@@ -21,6 +21,15 @@ public class Course {
     public String getFacultyId() { return facultyId; }
     public void setFacultyId(String facultyId) { this.facultyId = facultyId; }
 
+    // Compatibility methods for JSP pages that might use title/code terminology
+    public String getTitle() {
+        return courseName;
+    }
+
+    public String getCode() {
+        return courseId;
+    }
+
     @Override
     public String toString() {
         return "Course [courseId=" + courseId + ", courseName=" + courseName + ", facultyId=" + facultyId + "]";

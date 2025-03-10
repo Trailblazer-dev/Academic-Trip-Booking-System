@@ -1,0 +1,157 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.academictrip.model.*" %>
+<%@ page import="com.academictrip.dao.*" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Assignment | Academic Trip System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <jsp:include page="../includes/transportHeader.jsp" />
+    
+    <div class="container mx-auto px-4 py-6">
+        <h1 class="text-2xl font-bold mb-6">Edit Driver & Vehicle Assignment</h1>
+        
+        <!-- Include messages component -->
+        <jsp:include page="../includes/messages.jsp" />
+        
+        <%
+        String tripIdParam = request.getParameter("id");
+        if(tripIdParam != null && !tripIdParam.trim().isEmpty()) {
+            try {
+                TripDAO tripDAO = new TripDAO();
+                Trip trip = tripDAO.getTripById(tripIdParam); // Pass String directly
+                
+                if(trip != null) {
+                    DriverVehicleDAO driverVehicleDAO = new DriverVehicleDAO();
+                    DriverVehicle currentAssignment = driverVehicleDAO.getAssignmentByTripId(tripIdParam); // Pass String directly
+                    
+                    // Get lists for selection
+                    DriverDAO driverDAO = new DriverDAO();
+                    VehicleDAO vehicleDAO = new VehicleDAO();
+                    
+                    List<Driver> drivers = driverDAO.getAllDrivers();
+                    List<Vehicle> vehicles = vehicleDAO.getAllVehicles();
+                    
+                    // Change this line - remove time components from formatter
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        %>
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <p class="text-gray-600">Trip ID:</p>
+                    <p class="font-semibold"><%= trip.getTripId() %></p>
+                </div>
+                <div>
+                    <p class="text-gray-600">Course:</p>
+                    <p class="font-semibold"><%= trip.getCourseTitle() %></p>
+                </div>
+                <div>
+                    <p class="text-gray-600">Departure:</p>
+                    <p class="font-semibold"><%= trip.getStartDate() != null ? formatter.format(trip.getStartDate()) : "Not set" %></p>
+                </div>
+                <div>
+                    <p class="text-gray-600">Return:</p>
+                    <p class="font-semibold"><%= trip.getEndDate() != null ? formatter.format(trip.getEndDate()) : "Not set" %></p>
+                </div>
+                <div>
+                    <p class="text-gray-600">Destination:</p>
+                    <p class="font-semibold"><%= trip.getDestinationId() %></p>
+                </div>
+                <div>
+                    <p class="text-gray-600">Students:</p>
+                    <p class="font-semibold"><%= trip.getNumberOfStudents() %></p>
+                </div>
+            </div>
+            
+            <form action="${pageContext.request.contextPath}/updateAssignment" method="post" class="space-y-4">
+                <input type="hidden" name="tripId" value="<%= trip.getTripId() %>">
+                <input type="hidden" name="assignmentId" value="<%= currentAssignment != null ? currentAssignment.getDriverVehicleId() : "" %>">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="driverId" class="block text-sm font-medium text-gray-700">Driver</label>
+                        <select id="driverId" name="driverId" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                            <option value="">Select a driver</option>
+                            <% for(Driver driver : drivers) { %>
+                                <option value="<%= driver.getDriverId() %>" <%= (currentAssignment != null && driver.getDriverId().equals(currentAssignment.getDriverId())) ? "selected" : "" %>>
+                                    <%= driver.getFirstname() %> <%= driver.getLastname() %> (<%= driver.getPhoneNumber() %>)
+                                </option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="vehicleId" class="block text-sm font-medium text-gray-700">Vehicle</label>
+                        <select id="vehicleId" name="vehicleId" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                            <option value="">Select a vehicle</option>
+                            <% for(Vehicle vehicle : vehicles) { %>
+                                <option value="<%= vehicle.getVehicleId() %>" <%= (currentAssignment != null && vehicle.getVehicleId().equals(currentAssignment.getVehicleId())) ? "selected" : "" %>>
+                                    <%= vehicle.getMake() %> <%= vehicle.getModel() %> (<%= vehicle.getPlateNumber() %>, <%= vehicle.getCapacity() %> seats)
+                                </option>
+                            <% } %>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="assignmentStart" class="block text-sm font-medium text-gray-700">Assignment Start Date</label>
+                        <input type="date" id="assignmentStart" name="assignmentStart" 
+                               value="<%= currentAssignment != null ? currentAssignment.getAssignmentStart() : trip.getStartDate() %>"
+                               class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div>
+                        <label for="assignmentEnd" class="block text-sm font-medium text-gray-700">Assignment End Date</label>
+                        <input type="date" id="assignmentEnd" name="assignmentEnd"
+                               value="<%= currentAssignment != null ? currentAssignment.getAssignmentEnd() : trip.getEndDate() %>"
+                               class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+                </div>
+                
+                <div class="flex justify-between pt-4">
+                    <a href="tripDetails.jsp?id=<%= tripIdParam %>" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
+                        <i class="fas fa-arrow-left mr-1"></i> Cancel
+                    </a>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+                        <i class="fas fa-save mr-1"></i> Save Assignment
+                    </button>
+                </div>
+            </form>
+        </div>
+        <% 
+                } else {
+        %>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                <p>Trip not found with ID: <%= tripIdParam %></p>
+                <a href="viewAssignments.jsp" class="text-blue-500 hover:underline">Return to assignments</a>
+            </div>
+        <%
+                }
+            } catch(Exception e) {
+        %>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                <p>Error: <%= e.getMessage() %></p>
+                <pre class="text-xs mt-2"><%= e.toString() %></pre>
+                <a href="viewAssignments.jsp" class="text-blue-500 hover:underline">Return to assignments</a>
+            </div>
+        <%
+            }
+        } else {
+        %>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                <p>No trip ID provided</p>
+                <a href="viewAssignments.jsp" class="text-blue-500 hover:underline">Return to assignments</a>
+            </div>
+        <%
+        }
+        %>
+    </div>
+    
+    <jsp:include page="../includes/footer.jsp" />
+</body>
+</html>

@@ -1,0 +1,109 @@
+package com.academictrip.model;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.sql.SQLException;
+
+public class Trip {
+    private String tripId;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private String inchargeGroupId;
+    private String driverVehicleId;
+    private String destinationId;
+
+    // Constructors
+    public Trip() {}
+    
+    public Trip(String tripId, LocalDate startDate, LocalDate endDate, String destinationId, 
+                String driverVehicleId, String inchargeGroupId) {
+        this.tripId = tripId;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.destinationId = destinationId;
+        this.driverVehicleId = driverVehicleId;
+        this.inchargeGroupId = inchargeGroupId;
+    }
+
+    // Getter and setter methods
+    public String getTripId() { return tripId; }
+    public void setTripId(String tripId) { this.tripId = tripId; }
+    
+    public LocalDate getStartDate() { return startDate; }
+    public void setStartDate(LocalDate startDate) { this.startDate = startDate; }
+    
+    public LocalDate getEndDate() { return endDate; }
+    public void setEndDate(LocalDate endDate) { this.endDate = endDate; }
+    
+    public String getInchargeGroupId() { return inchargeGroupId; }
+    public void setInchargeGroupId(String inchargeGroupId) { this.inchargeGroupId = inchargeGroupId; }
+    
+    public String getDriverVehicleId() { return driverVehicleId; }
+    public void setDriverVehicleId(String driverVehicleId) { this.driverVehicleId = driverVehicleId; }
+    
+    public String getDestinationId() { return destinationId; }
+    public void setDestinationId(String destinationId) { this.destinationId = destinationId; }
+
+    // Helper methods for JSP formatting
+    public String getStartDateFormatted() {
+        return startDate != null ? startDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) : null;
+    }
+    
+    public String getEndDateFormatted() {
+        return endDate != null ? endDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) : null;
+    }
+
+    // Replace the incorrect methods
+    public String getCourseTitle() {
+        try {
+            // Get the incharge group to find the group_id
+            InchargeGroupDAO inchargeGroupDAO = new InchargeGroupDAO();
+            InchargeGroup inchargeGroup = inchargeGroupDAO.getInchargeGroupById(this.getInchargeGroupId());
+            
+            if (inchargeGroup != null) {
+                // Get the trip group to find the course_id
+                TripGroupDAO tripGroupDAO = new TripGroupDAO();
+                TripGroup tripGroup = tripGroupDAO.getTripGroupById(inchargeGroup.getGroupId());
+                
+                if (tripGroup != null) {
+                    // Get the course name using course_id
+                    CourseDAO courseDAO = new CourseDAO();
+                    Course course = courseDAO.getCourseById(tripGroup.getCourseId());
+                    
+                    if (course != null) {
+                        return course.getCourseName();
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    public int getNumberOfStudents() {
+        try {
+            // Get the incharge group to find the group_id
+            InchargeGroupDAO inchargeGroupDAO = new InchargeGroupDAO();
+            InchargeGroup inchargeGroup = inchargeGroupDAO.getInchargeGroupById(this.getInchargeGroupId());
+            
+            if (inchargeGroup != null) {
+                // Get the trip group to find student numbers
+                TripGroupDAO tripGroupDAO = new TripGroupDAO();
+                TripGroup tripGroup = tripGroupDAO.getTripGroupById(inchargeGroup.getGroupId());
+                
+                if (tripGroup != null) {
+                    return tripGroup.getStudentNumber();
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Trip [tripId=" + tripId + ", startDate=" + startDate + ", endDate=" + endDate + "]";
+    }
+}

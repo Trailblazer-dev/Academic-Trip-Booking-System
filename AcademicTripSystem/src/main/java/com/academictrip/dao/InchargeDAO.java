@@ -64,4 +64,33 @@ public class InchargeDAO {
             }
         }
     }
+
+    /**
+     * Retrieve an incharge by its ID
+     * @param inchargeId The ID of the incharge
+     * @return The incharge object or null if not found
+     * @throws SQLException if a database access error occurs
+     */
+    public Incharge getInchargeById(String inchargeId) throws SQLException {
+        String sql = "SELECT * FROM Incharge WHERE incharge_id = ?";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, inchargeId);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    Incharge incharge = new Incharge();
+                    incharge.setInchargeId(rs.getString("incharge_id"));
+                    incharge.setFirstName(rs.getString("first_name"));  // Changed from "firstname" to "first_name"
+                    incharge.setLastName(rs.getString("last_name"));    // Changed from "lastname" to "last_name"
+                    incharge.setPhoneNumber(rs.getInt("phone_number"));
+                    incharge.setEmail(rs.getString("email"));
+                    incharge.setFacultyId(rs.getString("faculty_id"));
+                    return incharge;
+                }
+            }
+        }
+        return null;
+    }
 }

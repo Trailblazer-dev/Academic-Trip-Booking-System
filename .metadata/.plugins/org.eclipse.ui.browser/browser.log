@@ -265,3 +265,79 @@ Mar 09, 2025 20:02:16.56 [74827:74857:0309/200216.563971:ERROR:registration_requ
 Mar 09, 2025 20:03:01.53 [74827:74857:0309/200301.529962:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
 Mar 09, 2025 20:04:26.80 [74827:74827:0309/200426.799745:ERROR:atom_cache.cc(230)] Add chromium/from-privileged to kAtomsToCache
 Mar 09, 2025 20:04:27.66 [74827:74857:0309/200427.663295:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 10, 2025 04:08:14.74 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 10, 2025 04:08:14.81 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Mar 10, 2025 04:08:21.53 Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 10, 2025 04:08:21.53 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Mar 10, 2025 04:08:21.75 [10858:10888:0310/040821.750341:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 10, 2025 04:08:33.82 [10858:10858:0310/040833.828446:ERROR:atom_cache.cc(230)] Add chromium/from-privileged to kAtomsToCache
+Mar 10, 2025 04:08:44.92 [10858:10888:0310/040844.926388:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+
+Mar 10, 2025 09:14:51.91 NEW SESSION
+Mar 10, 2025 09:14:51.93 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 10, 2025 09:14:52.16 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Mar 10, 2025 09:14:55.79 [2340:2371:0310/091455.793790:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 10, 2025 09:14:55.90 Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 10, 2025 09:14:55.90 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Mar 10, 2025 09:15:18.49 [2340:2371:0310/091518.498856:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 10, 2025 09:15:22.45 [2340:2371:0310/091522.459269:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 10, 2025 09:15:22.46 [2340:2371:0310/091522.461332:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 10, 2025 09:15:27.30 [2340:2371:0310/091527.307398:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 10, 2025 09:15:27.31 [2340:2340:0310/091527.310863:ERROR:account_info_fetcher.cc(62)] OnGetTokenFailure: Connection failed (-106).
+Mar 10, 2025 09:16:52.56 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 10, 2025 09:16:52.63 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Mar 10, 2025 09:16:56.94 Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 10, 2025 09:16:56.94 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Mar 10, 2025 09:16:57.70 [2991:3022:0310/091657.700831:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 10, 2025 09:17:23.13 [2991:3022:0310/091723.135744:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 10, 2025 09:18:17.84 [2991:3022:0310/091817.843757:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 10, 2025 09:20:05.29 [2991:3022:0310/092005.293724:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 10, 2025 09:23:00.58 [2991:3022:0310/092300.580106:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 10, 2025 09:30:23.95 [2991:3022:0310/093023.955131:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+
+Mar 10, 2025 09:34:45.17 NEW SESSION
+Mar 10, 2025 09:34:45.19 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 10, 2025 09:34:45.25 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Mar 10, 2025 09:34:49.71 Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 10, 2025 09:34:49.71 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Mar 10, 2025 09:34:50.19 [5157:5188:0310/093450.199068:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 10, 2025 09:35:16.06 [5157:5188:0310/093516.061228:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 10, 2025 09:35:59.05 [5157:5188:0310/093559.054920:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 10, 2025 09:37:23.67 [5157:5188:0310/093723.674293:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 10, 2025 09:41:19.36 [5157:5188:0310/094119.365527:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 10, 2025 09:47:05.91 [5157:5188:0310/094705.916664:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 10, 2025 10:50:52.10 [5157:5188:0310/105052.102779:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 10, 2025 10:58:45.74 Opening in existing browser session.
+Mar 10, 2025 11:13:54.47 [5157:5188:0310/111354.478780:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Mar 10, 2025 11:19:40.30 [5157:5188:0310/111940.301634:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+Mar 10, 2025 11:25:19.63 [5157:5157:0310/112519.631295:ERROR:atom_cache.cc(230)] Add chromium/x-internal-source-rfh-token to kAtomsToCache
+Mar 10, 2025 13:28:12.54 [5157:5188:0310/132812.543955:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 10, 2025 13:28:35.59 [5157:5188:0310/132835.599100:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 10, 2025 13:29:26.77 [5157:5188:0310/132926.775003:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 10, 2025 13:30:35.04 [5157:5188:0310/133035.046028:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 10, 2025 13:32:21.73 [5157:5188:0310/133221.735706:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 10, 2025 13:34:08.61 [5157:5157:0310/133408.603996:ERROR:atom_cache.cc(230)] Add WM_CHANGE_STATE to kAtomsToCache
+Mar 10, 2025 14:10:17.44 [5157:5188:0310/141017.448419:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 10, 2025 14:10:19.90 [5157:5188:0310/141019.906182:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+
+Mar 10, 2025 19:30:35.18 NEW SESSION
+Mar 10, 2025 19:30:35.19 Opening in existing browser session.
+Mar 10, 2025 19:38:56.76 Opening in existing browser session.
+
+Mar 10, 2025 20:43:50.91 NEW SESSION
+Mar 10, 2025 20:43:50.93 Opening in existing browser session.
+
+Mar 10, 2025 22:43:23.34 NEW SESSION
+Mar 10, 2025 22:43:23.43 Opening in existing browser session.
+Mar 10, 2025 23:10:24.88 Opening in existing browser session.
+Mar 10, 2025 23:12:38.80 Opening in existing browser session.
+
+Mar 11, 2025 24:42:35.20 NEW SESSION
+Mar 11, 2025 24:42:35.27 Opening in existing browser session.
+Mar 11, 2025 24:49:06.42 Opening in existing browser session.
+
+Mar 11, 2025 24:51:21.86 NEW SESSION
+Mar 11, 2025 24:51:21.96 Opening in existing browser session.
+
+Mar 11, 2025 01:00:23.95 NEW SESSION
+Mar 11, 2025 01:00:24.02 Opening in existing browser session.

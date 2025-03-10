@@ -9,9 +9,11 @@ public class Vehicle {
     private LocalDate year;
     private int capacity;
     private String plateNumber;
+    private boolean available; // Transient field for UI state management
 
     // Constructors
     public Vehicle() {}
+
     public Vehicle(String vehicleId, String make, String model, LocalDate year, int capacity, String plateNumber) {
         this.vehicleId = vehicleId;
         this.make = make;
@@ -34,6 +36,24 @@ public class Vehicle {
     public void setCapacity(int capacity) { this.capacity = capacity; }
     public String getPlateNumber() { return plateNumber; }
     public void setPlateNumber(String plateNumber) { this.plateNumber = plateNumber; }
+    public boolean isAvailable() { return available; }
+    public void setAvailable(boolean available) { this.available = available; }
+
+    /**
+     * Get the registration number (alias for plateNumber)
+     * @return vehicle's plate number/registration
+     */
+    public String getRegistration() {
+        return plateNumber;
+    }
+
+    /**
+     * Get the vehicle type
+     * @return type of vehicle (always "Bus" for this application)
+     */
+    public String getType() {
+        return "Bus";
+    }
 
     @Override
     public String toString() {

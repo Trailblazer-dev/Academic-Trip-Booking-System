@@ -19,6 +19,6 @@ public class Destination {
 
     @Override
     public String toString() {
-        return "Destination [destinationId=" + destinationId + ", name=" + name + "]";
+        return name;
     }
 }
