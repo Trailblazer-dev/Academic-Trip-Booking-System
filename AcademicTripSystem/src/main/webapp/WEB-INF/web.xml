@@ -5,49 +5,76 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <!-- ===== Servlet Declarations ===== 
+    <!-- ===== Servlet Declarations ===== -->
+    <!-- IMPORTANT: Servlets defined here should NOT have @WebServlet annotations in their Java files -->
     <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.academictrip.controller.LoginServlet</servlet-class>
+        <servlet-name>AddTripServlet</servlet-name>
+        <servlet-class>com.academictrip.controller.AddTripServlet</servlet-class>
     </servlet>
-    -->
+    
     <servlet>
         <servlet-name>AddDriverServlet</servlet-name>
         <servlet-class>com.academictrip.controller.AddDriverServlet</servlet-class>
     </servlet>
-    <!--
+    
     <servlet>
-        <servlet-name>AddVehicleServlet</servlet-name>
-        <servlet-class>com.academictrip.controller.AddVehicleServlet</servlet-class>
+        <servlet-name>UpdateTripServlet</servlet-name>
+        <servlet-class>com.academictrip.controller.UpdateTripServlet</servlet-class>
     </servlet>
-    -->
+    
     <servlet>
         <servlet-name>AssignResourcesServlet</servlet-name>
         <servlet-class>com.academictrip.controller.AssignResourcesServlet</servlet-class>
     </servlet>
+    
+    <servlet>
+        <servlet-name>CancelTripServlet</servlet-name>
+        <servlet-class>com.academictrip.controller.CancelTripServlet</servlet-class>
+    </servlet>
     <!-- (Add any additional servlets here as needed) -->
 
-    <!-- ===== Servlet Mappings ===== 
+    <!-- ===== Servlet Mappings ===== -->
+    <!-- Add explicit mapping for AddTripServlet -->
     <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/LoginServlet</url-pattern>
+        <servlet-name>AddTripServlet</servlet-name>
+        <url-pattern>/AddTripServlet</url-pattern>
     </servlet-mapping>
-    -->
     
     <servlet-mapping>
         <servlet-name>AddDriverServlet</servlet-name>
         <url-pattern>/transport/addDriver</url-pattern>
     </servlet-mapping>
-    <!--
+    
     <servlet-mapping>
-        <servlet-name>AddVehicleServlet</servlet-name>
-        <url-pattern>/transport/addVehicle</url-pattern>
+        <servlet-name>UpdateTripServlet</servlet-name>
+        <url-pattern>/UpdateTripServlet</url-pattern>
     </servlet-mapping>
-    -->
+    
     <servlet-mapping>
         <servlet-name>AssignResourcesServlet</servlet-name>
         <url-pattern>/transport/assignResources</url-pattern>
     </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>CancelTripServlet</servlet-name>
+        <url-pattern>/lecturer/cancelTrip</url-pattern>
+    </servlet-mapping>
+
+    <!-- Error handling -->
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.jsp</location>
+    </error-page>
 
     <!-- ===== Welcome Files ===== -->
     <welcome-file-list>

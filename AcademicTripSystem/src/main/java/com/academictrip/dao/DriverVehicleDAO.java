@@ -9,7 +9,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.academictrip.model.Driver;
 import com.academictrip.model.DriverVehicle;
+import com.academictrip.model.Vehicle;
 import com.academictrip.util.DatabaseUtil;
 
 public class DriverVehicleDAO {
@@ -249,6 +251,141 @@ public class DriverVehicleDAO {
             }
         }
 
+        return null;
+    }
+
+    /**
+     * Check if a driver is available for assignment (not currently assigned to another trip)
+     * @param driverId the driver ID to check
+     * @return true if the driver is available, false otherwise
+     * @throws SQLException if a database error occurs
+     */
+    public boolean isDriverAvailable(String driverId) throws SQLException {
+        // First, get all current assignments
+        List<DriverVehicle> currentAssignments = getActiveAssignments();
+
+        // Check if the driver is assigned in any active assignments
+        for (DriverVehicle assignment : currentAssignments) {
+            if (driverId.equals(assignment.getDriverId())) {
+                return false; // Driver is already assigned
+            }
+        }
+
+        return true; // Driver is available
+    }
+
+    /**
+     * Check if a vehicle is available for assignment (not currently assigned to another trip)
+     * @param vehicleId the vehicle ID to check
+     * @return true if the vehicle is available, false otherwise
+     * @throws SQLException if a database error occurs
+     */
+    public boolean isVehicleAvailable(String vehicleId) throws SQLException {
+        // First, get all current assignments
+        List<DriverVehicle> currentAssignments = getActiveAssignments();
+
+        // Check if the vehicle is assigned in any active assignments
+        for (DriverVehicle assignment : currentAssignments) {
+            if (vehicleId.equals(assignment.getVehicleId())) {
+                return false; // Vehicle is already assigned
+            }
+        }
+
+        return true; // Vehicle is available
+    }
+
+    /**
+     * Get all active assignments (assignments for trips that are not completed)
+     * @return List of active driver-vehicle assignments
+     * @throws SQLException if a database error occurs
+     */
+    private List<DriverVehicle> getActiveAssignments() throws SQLException {
+        List<DriverVehicle> activeAssignments = new ArrayList<>();
+        String sql = "SELECT dv.* FROM driver_vehicle dv " +
+                     "JOIN trip t ON t.driver_vehicle_id = dv.driver_vehicle_id " +
+                     "WHERE t.end_date >= CURRENT_DATE";
+
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                DriverVehicle assignment = new DriverVehicle();
+                assignment.setAssignmentId(rs.getString("driver_vehicle_id"));
+                assignment.setDriverId(rs.getString("driver_id"));
+                assignment.setVehicleId(rs.getString("vehicle_id"));
+
+                // Handle nullable dates
+                Date startDateSql = rs.getDate("assignment_start");
+                if (startDateSql != null) {
+                    assignment.setStartDate(startDateSql.toLocalDate());
+                }
+
+                Date endDateSql = rs.getDate("assigment_end");  // Note: this is the correct spelling as per schema
+                if (endDateSql != null) {
+                    assignment.setEndDate(endDateSql.toLocalDate());
+                }
+
+                // Add notes if the field exists
+                try {
+                    assignment.setNotes(rs.getString("notes"));
+                } catch (SQLException e) {
+                    // Field may not exist, ignore
+                }
+
+                activeAssignments.add(assignment);
+            }
+        }
+
+        return activeAssignments;
+    }
+
+    /**
+     * Get driver-vehicle assignment by ID, populating driver and vehicle objects
+     * @param id the ID to look up
+     * @return populated DriverVehicle object or null if not found
+     * @throws SQLException if database error occurs
+     */
+    public DriverVehicle getDriverVehicleById(String id) throws SQLException {
+        String sql = "SELECT * FROM Driver_Vehicle WHERE driver_vehicle_id = ?";
+
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, id);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    DriverVehicle dv = new DriverVehicle();
+
+                    dv.setDriverVehicleId(rs.getString("driver_vehicle_id"));
+                    dv.setDriverId(rs.getString("driver_id"));
+                    dv.setVehicleId(rs.getString("vehicle_id"));
+
+                    // Handle dates
+                    Date startDate = rs.getDate("assignment_start");
+                    if (startDate != null) {
+                        dv.setAssignmentStart(startDate.toLocalDate());
+                    }
+
+                    Date endDate = rs.getDate("assigment_end");
+                    if (endDate != null) {
+                        dv.setAssignmentEnd(endDate.toLocalDate());
+                    }
+
+                    // Load related driver and vehicle objects
+                    DriverDAO driverDAO = new DriverDAO();
+                    VehicleDAO vehicleDAO = new VehicleDAO();
+
+                    Driver driver = driverDAO.getDriverById(dv.getDriverId());
+                    Vehicle vehicle = vehicleDAO.getVehicleById(dv.getVehicleId());
+
+                    dv.setDriver(driver);
+                    dv.setVehicle(vehicle);
+
+                    return dv;
+                }
+            }
+        }
         return null;
     }
 }

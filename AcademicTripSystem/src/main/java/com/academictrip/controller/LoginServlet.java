@@ -23,23 +23,35 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+        // Add some basic validation
+        if (username == null || username.trim().isEmpty() ||
+            password == null || password.trim().isEmpty()) {
+            response.sendRedirect(request.getContextPath() + "/login.jsp?status=error");
+            return;
+        }
+
         UserDAO userDAO = new UserDAO();
         User user = userDAO.validateUser(username, password);
 
         if (user != null) {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
+            session.setAttribute("lastActivityTime", System.currentTimeMillis());
 
             // Redirect based on role
             if ("lecturer".equalsIgnoreCase(user.getRole())) {
-                response.sendRedirect("lecturer/addTrip.jsp");
-            } else if ("transport".equalsIgnoreCase(user.getRole())) {
-                response.sendRedirect("transport/dashboard.jsp");
+                response.sendRedirect(request.getContextPath() + "/lecturer/dashboard.jsp");
+            } else if ("transport".equalsIgnoreCase(user.getRole()) ||
+                       "transport_manager".equalsIgnoreCase(user.getRole())) {
+                response.sendRedirect(request.getContextPath() + "/transport/dashboard.jsp");
+            } else if ("admin".equalsIgnoreCase(user.getRole())) {
+                response.sendRedirect(request.getContextPath() + "/admin/dashboard.jsp");
             } else {
-                response.sendRedirect("loginError.jsp");
+                // Default fallback for unknown roles
+                response.sendRedirect(request.getContextPath() + "/login.jsp?status=error");
             }
         } else {
-            response.sendRedirect("loginError.jsp");
+            response.sendRedirect(request.getContextPath() + "/login.jsp?status=error");
         }
     }
 }

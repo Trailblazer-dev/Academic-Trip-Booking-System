@@ -3,84 +3,132 @@ package com.academictrip.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.academictrip.dao.DriverVehicleDAO;
-import com.academictrip.dao.TripDAO;
 import com.academictrip.model.DriverVehicle;
 
-// Change the servlet mapping to match the request URL pattern
-@WebServlet("/updateAssignment")
+/**
+ * Servlet implementation class UpdateAssignmentServlet
+ * Updates the driver and vehicle assignments for trips
+ */
+@WebServlet("/transport/updateAssignment")
 public class UpdateAssignmentServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public UpdateAssignmentServlet() {
+        super();
+    }
 
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    @Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession();
+
+        // Get form parameters
         String tripId = request.getParameter("tripId");
-        String assignmentId = request.getParameter("assignmentId");
+        String currentAssignmentId = request.getParameter("currentAssignmentId");
         String driverId = request.getParameter("driverId");
         String vehicleId = request.getParameter("vehicleId");
-        String startDateStr = request.getParameter("assignmentStart");
-        String endDateStr = request.getParameter("assignmentEnd");
+        String notes = request.getParameter("notes");
 
-        // Convert date strings to LocalDate
-        LocalDate startDate = startDateStr != null && !startDateStr.isEmpty() ?
-                              LocalDate.parse(startDateStr) : null;
-        LocalDate endDate = endDateStr != null && !endDateStr.isEmpty() ?
-                            LocalDate.parse(endDateStr) : null;
+        // Optional date parameters
+        String assignmentStartStr = request.getParameter("assignmentStart");
+        String assignmentEndStr = request.getParameter("assignmentEnd");
+
+        // Validate required parameters
+        if (tripId == null || tripId.trim().isEmpty() ||
+            currentAssignmentId == null || currentAssignmentId.trim().isEmpty() ||
+            driverId == null || driverId.trim().isEmpty() ||
+            vehicleId == null || vehicleId.trim().isEmpty()) {
+            session.setAttribute("errorMessage", "All required fields must be completed");
+            response.sendRedirect(request.getContextPath() + "/transport/editAssignment.jsp?id=" + tripId);
+            return;
+        }
 
         try {
             DriverVehicleDAO driverVehicleDAO = new DriverVehicleDAO();
-            TripDAO tripDAO = new TripDAO();
 
-            // Check if this is a new assignment or an update to an existing one
-            if (assignmentId == null || assignmentId.trim().isEmpty()) {
-                // Create new assignment
-                DriverVehicle newAssignment = new DriverVehicle();
-                newAssignment.setDriverId(driverId);
-                newAssignment.setVehicleId(vehicleId);
-                newAssignment.setAssignmentStart(startDate);
-                newAssignment.setAssignmentEnd(endDate);
-
-                // Insert the assignment and get the ID
-                String newAssignmentId = driverVehicleDAO.insertAssignment(newAssignment);
-
-                // Update the trip with the new driver_vehicle_id
-                tripDAO.updateTripDriverVehicle(tripId, newAssignmentId);
-            } else {
-                // Update existing assignment - first retrieve it
-                DriverVehicle existingAssignment = driverVehicleDAO.getAssignmentByDriverVehicleId(assignmentId);
-
-                if (existingAssignment != null) {
-                    // Update the assignment with new data
-                    existingAssignment.setDriverId(driverId);
-                    existingAssignment.setVehicleId(vehicleId);
-                    existingAssignment.setAssignmentStart(startDate);
-                    existingAssignment.setAssignmentEnd(endDate);
-
-                    // Update in database
-                    driverVehicleDAO.updateAssignment(existingAssignment);
-                }
+            // Check if we're actually changing anything
+            DriverVehicle currentAssignment = driverVehicleDAO.getAssignmentById(currentAssignmentId);
+            if (currentAssignment == null) {
+                session.setAttribute("errorMessage", "Current assignment not found");
+                response.sendRedirect(request.getContextPath() + "/transport/editAssignment.jsp?id=" + tripId);
+                return;
             }
 
-            // Set success message
-            request.getSession().setAttribute("successMessage", "Assignment updated successfully");
+            // Check if the driver and vehicle are available (except for the current assignment)
+            if (!driverId.equals(currentAssignment.getDriverId()) && !driverVehicleDAO.isDriverAvailable(driverId)) {
+                session.setAttribute("errorMessage", "Selected driver is not available for assignment");
+                response.sendRedirect(request.getContextPath() + "/transport/editAssignment.jsp?id=" + tripId);
+                return;
+            }
 
-            // Redirect back to trip details page - fix the path to include the transport directory
-            response.sendRedirect(request.getContextPath() + "/transport/tripDetails.jsp?id=" + tripId);
+            if (!vehicleId.equals(currentAssignment.getVehicleId()) && !driverVehicleDAO.isVehicleAvailable(vehicleId)) {
+                session.setAttribute("errorMessage", "Selected vehicle is not available for assignment");
+                response.sendRedirect(request.getContextPath() + "/transport/editAssignment.jsp?id=" + tripId);
+                return;
+            }
+
+            // Prepare assignment dates if provided
+            LocalDate startDate = null;
+            LocalDate endDate = null;
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+            if (assignmentStartStr != null && !assignmentStartStr.trim().isEmpty()) {
+                startDate = LocalDate.parse(assignmentStartStr, formatter);
+            }
+
+            if (assignmentEndStr != null && !assignmentEndStr.trim().isEmpty()) {
+                endDate = LocalDate.parse(assignmentEndStr, formatter);
+            }
+
+            // Update the driver-vehicle assignment
+            DriverVehicle updatedAssignment = new DriverVehicle();
+            updatedAssignment.setDriverVehicleId(currentAssignmentId);
+            updatedAssignment.setDriverId(driverId);
+            updatedAssignment.setVehicleId(vehicleId);
+
+            // Using the appropriate setter methods for dates
+            if (startDate != null) {
+                updatedAssignment.setAssignmentStart(startDate);
+            }
+            if (endDate != null) {
+                updatedAssignment.setAssignmentEnd(endDate);
+            }
+            updatedAssignment.setNotes(notes);
+
+            boolean success = driverVehicleDAO.updateAssignment(updatedAssignment);
+
+            if (success) {
+                session.setAttribute("successMessage", "Assignment updated successfully");
+                // Redirect to trip details
+                response.sendRedirect(request.getContextPath() + "/transport/tripDetails.jsp?id=" + tripId);
+            } else {
+                session.setAttribute("errorMessage", "Failed to update assignment");
+                response.sendRedirect(request.getContextPath() + "/transport/editAssignment.jsp?id=" + tripId);
+            }
 
         } catch (SQLException e) {
-            // Set error message
-            request.getSession().setAttribute("errorMessage", "Error updating assignment: " + e.getMessage());
-
-            // Redirect back to edit assignment page
+            session.setAttribute("errorMessage", "Database error: " + e.getMessage());
+            e.printStackTrace();
+            response.sendRedirect(request.getContextPath() + "/transport/editAssignment.jsp?id=" + tripId);
+        } catch (Exception e) {
+            session.setAttribute("errorMessage", "Unexpected error: " + e.getMessage());
+            e.printStackTrace();
             response.sendRedirect(request.getContextPath() + "/transport/editAssignment.jsp?id=" + tripId);
         }
     }

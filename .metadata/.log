@@ -11928,3 +11928,492 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp
 
 !ENTRY org.eclipse.lsp4e 1 0 2025-03-11 00:59:51.896
 !MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 01:26:57.654
+!MESSAGE [Info] Language ID not found for extension: jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 01:50:22.439
+!MESSAGE [Info] Java format preference cache for AcademicTripSystem is updated. key: org.eclipse.jdt.core.formatter.tabulation.char, new value: tab
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 01:50:22.440
+!MESSAGE [Info] Java format preference cache for AcademicTripSystem is updated. key: org.eclipse.jdt.core.formatter.tabulation.size, new value: 4
+
+!ENTRY org.eclipse.debug.core 4 125 2025-03-11 01:57:57.902
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:02.294
+!MESSAGE [Info] Document is null for editor: DeleteDriverServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:02.295
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/DeleteDriverServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:02.679
+!MESSAGE [Info] Document is null for editor: manageDrivers.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:02.690
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/manageDrivers.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:02.925
+!MESSAGE [Info] Document is null for editor: manageVehicles.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:02.926
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/manageVehicles.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:03.137
+!MESSAGE [Info] Document is null for editor: viewAssignments.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:03.138
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/viewAssignments.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:03.269
+!MESSAGE [Info] Document is null for editor: TripDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:03.270
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/TripDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:03.395
+!MESSAGE [Info] Document is null for editor: tripDetails.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:03.396
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/tripDetails.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:03.563
+!MESSAGE [Info] Document is null for editor: editAssignment.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:03.564
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/editAssignment.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:03.793
+!MESSAGE [Info] Document is null for editor: UpdateAssignmentServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:03.794
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/UpdateAssignmentServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:03.967
+!MESSAGE [Info] Document is null for editor: AssignResourcesServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:03.968
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/AssignResourcesServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:04.093
+!MESSAGE [Info] Document is null for editor: DriverVehicleDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:04.093
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/DriverVehicleDAO.java
+!SESSION 2025-03-11 02:47:11.435 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product -data file:/home/mwaki/eclipse-workspace2/
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-11 02:47:26.238
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-11 02:47:32.864
+!MESSAGE Logback config file: /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:56.838
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:56.941
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:47:56.984
+!MESSAGE [Info] No proxy data found
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 02:48:02.884
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 02:48:04.935
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:48:28.085
+!MESSAGE [Info] Java format preference cache for AcademicTripSystem is updated. key: org.eclipse.jdt.core.formatter.tabulation.char, new value: tab
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 02:48:28.096
+!MESSAGE [Info] Java format preference cache for AcademicTripSystem is updated. key: org.eclipse.jdt.core.formatter.tabulation.size, new value: 4
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-03-11 04:30:27.350
+!MESSAGE [Error]	[default] Error sending telemetry FetchError: The pending stream has been canceled (caused by: getaddrinfo ENOTFOUND telemetry.individual.githubcopilot.com)
+    at fetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:99:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at cachingFetch (/snapshot/copilot-client/node_modules/@adobe/helix-fetch/src/fetch/index.js:288:16)
+    at k1e.fetch (/snapshot/copilot-client/lib/src/network/helix.ts:94:22) {
+  type: 'system',
+  _name: 'FetchError',
+  code: 'ERR_HTTP2_STREAM_CANCEL',
+  errno: undefined,
+  erroredSysCall: undefined
+}
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 09:16:25.455
+!MESSAGE [Info] Language ID not found for extension: jsp
+
+!ENTRY org.eclipse.wst.server.core 4 0 2025-03-11 09:42:39.154
+!MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:40.951
+!MESSAGE [Info] Document is null for editor: manageDrivers.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:40.952
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/manageDrivers.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.063
+!MESSAGE [Info] Document is null for editor: TripDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.064
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/TripDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.115
+!MESSAGE [Info] Document is null for editor: DriverVehicleDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.116
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/DriverVehicleDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.156
+!MESSAGE [Info] Document is null for editor: InchargeGroupDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.156
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/InchargeGroupDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.206
+!MESSAGE [Info] Document is null for editor: viewTrip.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.206
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/lecturer/viewTrip.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.248
+!MESSAGE [Info] Document is null for editor: dashboard.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.250
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/lecturer/dashboard.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.289
+!MESSAGE [Info] Document is null for editor: addTrip.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.290
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/lecturer/addTrip.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.335
+!MESSAGE [Info] Document is null for editor: AddTripServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:58:41.335
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/AddTripServlet.java
+
+!ENTRY org.eclipse.debug.core 4 125 2025-03-11 10:58:43.519
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+!SESSION 2025-03-11 10:58:45.434 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product -data file:/home/mwaki/eclipse-workspace2/
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-11 10:58:51.736
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-11 10:58:54.910
+!MESSAGE Logback config file: /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:59:12.673
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:59:12.851
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 10:59:13.014
+!MESSAGE [Info] No proxy data found
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 10:59:19.495
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 10:59:22.562
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY org.eclipse.wst.server.core 4 0 2025-03-11 11:01:34.266
+!MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2025-03-11 11:04:05.798
+!MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:04:28.612
+!MESSAGE [Info] Java format preference cache for AcademicTripSystem is updated. key: org.eclipse.jdt.core.formatter.tabulation.char, new value: tab
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:04:28.614
+!MESSAGE [Info] Java format preference cache for AcademicTripSystem is updated. key: org.eclipse.jdt.core.formatter.tabulation.size, new value: 4
+
+!ENTRY org.eclipse.wst.server.core 4 0 2025-03-11 11:04:56.493
+!MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:05:01.065
+!MESSAGE [Info] Document is null for editor: AddTripServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:05:01.066
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/AddTripServlet.java
+
+!ENTRY org.eclipse.wst.server.core 4 0 2025-03-11 11:07:44.207
+!MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2025-03-11 11:08:32.000
+!MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:10:40.045
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:10:40.058
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 11:10:43.278
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 11:10:44.258
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-03-11 11:10:53.119
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-03-11 11:10:53.122
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-03-11 11:10:53.125
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-03-11 11:10:53.126
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-03-11 11:10:53.142
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-03-11 11:10:53.147
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:16:35.727
+!MESSAGE [Info] Document is null for editor: web.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:16:35.728
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/WEB-INF/web.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:16:35.784
+!MESSAGE [Info] Document is null for editor: AddTripServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:16:35.787
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/AddTripServlet.java
+!SESSION 2025-03-11 11:16:39.301 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product -data file:/home/mwaki/eclipse-workspace2/
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-11 11:16:47.145
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-11 11:16:50.246
+!MESSAGE Logback config file: /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:17:06.150
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:17:06.265
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:17:06.452
+!MESSAGE [Info] No proxy data found
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 11:17:12.865
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 11:17:16.242
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:22:02.398
+!MESSAGE [Info] Java format preference cache for AcademicTripSystem is updated. key: org.eclipse.jdt.core.formatter.tabulation.char, new value: tab
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:22:02.398
+!MESSAGE [Info] Java format preference cache for AcademicTripSystem is updated. key: org.eclipse.jdt.core.formatter.tabulation.size, new value: 4
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 11:22:20.283
+!MESSAGE [Info]	[fetchCompletions] request.response: [https://proxy.individual.githubcopilot.com/v1/engines/copilot-codex/completions] took 3745 ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 11:22:20.283
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 11:22:20.284
+!MESSAGE [Info]	[streamChoices] request done: headerRequestId: [c3ce419c-d54e-49ab-8dc0-18c9377dc438] model deployment ID: [d277-20250305204619]
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 11:47:01.320
+!MESSAGE [Info] Language ID not found for extension: jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:25:30.609
+!MESSAGE [Info] Document is null for editor: AddTripServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:25:30.613
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/controller/AddTripServlet.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:25:30.711
+!MESSAGE [Info] Document is null for editor: TripDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:25:30.712
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/dao/TripDAO.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:25:30.784
+!MESSAGE [Info] Document is null for editor: error.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:25:30.785
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/error.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:25:30.846
+!MESSAGE [Info] Document is null for editor: dashboard.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:25:30.850
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/lecturer/dashboard.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:25:30.929
+!MESSAGE [Info] Document is null for editor: addTrip.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:25:30.935
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/lecturer/addTrip.jsp
+!SESSION 2025-03-11 12:25:36.053 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product -data file:/home/mwaki/eclipse-workspace2/
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-11 12:25:45.439
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-11 12:25:50.211
+!MESSAGE Logback config file: /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:26:04.499
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:26:04.526
+!MESSAGE [Info] No proxy data found
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:26:04.545
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 12:26:09.602
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 12:26:11.791
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:29:12.742
+!MESSAGE [Info] Document is null for editor: addTrip.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:29:12.746
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/lecturer/addTrip.jsp
+!SESSION 2025-03-11 12:29:17.900 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product -data file:/home/mwaki/eclipse-workspace2/
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-11 12:29:30.784
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-11 12:29:36.001
+!MESSAGE Logback config file: /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:29:59.832
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:29:59.886
+!MESSAGE [Info] No proxy data found
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:29:59.897
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 12:30:08.251
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 12:30:11.653
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:32:36.020
+!MESSAGE [Info] Language ID not found for extension: jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:39:45.649
+!MESSAGE [Info] Document is null for editor: addTrip.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:39:45.651
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/lecturer/addTrip.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:39:45.775
+!MESSAGE [Info] Document is null for editor: dashboard.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:39:45.776
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/transport/dashboard.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:52:44.963
+!MESSAGE [Info] Document is null for editor: Course.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:52:44.964
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/java/com/academictrip/model/Course.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:52:45.110
+!MESSAGE [Info] Document is null for editor: editTrip.jsp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:52:45.113
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///home/mwaki/eclipse-workspace2/AcademicTripSystem/src/main/webapp/lecturer/editTrip.jsp
+!SESSION 2025-03-11 12:52:52.559 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product -data file:/home/mwaki/eclipse-workspace2/
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-11 12:53:03.514
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-03-11 12:53:09.520
+!MESSAGE Logback config file: /home/mwaki/eclipse-workspace2/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:53:37.648
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:53:37.762
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-03-11 12:53:37.986
+!MESSAGE [Info] No proxy data found
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 12:53:43.548
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.259.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-03-11 12:53:46.926
+!MESSAGE [Info]	[certificates] Removed 8 expired certificates
+
+!ENTRY org.eclipse.wst.server.core 4 0 2025-03-11 12:55:30.883
+!MESSAGE Server Tomcat v9.0 Server at localhost failed to start.

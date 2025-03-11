@@ -10,10 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.academictrip.dao.CourseDAO;
 import com.academictrip.dao.DestinationDAO;
-import com.academictrip.dao.DriverVehicleDAO;
 import com.academictrip.dao.FacultyDAO;
 import com.academictrip.dao.InchargeDAO;
 import com.academictrip.dao.InchargeGroupDAO;
@@ -21,15 +21,14 @@ import com.academictrip.dao.TripDAO;
 import com.academictrip.dao.TripGroupDAO;
 import com.academictrip.model.Course;
 import com.academictrip.model.Destination;
-import com.academictrip.model.DriverVehicle;
 import com.academictrip.model.Faculty;
 import com.academictrip.model.Incharge;
 import com.academictrip.model.InchargeGroup;
 import com.academictrip.model.Trip;
 import com.academictrip.model.TripGroup;
 
-
-@WebServlet("/AddTripServlet")
+//
+//@WebServlet("/AddTripServlet")
 
 public class AddTripServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -44,14 +43,33 @@ public class AddTripServlet extends HttpServlet {
         String inchargePhone = request.getParameter("inchargePhone");
         String inchargeEmail = request.getParameter("inchargeEmail");
         String groupName = request.getParameter("groupName");
-        int studentCount = Integer.parseInt(request.getParameter("studentCount"));
+        String studentCountStr = request.getParameter("studentCount");
         String courseName = request.getParameter("courseName");
         String facultyName = request.getParameter("facultyName");
         String destinationName = request.getParameter("destinationName");
 
+        // Validate required fields
+        if (startDate == null || endDate == null || inchargeFirstName == null ||
+            inchargeLastName == null || inchargePhone == null || inchargeEmail == null ||
+            groupName == null || studentCountStr == null || courseName == null ||
+            facultyName == null || destinationName == null) {
+
+            request.setAttribute("errorMessage", "All fields are required");
+            request.getRequestDispatcher("/lecturer/addTrip.jsp").forward(request, response);
+            return;
+        }
+
+        int studentCount;
+        try {
+            studentCount = Integer.parseInt(studentCountStr);
+        } catch (NumberFormatException e) {
+            request.setAttribute("errorMessage", "Invalid student count");
+            request.getRequestDispatcher("/lecturer/addTrip.jsp").forward(request, response);
+            return;
+        }
 
         try {
-        	 System.out.println("=== STARTING TRIP CREATION ===");
+            System.out.println("=== STARTING TRIP CREATION ===");
             // 1. Faculty
             FacultyDAO facultyDAO = new FacultyDAO();
             Faculty faculty = facultyDAO.findFacultyByName(facultyName);
@@ -85,7 +103,7 @@ public class AddTripServlet extends HttpServlet {
             }
 
 
-            // 5. Destination
+            // 4. Destination
             DestinationDAO destinationDAO = new DestinationDAO();
             Destination destination = destinationDAO.findDestinationByName(destinationName);
             if (destination == null) {
@@ -94,7 +112,7 @@ public class AddTripServlet extends HttpServlet {
                 destinationDAO.insertDestination(destination); // Auto-generates destination_id
             }
 
-            // 6. Trip_Group
+            // 5. Trip_Group
             TripGroupDAO tripGroupDAO = new TripGroupDAO();
             TripGroup tripGroup = new TripGroup();
             tripGroup.setGroupName(groupName);
@@ -102,20 +120,20 @@ public class AddTripServlet extends HttpServlet {
             tripGroup.setCourseId(course.getCourseId());
             tripGroupDAO.insertTripGroup(tripGroup);
 
-            // 4. Incharge_Group
+            // 6. Incharge_Group - MODIFIED TO ENSURE ID IS GENERATED
             InchargeGroupDAO inchargeGroupDAO = new InchargeGroupDAO();
-            InchargeGroup group = new InchargeGroup();
-            group.setInchargeId(incharge.getInchargeId());
-            group.setGroupId(tripGroup.getGroupId());  // Use TripGroup's generated ID
-            inchargeGroupDAO.insertInchargeGroup(group);
+            InchargeGroup inchargeGroup = new InchargeGroup();
+            inchargeGroup.setInchargeId(incharge.getInchargeId());
+            inchargeGroup.setGroupId(tripGroup.getGroupId());
 
-            // 6. Create temporary driver-vehicle assignment
-            DriverVehicleDAO driverVehicleDAO = new DriverVehicleDAO();
-            DriverVehicle tempAssignment = new DriverVehicle();
-            tempAssignment.setDriverId("DEFAULT"); // Use a placeholder driver
-            tempAssignment.setVehicleId("DEFAULT"); // Use a placeholder vehicle
-            String driverVehicleId = driverVehicleDAO.insertAssignment(tempAssignment);
+            // Make sure to generate and set the incharge_group_id
+            String inchargeGroupId = inchargeGroupDAO.insertInchargeGroup(inchargeGroup);
 
+            // Explicitly set the incharge_group_id on our object
+            inchargeGroup.setInchargeGroupId(inchargeGroupId);
+
+            // Print debug information
+            System.out.println("Generated incharge_group_id: " + inchargeGroupId);
 
             // Convert String dates to LocalDate objects
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -127,17 +145,22 @@ public class AddTripServlet extends HttpServlet {
             Trip trip = new Trip();
             trip.setStartDate(startLocalDate);
             trip.setEndDate(endLocalDate);
-            trip.setInchargeGroupId(group.getInchargeGroupId());
+
+            // Debug to verify incharge_group_id is not null
+            System.out.println("Setting incharge_group_id on Trip: " + inchargeGroup.getInchargeGroupId());
+
+            // Ensure we're setting the incharge_group_id properly
+            trip.setInchargeGroupId(inchargeGroup.getInchargeGroupId());
             trip.setDestinationId(destination.getDestinationId());
 
             tripDAO.insertTrip(trip); // This now generates trip_id
 
+            // After successful creation, redirect to the dashboard
+            HttpSession session = request.getSession();
+            session.setAttribute("successMessage", "Trip created successfully!");
+            response.sendRedirect(request.getContextPath() + "/lecturer/dashboard.jsp");
 
-
-            response.sendRedirect(request.getContextPath() + "/success.jsp");
-
-
-         // After each DAO operation
+            // After each DAO operation
             System.out.println("Inserted Faculty: " + faculty);
             System.out.println("Inserted Course: " + course);
             System.out.println("Inserted Incharge: " + incharge);
@@ -146,12 +169,20 @@ public class AddTripServlet extends HttpServlet {
             System.out.println("=== TRIP CREATION SUCCESSFUL ===");
 
         } catch (SQLException e) {
-        	// Enhanced error logging
+            // Enhanced error logging
             System.err.println("SQL Error Code: " + e.getErrorCode());
             System.err.println("SQL State: " + e.getSQLState());
+            System.err.println("Error Message: " + e.getMessage());
             e.printStackTrace();
-            request.setAttribute("error", e);
-            request.getRequestDispatcher("/error.jsp").forward(request, response);
+
+            request.setAttribute("errorMessage", "Failed to create trip: " + e.getMessage());
+            request.getRequestDispatcher("/lecturer/addTrip.jsp").forward(request, response);
+        } catch (Exception e) {
+            System.err.println("Unexpected error: " + e.getMessage());
+            e.printStackTrace();
+
+            request.setAttribute("errorMessage", "Failed to create trip: " + e.getMessage());
+            request.getRequestDispatcher("/lecturer/addTrip.jsp").forward(request, response);
         }
     }
 }

@@ -77,10 +77,27 @@ public class DestinationDAO {
                     Destination destination = new Destination();
                     destination.setDestinationId(rs.getString("destination_id"));
                     destination.setName(rs.getString("name"));
+
+                    // Handle optional fields that may not exist in the database schema
+                    try {
+                        destination.setLocation(rs.getString("location"));
+                    } catch (SQLException e) {
+                        // Column doesn't exist, set a default or leave as null
+                        destination.setLocation("Unknown");
+                    }
+
+                    try {
+                        destination.setDistance(rs.getInt("distance"));
+                    } catch (SQLException e) {
+                        // Column doesn't exist, set a default value
+                        destination.setDistance(0);
+                    }
+
                     return destination;
                 }
             }
         }
+
         return null;
     }
 
@@ -91,7 +108,7 @@ public class DestinationDAO {
      */
     public List<Destination> getAllDestinations() throws SQLException {
         List<Destination> destinations = new ArrayList<>();
-        String sql = "SELECT * FROM Destination";
+        String sql = "SELECT * FROM Destination ORDER BY name";
 
         try (Connection conn = DatabaseUtil.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
@@ -102,6 +119,20 @@ public class DestinationDAO {
                     rs.getString("destination_id"),
                     rs.getString("name")
                 );
+
+                // Handle optional fields that may not exist in the database schema
+                try {
+                    destination.setLocation(rs.getString("location"));
+                } catch (SQLException e) {
+                    destination.setLocation("Unknown");
+                }
+
+                try {
+                    destination.setDistance(rs.getInt("distance"));
+                } catch (SQLException e) {
+                    destination.setDistance(0);
+                }
+
                 destinations.add(destination);
             }
         }

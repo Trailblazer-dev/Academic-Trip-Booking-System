@@ -15,7 +15,7 @@ import com.academictrip.model.Vehicle;
 
 /**
  * Servlet to handle adding new vehicles
- * 
+ *
  * FIXED: Renamed servlet mapping to avoid conflict with another servlet
  */
 @WebServlet("/transport/addVehicleAction")

@@ -49,6 +49,15 @@ public class Driver {
         return null;
     }
 
+    // Alias methods for JSP consistency
+    public String getName() {
+        return getFullName();
+    }
+
+    public String getPhone() {
+        return this.phoneNumber != null ? this.phoneNumber.toString() : "";
+    }
+
     @Override
     public String toString() {
         return "Driver [driverId=" + driverId + ", name=" + getFullName() + "]";

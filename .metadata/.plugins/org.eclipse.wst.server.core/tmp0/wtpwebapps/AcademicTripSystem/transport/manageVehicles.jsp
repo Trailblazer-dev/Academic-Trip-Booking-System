@@ -3,9 +3,6 @@
 <%@ page import="com.academictrip.model.Vehicle" %>
 <%@ page import="java.util.List" %>
 <%
-    // Remove duplicate declarations of pageName and currentUser
-    // They are already declared in transportHeader.jsp
-    
     // Your existing code for vehicle management
     VehicleDAO vehicleDAO = new VehicleDAO();
     List<Vehicle> vehicles = vehicleDAO.getAllVehicles();
@@ -24,114 +21,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Vehicles | Academic Trip System</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 min-h-screen">
-    <!-- Include header -->
-    <%@ include file="../includes/transportHeader.jsp" %>
-
-    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <!-- Page header -->
-        <div class="md:flex md:items-center md:justify-between mb-8">
-            <div class="flex-1 min-w-0">
-                <h1 class="text-3xl font-bold text-gray-900">Manage Vehicles</h1>
-                <p class="mt-1 text-sm text-gray-500">Add, edit and manage the fleet of vehicles available for academic trips.</p>
-            </div>
-            <div class="mt-4 md:mt-0">
-                <button type="button" onclick="openAddModal()" 
-                        class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    <i class="fas fa-plus mr-2"></i> Add New Vehicle
-                </button>
-            </div>
-        </div>
-
-        <!-- Alert Messages -->
-        <% if (successMessage != null && !successMessage.isEmpty()) { %>
-            <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-6" id="successAlert">
-                <div class="flex">
-                    <div class="flex-shrink-0">
-                        <i class="fas fa-check-circle text-green-500"></i>
-                    </div>
-                    <div class="ml-3">
-                        <p class="text-green-700"><%= successMessage %></p>
-                    </div>
-                    <div class="ml-auto">
-                        <button onclick="document.getElementById('successAlert').style.display='none'" class="text-green-500">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        <% } %>
+<body class="bg-gray-50">
+    <div class="page-wrapper">
+        <!-- Include standardized header -->
+        <jsp:include page="../includes/transportHeader.jsp" />
         
-        <% if (errorMessage != null && !errorMessage.isEmpty()) { %>
-            <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6" id="errorAlert">
-                <div class="flex">
-                    <div class="flex-shrink-0">
-                        <i class="fas fa-exclamation-circle text-red-500"></i>
+        <div class="main-content">
+            <div class="container mx-auto px-4 py-8">
+                <!-- Page header -->
+                <div class="md:flex md:items-center md:justify-between mb-8">
+                    <div class="flex-1 min-w-0">
+                        <h1 class="text-3xl font-bold text-gray-900">
+                            <i class="fas fa-bus mr-2 text-secondary"></i>Manage Vehicles
+                        </h1>
+                        <p class="mt-1 text-sm text-gray-500">Add, edit and manage the fleet of vehicles available for academic trips.</p>
                     </div>
-                    <div class="ml-3">
-                        <p class="text-red-700"><%= errorMessage %></p>
-                    </div>
-                    <div class="ml-auto">
-                        <button onclick="document.getElementById('errorAlert').style.display='none'" class="text-red-500">
-                            <i class="fas fa-times"></i>
+                    <div class="mt-4 md:mt-0">
+                        <button id="addVehicleBtn" class="btn btn-secondary hover:bg-orange-700 text-white py-2 px-4 rounded-lg flex items-center">
+                            <i class="fas fa-plus-circle mr-2"></i> Add New Vehicle
                         </button>
                     </div>
                 </div>
-            </div>
-        <% } %>
+                
+                <!-- Alert Messages -->
+                <% if (successMessage != null && !successMessage.isEmpty()) { %>
+                    <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-6" id="successAlert">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-green-700"><%= successMessage %></p>
+                            </div>
+                            <div class="ml-auto">
+                                <button onclick="document.getElementById('successAlert').style.display='none'" class="text-green-500">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+                
+                <% if (errorMessage != null && !errorMessage.isEmpty()) { %>
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6" id="errorAlert">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-exclamation-circle text-red-500"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-red-700"><%= errorMessage %></p>
+                            </div>
+                            <div class="ml-auto">
+                                <button onclick="document.getElementById('errorAlert').style.display='none'" class="text-red-500">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
 
-        <!-- Vehicle List -->
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-            <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-50">
-                        <tr>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Registration</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Make & Model</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Capacity</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                        <% if (vehicles != null && !vehicles.isEmpty()) { 
-                            for (Vehicle vehicle : vehicles) { %>
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= vehicle.getRegistration() %></td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= vehicle.getMake() %> <%= vehicle.getModel() %></td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= vehicle.getType() %></td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= vehicle.getCapacity() %> passengers</td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <% if (vehicle.isAvailable()) { %>
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Available</span>
-                                    <% } else { %>
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">In Use</span>
-                                    <% } %>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                    <div class="flex space-x-2">
-                                        <button onclick="openEditModal('<%= vehicle.getVehicleId() %>', '<%= vehicle.getRegistration() %>', '<%= vehicle.getMake() %>', '<%= vehicle.getModel() %>', '<%= vehicle.getYear() %>', '<%= vehicle.getType() %>', '<%= vehicle.getCapacity() %>')" class="text-indigo-600 hover:text-indigo-900">
-                                            <i class="fas fa-edit"></i> Edit
-                                        </button>
-                                        <button onclick="confirmDelete('<%= vehicle.getVehicleId() %>', '<%= vehicle.getMake() %> <%= vehicle.getModel() %>')" class="text-red-600 hover:text-red-900">
-                                            <i class="fas fa-trash-alt"></i> Delete
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                        <% } } else { %>
-                            <tr>
-                                <td colspan="6" class="px-6 py-4 text-center text-sm text-gray-500">No vehicles available</td>
-                            </tr>
-                        <% } %>
-                    </tbody>
-                </table>
+                <!-- Vehicle List -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Registration</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Make & Model</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Capacity</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <% if (vehicles != null && !vehicles.isEmpty()) { 
+                                    for (Vehicle vehicle : vehicles) { %>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= vehicle.getRegistration() %></td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= vehicle.getMake() %> <%= vehicle.getModel() %></td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= vehicle.getType() %></td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= vehicle.getCapacity() %> passengers</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <% if (vehicle.isAvailable()) { %>
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Available</span>
+                                            <% } else { %>
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">In Use</span>
+                                            <% } %>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <div class="flex space-x-2">
+                                                <button onclick="openEditModal('<%= vehicle.getVehicleId() %>', '<%= vehicle.getRegistration() %>', '<%= vehicle.getMake() %>', '<%= vehicle.getModel() %>', '<%= vehicle.getYear() %>', '<%= vehicle.getType() %>', '<%= vehicle.getCapacity() %>')" class="text-indigo-600 hover:text-indigo-900">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </button>
+                                                <button onclick="confirmDelete('<%= vehicle.getVehicleId() %>', '<%= vehicle.getMake() %> <%= vehicle.getModel() %>')" class="text-red-600 hover:text-red-900">
+                                                    <i class="fas fa-trash-alt"></i> Delete
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <% } } else { %>
+                                    <tr>
+                                        <td colspan="6" class="px-6 py-4 text-center text-sm text-gray-500">No vehicles available</td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
+        
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2023 Academic Trip System. All rights reserved.</p>
+                <p class="mt-2 text-sm text-gray-300">Transport Management Module</p>
+            </div>
+        </footer>
     </div>
 
     <!-- Add Vehicle Modal -->
@@ -330,81 +340,79 @@
         </div>
     </div>
     
-    <!-- Include footer -->
-    <%@ include file="../includes/footer.jsp" %>
-    
+    <!-- Your existing JavaScript code -->
     <script>
-    // Modal handling functions
-    function openAddModal() {
-        document.getElementById('addVehicleModal').classList.remove('hidden');
-    }
-    
-    function openEditModal(vehicleId, registration, make, model, year, type, capacity) {
-        document.getElementById('editVehicleId').value = vehicleId;
-        document.getElementById('editRegistration').value = registration;
-        document.getElementById('editMake').value = make;
-        document.getElementById('editModel').value = model;
-        document.getElementById('editYear').value = year;
-        document.getElementById('editType').value = type;
-        document.getElementById('editCapacity').value = capacity;
-        document.getElementById('editVehicleModal').classList.remove('hidden');
-    }
-    
-    function confirmDelete(vehicleId, vehicleName) {
-        document.getElementById('deleteVehicleId').value = vehicleId;
-        document.getElementById('deleteConfirmationText').textContent = 
-            `Are you sure you want to delete the vehicle ${vehicleName}? This action cannot be undone.`;
-        document.getElementById('deleteModal').classList.remove('hidden');
-    }
-    
-    function closeModal(modalId) {
-        document.getElementById(modalId).classList.add('hidden');
-    }
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        // Auto-hide alerts after 5 seconds
-        setTimeout(function() {
-            const alerts = document.querySelectorAll('#successAlert, #errorAlert');
-            alerts.forEach(alert => {
-                if (alert) alert.style.display = 'none';
-            });
-        }, 5000);
+        // Modal handling functions
+        function openAddModal() {
+            document.getElementById('addVehicleModal').classList.remove('hidden');
+        }
         
-        // Form validation
-        const forms = document.querySelectorAll('#addVehicleForm, #editVehicleForm');
-        forms.forEach(form => {
-            form.addEventListener('submit', function(e) {
-                const requiredFields = form.querySelectorAll('[required]');
-                let isValid = true;
-                
-                requiredFields.forEach(field => {
-                    if (!field.value.trim()) {
-                        isValid = false;
-                        field.classList.add('border-red-500');
-                    } else {
-                        field.classList.remove('border-red-500');
+        function openEditModal(vehicleId, registration, make, model, year, type, capacity) {
+            document.getElementById('editVehicleId').value = vehicleId;
+            document.getElementById('editRegistration').value = registration;
+            document.getElementById('editMake').value = make;
+            document.getElementById('editModel').value = model;
+            document.getElementById('editYear').value = year;
+            document.getElementById('editType').value = type;
+            document.getElementById('editCapacity').value = capacity;
+            document.getElementById('editVehicleModal').classList.remove('hidden');
+        }
+        
+        function confirmDelete(vehicleId, vehicleName) {
+            document.getElementById('deleteVehicleId').value = vehicleId;
+            document.getElementById('deleteConfirmationText').textContent = 
+                `Are you sure you want to delete the vehicle ${vehicleName}? This action cannot be undone.`;
+            document.getElementById('deleteModal').classList.remove('hidden');
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-hide alerts after 5 seconds
+            setTimeout(function() {
+                const alerts = document.querySelectorAll('#successAlert, #errorAlert');
+                alerts.forEach(alert => {
+                    if (alert) alert.style.display = 'none';
+                });
+            }, 5000);
+            
+            // Form validation
+            const forms = document.querySelectorAll('#addVehicleForm, #editVehicleForm');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    const requiredFields = form.querySelectorAll('[required]');
+                    let isValid = true;
+                    
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.classList.add('border-red-500');
+                        } else {
+                            field.classList.remove('border-red-500');
+                        }
+                    });
+                    
+                    if (!isValid) {
+                        e.preventDefault();
+                        alert('Please fill in all required fields');
                     }
                 });
-                
-                if (!isValid) {
-                    e.preventDefault();
-                    alert('Please fill in all required fields');
+            });
+            
+            // Add keyboard event for ESC key to close modals
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const modals = document.querySelectorAll('#addVehicleModal, #editVehicleModal, #deleteModal');
+                    modals.forEach(modal => {
+                        if (!modal.classList.contains('hidden')) {
+                            modal.classList.add('hidden');
+                        }
+                    });
                 }
             });
         });
-        
-        // Add keyboard event for ESC key to close modals
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const modals = document.querySelectorAll('#addVehicleModal, #editVehicleModal, #deleteModal');
-                modals.forEach(modal => {
-                    if (!modal.classList.contains('hidden')) {
-                        modal.classList.add('hidden');
-                    }
-                });
-            }
-        });
-    });
     </script>
 </body>
 </html>

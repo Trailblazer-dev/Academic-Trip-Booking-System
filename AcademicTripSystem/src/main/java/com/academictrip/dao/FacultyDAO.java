@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.academictrip.model.Faculty;
 import com.academictrip.util.DatabaseUtil;
@@ -58,5 +60,51 @@ public class FacultyDAO {
                 return null;
             }
         }
+    }
+
+    // Get all faculties
+    public List<Faculty> getAllFaculties() throws SQLException {
+        List<Faculty> faculties = new ArrayList<>();
+        String sql = "SELECT * FROM Faculty ORDER BY name";
+
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                Faculty faculty = new Faculty();
+                faculty.setFacultyId(rs.getString("faculty_id"));
+                faculty.setName(rs.getString("name"));
+                faculties.add(faculty);
+            }
+        }
+        return faculties;
+    }
+
+    /**
+     * Get faculty by ID
+     * @param facultyId the faculty ID to lookup
+     * @return Faculty object if found, null otherwise
+     * @throws SQLException if database error occurs
+     */
+    public Faculty getFacultyById(String facultyId) throws SQLException {
+        String sql = "SELECT * FROM Faculty WHERE faculty_id = ?";
+        
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setString(1, facultyId);
+            
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    Faculty faculty = new Faculty();
+                    faculty.setFacultyId(rs.getString("faculty_id"));
+                    faculty.setName(rs.getString("name"));
+                    return faculty;
+                }
+            }
+        }
+        
+        return null;
     }
 }

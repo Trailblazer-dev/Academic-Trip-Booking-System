@@ -19,6 +19,16 @@ public class Trip {
     private String purpose; // Additional field not in DB schema
     private Destination destination; // Reference to Destination object
 
+    // Additional fields for relationships
+    private Course course;
+    private Faculty faculty;
+    private InchargeGroup inchargeGroup;
+    private DriverVehicle driverVehicle;
+    private String notes;
+    private LocalDate createdAt;
+    private String inchargeId;
+    private String lecturerId;
+
     // Constructors
     public Trip() {}
 
@@ -144,6 +154,102 @@ public class Trip {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    // Id getter and setter
+    public String getId() {
+        return this.getTripId();
+    }
+
+    // Trip date accessor for UI consistency
+    public LocalDate getTripDate() {
+        return this.getStartDate();
+    }
+
+    // Enhanced getter for Course that ensures non-null return
+    public Course getCourse() {
+        if (course == null) {
+            // Create a default Course if none exists
+            course = new Course();
+            course.setCourseName("Not Assigned");
+            course.setCourseId("N/A");
+        }
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    // Enhanced getter for Faculty that ensures non-null return
+    public Faculty getFaculty() {
+        if (faculty == null) {
+            // Create a default Faculty if none exists
+            faculty = new Faculty();
+            faculty.setName("Not Assigned");
+        }
+        return faculty;
+    }
+
+    public void setFaculty(Faculty faculty) {
+        this.faculty = faculty;
+    }
+
+    // Getter and setter for inchargeGroup
+    public InchargeGroup getInchargeGroup() {
+        return inchargeGroup;
+    }
+
+    public void setInchargeGroup(InchargeGroup inchargeGroup) {
+        this.inchargeGroup = inchargeGroup;
+    }
+
+    // Getter and setter for createdAt
+    public LocalDate getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDate createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    // Getter and setter for notes
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    // Getter and setter for inchargeId
+    public String getInchargeId() {
+        return inchargeId;
+    }
+
+    public void setInchargeId(String inchargeId) {
+        this.inchargeId = inchargeId;
+    }
+
+    // Getter and setter for lecturerId
+    public String getLecturerId() {
+        return lecturerId;
+    }
+
+    public void setLecturerId(String lecturerId) {
+        this.lecturerId = lecturerId;
+    }
+
+    // Getter and setter for driverVehicle
+    public DriverVehicle getDriverVehicle() {
+        return driverVehicle;
+    }
+
+    public void setDriverVehicle(DriverVehicle driverVehicle) {
+        this.driverVehicle = driverVehicle;
+        if (driverVehicle != null) {
+            this.driverVehicleId = driverVehicle.getDriverVehicleId();
+        }
     }
 
     @Override

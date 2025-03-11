@@ -7,6 +7,7 @@ public class Incharge {
     private int phoneNumber;
     private String email;
     private String facultyId;
+    private Faculty faculty;
 
     // Constructors
     public Incharge() {}
@@ -32,6 +33,43 @@ public class Incharge {
     public void setEmail(String email) { this.email = email; }
     public String getFacultyId() { return facultyId; }
     public void setFacultyId(String facultyId) { this.facultyId = facultyId; }
+
+    // For backward compatibility
+    public void setName(String name) {
+        if (name != null && !name.isEmpty()) {
+            String[] parts = name.split(" ", 2);
+            this.firstName = parts[0];
+            if (parts.length > 1) {
+                this.lastName = parts[1];
+            } else {
+                this.lastName = "";
+            }
+        }
+    }
+
+    // Faculty relationship
+    public Faculty getFaculty() {
+        return faculty;
+    }
+    public void setFaculty(Faculty faculty) {
+        this.faculty = faculty;
+        if (faculty != null) {
+            this.facultyId = faculty.getFacultyId();
+        }
+    }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
+    // Additional alias methods for JSP consistency
+    public String getName() {
+        return getFullName();
+    }
+
+    public String getPhone() {
+        return String.valueOf(phoneNumber);
+    }
 
     @Override
     public String toString() {

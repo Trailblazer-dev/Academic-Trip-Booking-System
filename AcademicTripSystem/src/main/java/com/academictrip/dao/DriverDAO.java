@@ -194,7 +194,7 @@ public class DriverDAO {
 
         return driversMap;
     }
-    
+
     /**
      * Check if a driver is currently assigned to a trip
      * @param driverId The ID of the driver to check
@@ -220,7 +220,7 @@ public class DriverDAO {
         }
         return false;
     }
-    
+
     /**
      * Delete a driver from the database by ID
      * @param driverId The ID of the driver to delete

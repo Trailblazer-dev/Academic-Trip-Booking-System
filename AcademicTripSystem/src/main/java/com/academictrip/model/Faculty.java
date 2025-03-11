@@ -19,6 +19,6 @@ public class Faculty {
 
     @Override
     public String toString() {
-        return "Faculty [facultyId=" + facultyId + ", name=" + name + "]";
+        return name;
     }
 }

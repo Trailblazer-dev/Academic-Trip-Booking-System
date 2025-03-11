@@ -39,20 +39,21 @@ public class Vehicle {
     public boolean isAvailable() { return available; }
     public void setAvailable(boolean available) { this.available = available; }
 
-    /**
-     * Get the registration number (alias for plateNumber)
-     * @return vehicle's plate number/registration
-     */
+    // Alias methods to handle varied naming conventions
     public String getRegistration() {
         return plateNumber;
     }
 
-    /**
-     * Get the vehicle type
-     * @return type of vehicle (always "Bus" for this application)
-     */
+    public String getRegistrationNumber() {
+        return plateNumber;
+    }
+
+    public void setRegistration(String registration) {
+        this.plateNumber = registration;
+    }
+
     public String getType() {
-        return "Bus";
+        return make + " " + model;
     }
 
     @Override
