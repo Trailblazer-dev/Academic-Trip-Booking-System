@@ -9,12 +9,18 @@ The Academic Trip System is a comprehensive web application designed to manage a
 - **Dashboard**: Intuitive dashboards for different user roles
 - **Reporting**: Generate reports on trips, resource utilization, and more
 
+<<<<<<< HEAD
 ## Technology Stack
 - Java EE
 - JSP & Servlets
 - MySQL Database
 - HTML5, CSS3, JavaScript
 - Tailwind CSS Framework
+=======
+### User Guides
+- [Lecturer User Guide](./AcademicTripSystem/user-guides/lecturer-guide.md) - Instructions for lecturers on how to manage academic trips
+- [Transport Officer User Guide](user-guides/transport-guide.md) - Instructions for transport officers on managing vehicles, drivers and assignments
+>>>>>>> 0cd72e4fac87a66899fae80a37abdbc78a50fff9
 
 ## Getting Started
 1. Clone the repository
