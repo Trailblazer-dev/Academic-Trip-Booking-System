@@ -17,8 +17,8 @@ The Academic Trip System is a comprehensive web application designed to manage a
 - Tailwind CSS Framework
 
 ### User Guides
-- [Lecturer User Guide](./AcademicTripSystem/user-guides/lecturer-guide.md) - Instructions for lecturers on how to manage academic trips
-- [Transport Officer User Guide](./AcademicTripSystem/user-guides/transport-guide.md) - Instructions for transport officers on managing vehicles, drivers and assignments
+- [Lecturer User Guide](./AcademicTripSystem/docs/user-guides/lecturer-guide.md) - Instructions for lecturers on how to manage academic trips
+- [Transport Officer User Guide](./AcademicTripSystem/docs/user-guides/transport-guide.md) - Instructions for transport officers on managing vehicles, drivers and assignments
 
 
 ## Getting Started
@@ -35,6 +35,6 @@ For more information, refer to the following documentation:
 - **Video Tutorial**: [Download/Watch System Tutorial](../AcademicTripSystem/src/main/resources/transportsystem.mp4)
 
 ## Screenshots
-![Login Screen](../AcademicTripSystem/src/main/resources/login_ats.png)
-![Lecturer Dashboard](../AcademicTripSystem/src/main/resources/lecturer_dashboard.png)
-![Transport Dashboard](../AcademicTripSystem/src/main/resources/transport_dashboard.png)
+![Login Screen](./AcademicTripSystem/src/main/resources/login_ats.png)
+![Lecturer Dashboard](./AcademicTripSystem/src/main/resources/lecturer_dashboard.png)
+![Transport Dashboard](./AcademicTripSystem/src/main/resources/transport_dashboard.png)
