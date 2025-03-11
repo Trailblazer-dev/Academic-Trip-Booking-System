@@ -5,7 +5,7 @@ Welcome to the Academic Trip System documentation. This documentation provides c
 ## Documentation Contents
 
 ### User Guides
-- [Lecturer User Guide](user-guides/lecturer-guide.md) - Instructions for lecturers on how to manage academic trips
+- [Lecturer User Guide](./AcademicTripSystem/user-guides/lecturer-guide.md) - Instructions for lecturers on how to manage academic trips
 - [Transport Officer User Guide](user-guides/transport-guide.md) - Instructions for transport officers on managing vehicles, drivers and assignments
 
 ### Technical Documentation
