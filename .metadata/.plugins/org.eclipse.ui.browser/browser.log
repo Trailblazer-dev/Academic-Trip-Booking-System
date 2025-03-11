@@ -372,3 +372,16 @@ Mar 11, 2025 12:33:41.54 Opening in existing browser session.
 
 Mar 11, 2025 12:58:03.41 NEW SESSION
 Mar 11, 2025 12:58:03.46 Opening in existing browser session.
+Mar 11, 2025 14:42:18.98 Opening in existing browser session.
+
+Mar 11, 2025 19:46:07.14 NEW SESSION
+Mar 11, 2025 19:46:07.17 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 11, 2025 19:46:07.25 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Mar 11, 2025 19:46:11.93 Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 11, 2025 19:46:11.93 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Mar 11, 2025 19:46:12.19 [5952:5985:0311/194612.193542:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 11, 2025 19:46:41.24 [5952:5985:0311/194641.238150:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 11, 2025 19:47:24.04 [5952:5985:0311/194724.041528:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 11, 2025 19:48:58.37 [5952:5985:0311/194858.369054:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 11, 2025 19:52:55.42 [5952:5985:0311/195255.423356:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 11, 2025 19:59:45.07 [5952:5985:0311/195945.072920:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT

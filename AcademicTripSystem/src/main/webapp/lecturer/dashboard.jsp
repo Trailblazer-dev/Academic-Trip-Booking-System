@@ -37,21 +37,48 @@
         
         <div class="main-content">
             <div class="container mx-auto px-4 py-8 max-w-7xl">
-                <!-- Welcome Banner -->
-                <div class="bg-gradient-to-r from-primary to-primary-dark rounded-lg shadow-lg mb-8 p-6 text-white">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h1 class="text-3xl font-bold">
-                                <i class="fas fa-tachometer-alt mr-2"></i>Welcome, <%= dashboardUser.getName() != null ? dashboardUser.getName() : "Lecturer" %>
-                            </h1>
-                            <p class="mt-1 opacity-80">
-                                Your academic trip planning portal - Request, track and manage all your trips
-                            </p>
+                <!-- Welcome Banner - Enhanced for better visibility -->
+                <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg shadow-2xl mb-8 overflow-hidden">
+                    <div class="relative">
+                        <div class="absolute top-0 right-0 w-1/3 h-full opacity-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-full w-full text-white">
+                                <path fill="currentColor" d="M17.92,11.62a1,1,0,0,0-.21-.33l-5-5a1,1,0,0,0-1.42,1.42L14.59,11H7a1,1,0,0,0,0,2h7.59l-3.3,3.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l5-5a1,1,0,0,0,.21-.33A1,1,0,0,0,17.92,11.62Z"/>
+                            </svg>
                         </div>
-                        <div class="hidden md:block bg-white bg-opacity-10 p-4 rounded-lg">
-                            <div class="text-center">
-                                <p class="text-sm uppercase tracking-wider mb-1">Today's Date</p>
-                                <p class="text-xl font-semibold"><%= LocalDate.now().format(DateTimeFormatter.ofPattern("dd MMMM yyyy")) %></p>
+                        <div class="p-8">
+                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between">
+                                <div class="mb-6 md:mb-0">
+                                    <div class="flex items-center">
+                                        <div class="mr-4 bg-white bg-opacity-20 p-3 rounded-full">
+                                            <i class="fas fa-user-graduate text-2xl text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h1 class="text-4xl font-bold text-white tracking-tight">
+                                                Welcome, <%= dashboardUser.getName() != null ? dashboardUser.getName() : "Lecturer" %>
+                                            </h1>
+                                            <p class="mt-2 text-lg text-blue-100">
+                                                <i class="fas fa-quote-left text-sm mr-1 opacity-70"></i>
+                                                Your academic trip planning portal - Request, track and manage all your trips
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-6 flex items-center text-blue-100">
+                                        <a href="${pageContext.request.contextPath}/lecturer/addTrip.jsp" class="bg-white bg-opacity-20 hover:bg-opacity-30 transition-all px-4 py-2 rounded-md mr-3 flex items-center font-medium">
+                                            <i class="fas fa-plus-circle mr-2"></i> New Trip
+                                        </a>
+                                        <a href="${pageContext.request.contextPath}/lecturer/viewTimetable.jsp" class="bg-white bg-opacity-20 hover:bg-opacity-30 transition-all px-4 py-2 rounded-md flex items-center font-medium">
+                                            <i class="fas fa-calendar-alt mr-2"></i> View Schedule
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="md:ml-4 bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 p-6 rounded-lg border border-white border-opacity-20 shadow-inner flex flex-col items-center">
+                                    <div class="text-center">
+                                        <p class="text-xs uppercase tracking-widest mb-1 text-blue-100 font-semibold">Today's Date</p>
+                                        <p class="text-3xl font-bold text-white"><%= LocalDate.now().format(DateTimeFormatter.ofPattern("dd")) %></p>
+                                        <p class="text-lg font-medium text-white"><%= LocalDate.now().format(DateTimeFormatter.ofPattern("MMMM")) %></p>
+                                        <p class="text-sm text-blue-100"><%= LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy")) %></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

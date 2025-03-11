@@ -1,17 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.academictrip.model.User" %>
 <%@ page import="com.academictrip.dao.TripDAO" %>
 <%@ page import="com.academictrip.model.Trip" %>
-<%@ page import="com.academictrip.model.User" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.time.format.DateTimeFormatter" %>
 <%@ page import="java.time.LocalDate" %>
-
+<%@ page import="java.time.format.DateTimeFormatter" %>
+<%@ page import="java.time.DayOfWeek" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.time.temporal.ChronoUnit" %>
 <%
-    User tripTableUser = (User) session.getAttribute("user");
-    if (tripTableUser == null || !tripTableUser.getRole().equalsIgnoreCase("lecturer")) {
+    // Check user authentication
+    User timetableUser = (User) session.getAttribute("user");
+    if (timetableUser == null || !timetableUser.getRole().equalsIgnoreCase("lecturer")) {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
+    
+    // Get lecturer's details
+    String lecturerId = String.valueOf(timetableUser.getId());
+    String lecturerName = timetableUser.getName();
+    String lecturerUsername = timetableUser.getUsername(); // Changed from getEmail() to getUsername()
+    
+    // Get trips for the lecturer
+    TripDAO tripDAO = new TripDAO();
+    List<Trip> allTrips = tripDAO.getTripsByLecturerId(lecturerId);
     
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
 %>
@@ -65,7 +79,7 @@
                     </div>
                     <div class="p-6">
                         <% 
-                            TripDAO tripDAO = new TripDAO();
+                            
                             List<Trip> trips = tripDAO.getAllTrips();
                             
                             if (trips != null && !trips.isEmpty()) { 

@@ -8,6 +8,10 @@
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
+    
+    // Pre-populate form with user information if available
+    String userEmail = addTripUser.getUsername(); // Changed from getEmail() to getUsername()
+    String userName = addTripUser.getName() != null ? addTripUser.getName() : "";
 %>
 <!DOCTYPE html>
 <html>

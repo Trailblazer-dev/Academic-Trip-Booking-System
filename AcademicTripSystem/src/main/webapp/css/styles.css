@@ -27,6 +27,19 @@
   --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
 }
 
+/* Primary Colors */
+:root {
+  --color-primary: #1E88E5; /* Blue */
+  --color-primary-dark: #1565C0;
+  --color-secondary: #6c757d;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+  --color-light: #f8f9fa;
+  --color-dark: #343a40;
+}
+
 /* General styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1713,4 +1726,85 @@ header {
     width: 100%;
     margin: 5px 0;
   }
+}
+
+/* Tailwind Classes */
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.bg-primary-dark {
+  background-color: var(--color-primary-dark) !important;
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary) !important;
+}
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.text-secondary {
+  color: var(--color-secondary) !important;
+}
+
+.border-primary {
+  border-color: var(--color-primary) !important;
+}
+
+/* Layout Components */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+  padding: 1rem 0;
+  background-color: #2c3e50;
+  color: white;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-outline {
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: white;
 }

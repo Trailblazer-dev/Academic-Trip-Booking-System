@@ -252,6 +252,18 @@ public class Trip {
         }
     }
 
+    /**
+     * Gets the name of the trip incharge person
+     * @return The name of the incharge person, or "N/A" if no incharge is assigned
+     */
+    public String getInchargeName() {
+        if (this.inchargeGroup != null && this.inchargeGroup.getIncharge() != null) {
+            Incharge incharge = this.inchargeGroup.getIncharge();
+            return incharge.getFirstName() + " " + incharge.getLastName();
+        }
+        return "N/A";
+    }
+
     @Override
     public String toString() {
         return "Trip [tripId=" + tripId + ", startDate=" + startDate + ", endDate=" + endDate + "]";
