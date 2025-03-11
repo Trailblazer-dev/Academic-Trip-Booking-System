@@ -32,7 +32,7 @@ For more information, refer to the following documentation:
 - User Guide: `/docs/user-guide.md`
 - Technical Documentation: `/docs/technical/`
 - Installation Guide: `/docs/technical/installation-guide.md`
-- **Video Tutorial**: [Download/Watch System Tutorial](../AcademicTripSystem/src/main/resources/transportsystem.mp4)
+- **Video Tutorial**: [Download/Watch System Tutorial](./AcademicTripSystem/src/main/resources/transportsystem.mp4)
 
 ## Screenshots
 ![Login Screen](./AcademicTripSystem/src/main/resources/login_ats.png)
