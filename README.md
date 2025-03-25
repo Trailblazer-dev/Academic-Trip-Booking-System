@@ -17,8 +17,14 @@ The Academic Trip System is a comprehensive web application designed to manage a
 - Tailwind CSS Framework
 
 ### User Guides
+<<<<<<< HEAD
 - [Lecturer User Guide](./AcademicTripSystem/user-guides/lecturer-guide.md) - Instructions for lecturers on how to manage academic trips
 - [Transport Officer User Guide](user-guides/transport-guide.md) - Instructions for transport officers on managing vehicles, drivers and assignments
+=======
+- [Lecturer User Guide](./AcademicTripSystem/docs/user-guides/lecturer-guide.md) - Instructions for lecturers on how to manage academic trips
+- [Transport Officer User Guide](./AcademicTripSystem/docs/user-guides/transport-guide.md) - Instructions for transport officers on managing vehicles, drivers and assignments
+
+>>>>>>> f37441b6cba42da95600eeda21db6d20756e9c19
 
 ## Getting Started
 1. Clone the repository
@@ -31,9 +37,9 @@ For more information, refer to the following documentation:
 - User Guide: `/docs/user-guide.md`
 - Technical Documentation: `/docs/technical/`
 - Installation Guide: `/docs/technical/installation-guide.md`
-- **Video Tutorial**: [Download/Watch System Tutorial](./src/main/resources/transportsystem.mp4)
+- **Video Tutorial**: [Download/Watch System Tutorial](./AcademicTripSystem/src/main/resources/transportsystem.mp4)
 
 ## Screenshots
-![Login Screen](./src/main/resources/login_ats.png)
-![Lecturer Dashboard](./src/main/resources/lecturer_dashboard.png)
-![Transport Dashboard](./src/main/resources/transport_dashboard.png)
+![Login Screen](./AcademicTripSystem/src/main/resources/login_ats.png)
+![Lecturer Dashboard](./AcademicTripSystem/src/main/resources/lecturer_dashboard.png)
+![Transport Dashboard](./AcademicTripSystem/src/main/resources/transport_dashboard.png)
