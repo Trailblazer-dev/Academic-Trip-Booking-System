@@ -385,3 +385,113 @@ Mar 11, 2025 19:47:24.04 [5952:5985:0311/194724.041528:ERROR:registration_reques
 Mar 11, 2025 19:48:58.37 [5952:5985:0311/194858.369054:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
 Mar 11, 2025 19:52:55.42 [5952:5985:0311/195255.423356:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
 Mar 11, 2025 19:59:45.07 [5952:5985:0311/195945.072920:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+
+Mar 12, 2025 11:18:26.19 NEW SESSION
+Mar 12, 2025 11:18:26.23 Opening in existing browser session.
+
+Mar 17, 2025 16:24:57.46 NEW SESSION
+Mar 17, 2025 16:24:57.47 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 17, 2025 16:24:57.66 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Mar 17, 2025 16:24:59.00 [2783:2783:0317/162458.997697:ERROR:fallback_task_provider.cc(126)] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/739782.
+Mar 17, 2025 16:25:02.03 [2783:2814:0317/162502.034395:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 17, 2025 16:25:02.18 Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 17, 2025 16:25:02.18 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Mar 17, 2025 16:25:26.79 [2783:2814:0317/162526.795428:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 17, 2025 16:26:23.76 [2783:2814:0317/162623.766148:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+
+Mar 20, 2025 07:15:39.15 NEW SESSION
+Mar 20, 2025 07:15:39.17 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 20, 2025 07:15:39.22 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Mar 20, 2025 07:15:40.45 [12589:12589:0320/071540.450305:ERROR:fallback_task_provider.cc(126)] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/739782.
+Mar 20, 2025 07:15:43.51 [12589:12619:0320/071543.515559:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:15:43.54 [12589:12619:0320/071543.542529:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:15:43.55 [12589:12619:0320/071543.555301:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:15:43.55 [12589:12619:0320/071543.555429:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:15:43.65 Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 20, 2025 07:15:43.65 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Mar 20, 2025 07:15:49.33 [12589:12619:0320/071549.334284:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:15:57.03 [12589:12619:0320/071557.033341:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:16:04.07 [12589:12619:0320/071604.079643:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:16:05.34 [12589:12619:0320/071605.341408:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:16:10.67 [12589:12619:0320/071610.678935:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:16:10.74 [12589:12619:0320/071610.745478:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:16:12.13 [12589:12619:0320/071612.129645:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:16:50.78 [12589:12619:0320/071650.787855:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:16:51.65 [12589:12619:0320/071651.659449:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:16:52.90 [12589:12619:0320/071652.909552:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:16:54.38 [12589:12619:0320/071654.384557:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:16:58.42 [12589:12619:0320/071658.428711:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:17:07.61 [12589:12619:0320/071707.616328:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:17:38.47 [12589:12619:0320/071738.471166:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:17:41.63 [12589:12619:0320/071741.629649:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:17:49.03 [12589:12619:0320/071749.031521:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:18:25.17 [12589:12619:0320/071825.177787:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:18:26.42 [12589:12619:0320/071826.423372:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:18:48.18 [12589:12619:0320/071848.180362:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:18:53.47 [12589:12619:0320/071853.479371:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:18:57.33 [12589:12619:0320/071857.331029:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:19:12.35 [12589:12619:0320/071912.359353:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:20:11.81 [12589:12619:0320/072011.813255:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:21:01.28 [12589:12619:0320/072101.286041:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:21:16.26 [12589:12619:0320/072116.263062:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:21:29.82 [12589:12619:0320/072129.826659:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:22:11.80 [12589:12619:0320/072211.806472:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:22:12.74 [12589:12619:0320/072212.747207:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:22:19.16 [12589:12619:0320/072219.160519:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:22:30.69 [12589:12619:0320/072230.696222:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:22:30.70 [12589:12619:0320/072230.699756:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:23:19.90 [12589:12619:0320/072319.908963:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 07:26:11.86 Fontconfig error: Cannot load default config file: No such file: (null)
+Mar 20, 2025 07:27:05.90 [12589:12619:0320/072705.903000:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:28:22.99 [12589:12619:0320/072822.992777:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:28:28.69 [12589:12619:0320/072828.692516:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:29:06.46 Fontconfig error: Cannot load default config file: No such file: (null)
+Mar 20, 2025 07:29:06.93 Fontconfig error: Cannot load default config file: No such file: (null)
+Mar 20, 2025 07:30:04.57 [12589:12619:0320/073004.572519:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 20, 2025 07:30:04.57 [12589:12589:0320/073004.572797:ERROR:sharing_service.cc(291)] Device registration failed with transient error
+Mar 20, 2025 07:34:48.62 [12589:12589:0320/073448.627492:ERROR:fallback_task_provider.cc(126)] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/739782.
+Mar 20, 2025 07:34:54.54 [12589:12589:0320/073454.544229:ERROR:fallback_task_provider.cc(126)] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/739782.
+Mar 20, 2025 07:46:14.68 [12589:12619:0320/074614.688299:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Mar 20, 2025 07:57:43.69 [12589:12619:0320/075743.691814:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Mar 20, 2025 08:44:15.31 [12589:12619:0320/084415.317434:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+Mar 20, 2025 08:44:39.67 [12640:12648:0320/084439.677568:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 20, 2025 08:44:39.79 [12640:12648:0320/084439.790688:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 20, 2025 08:44:39.79 [12589:12619:0320/084439.790944:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -101
+Mar 20, 2025 08:45:44.77 [12640:12648:0320/084544.775159:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 20, 2025 08:45:44.87 [12640:12648:0320/084544.870149:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 20, 2025 08:45:58.23 [12589:12619:0320/084558.232454:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+Mar 20, 2025 08:46:40.49 [12640:12648:0320/084640.492425:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 20, 2025 08:46:40.62 [12640:12648:0320/084640.628990:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 20, 2025 08:46:40.70 [12640:12648:0320/084640.705250:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 20, 2025 08:46:40.79 [12640:12648:0320/084640.797010:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 20, 2025 08:47:51.41 [12640:12648:0320/084751.410008:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 20, 2025 08:47:51.50 [12640:12648:0320/084751.505230:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 20, 2025 08:47:51.50 [12589:12619:0320/084751.505478:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -101
+Mar 20, 2025 08:52:05.83 [12589:12619:0320/085205.837042:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+Mar 20, 2025 08:54:48.17 [12640:12648:0320/085448.172679:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 20, 2025 08:54:48.53 [12640:12648:0320/085448.536134:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 20, 2025 10:32:43.92 [12589:12619:0320/103243.921366:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 11:04:17.11 [12589:12619:0320/110417.114474:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 20, 2025 11:05:07.32 [12589:12619:0320/110507.328009:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+
+Mar 25, 2025 10:12:06.46 NEW SESSION
+Mar 25, 2025 10:12:06.48 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 25, 2025 10:12:06.68 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Mar 25, 2025 10:12:12.03 [48631:48662:0325/101212.027529:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 25, 2025 10:12:12.03 [48631:48662:0325/101212.037120:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 25, 2025 10:12:12.22 Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 25, 2025 10:12:12.22 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Mar 25, 2025 10:12:42.06 [48631:48662:0325/101242.064757:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 25, 2025 10:13:33.96 [48631:48662:0325/101333.964601:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 25, 2025 10:15:01.94 [48631:48662:0325/101501.938631:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 25, 2025 10:17:37.47 [48682:48688:0325/101737.474896:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -100
+Mar 25, 2025 10:19:15.43 [48631:48662:0325/101915.430796:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Mar 25, 2025 10:26:23.58 [48631:48662:0325/102623.584888:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+
+Mar 25, 2025 10:56:17.54 NEW SESSION
+Mar 25, 2025 10:56:17.56 Opening in existing browser session.
+
+Mar 25, 2025 11:04:11.92 NEW SESSION
+Mar 25, 2025 11:04:11.98 Opening in existing browser session.
+Mar 25, 2025 11:04:12.08 [57209:57209:0100/000000.082028:ERROR:zygote_linux.cc(664)] write: Broken pipe (32)
+Mar 25, 2025 11:15:03.99 Opening in existing browser session.

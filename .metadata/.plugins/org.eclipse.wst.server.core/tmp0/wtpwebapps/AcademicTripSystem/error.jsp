@@ -42,12 +42,9 @@
             </div>
         </div>
         
-        <div class="flex justify-center space-x-4">
-            <a href="${pageContext.request.contextPath}/lecturer/addTrip.jsp" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors">
-                <i class="fas fa-arrow-left mr-2"></i>Back to Trip Form
-            </a>
-            <a href="${pageContext.request.contextPath}/lecturer/dashboard.jsp" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded transition-colors">
-                <i class="fas fa-home mr-2"></i>Go to Dashboard
+        <div class="flex justify-center space-x-4">            
+            <a href="${pageContext.request.contextPath}/" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded transition-colors">
+                <i class="fas fa-home mr-2"></i>Go to Login
             </a>
         </div>
     </div>

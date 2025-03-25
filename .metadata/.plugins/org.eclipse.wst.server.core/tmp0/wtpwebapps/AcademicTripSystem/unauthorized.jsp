@@ -55,7 +55,7 @@
                 </div>
                 <h1 class="text-3xl font-bold mb-4">Unauthorized Access</h1>
                 <p class="text-gray-700 mb-6">You don't have permission to access this resource. Please contact your administrator if you believe this is an error.</p>
-                <a href="<%= redirectPath %>" class="btn-primary">
+                <a href="login.jsp" class="btn-primary">
                     <i class="fas fa-home mr-2"></i> Return to Home
                 </a>
             </div>

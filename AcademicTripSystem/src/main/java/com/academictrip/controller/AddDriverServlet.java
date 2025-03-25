@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.academictrip.dao.DriverDAO;
 import com.academictrip.model.Driver;
 
-//@WebServlet("/AddDriverServlet")
+//@WebServlet("/tranport/AddDriverServlet")
 public class AddDriverServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

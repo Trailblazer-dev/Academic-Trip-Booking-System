@@ -88,7 +88,7 @@
                                     </a>
                                 <% } %>
                                 
-                                <a href="${pageContext.request.contextPath}/LogoutServlet" class="dropdown-item border-t border-gray-100 text-red-600 hover:text-red-800 hover:bg-red-50">
+                                <a href="${pageContext.request.contextPath}/logout" class="dropdown-item border-t border-gray-100 text-red-600 hover:text-red-800 hover:bg-red-50">
                                     <i class="fas fa-sign-out-alt mr-2"></i> Sign out
                                 </a>
                             </div>
@@ -138,7 +138,7 @@
                             <i class="fas fa-user-circle mr-2"></i> Profile
                         </a>
                     <% } %>
-                    <a href="${pageContext.request.contextPath}/LogoutServlet" class="mobile-nav-link text-red-600">
+                    <a href="${pageContext.request.contextPath}/logout" class="mobile-nav-link text-red-600">
                         <i class="fas fa-sign-out-alt mr-2"></i> Sign out
                     </a>
                 </div>

@@ -40,9 +40,9 @@
                     <h1 class="text-2xl font-bold text-gray-800">
                         <i class="fas fa-users mr-2 text-secondary"></i>Manage Drivers
                     </h1>
-                    <button id="addDriverBtn" class="btn btn-secondary hover:bg-orange-700 text-white py-2 px-4 rounded-lg flex items-center">
-                        <i class="fas fa-plus-circle mr-2"></i> Add New Driver
-                    </button>
+                    <a href="${pageContext.request.contextPath}/transport/addDriver.jsp" class="btn btn-secondary hover:bg-orange-700 text-white py-2 px-4 rounded-lg flex items-center">
+    <i class="fas fa-plus-circle mr-2"></i> Add New Driver
+</a>
                 </div>
                 
                 <!-- Dashboard Stats -->

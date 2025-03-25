@@ -41,9 +41,9 @@
                         <p class="mt-1 text-sm text-gray-500">Add, edit and manage the fleet of vehicles available for academic trips.</p>
                     </div>
                     <div class="mt-4 md:mt-0">
-                        <button id="addVehicleBtn" class="btn btn-secondary hover:bg-orange-700 text-white py-2 px-4 rounded-lg flex items-center">
-                            <i class="fas fa-plus-circle mr-2"></i> Add New Vehicle
-                        </button>
+                        <a href="${pageContext.request.contextPath}/transport/addVehicle.jsp" class="btn btn-secondary hover:bg-orange-700 text-white py-2 px-4 rounded-lg flex items-center">
+    <i class="fas fa-plus-circle mr-2"></i> Add New Vehicle
+</a>
                     </div>
                 </div>
                 
