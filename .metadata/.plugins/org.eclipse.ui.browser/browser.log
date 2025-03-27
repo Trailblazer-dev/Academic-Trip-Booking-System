@@ -385,3 +385,14 @@ Mar 11, 2025 19:47:24.04 [5952:5985:0311/194724.041528:ERROR:registration_reques
 Mar 11, 2025 19:48:58.37 [5952:5985:0311/194858.369054:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
 Mar 11, 2025 19:52:55.42 [5952:5985:0311/195255.423356:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
 Mar 11, 2025 19:59:45.07 [5952:5985:0311/195945.072920:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+
+Mar 27, 2025 07:18:05.41 NEW SESSION
+Mar 27, 2025 07:18:05.42 MESA-INTEL: warning: Haswell Vulkan support is incomplete
+Mar 27, 2025 07:18:05.64 libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+Mar 27, 2025 07:18:10.01 [2941:2973:0327/071810.005834:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 27, 2025 07:18:10.16 Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 27, 2025 07:18:10.17 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Mar 27, 2025 07:18:34.14 [2941:2973:0327/071834.145382:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 27, 2025 07:19:15.67 [2941:2973:0327/071915.671422:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 27, 2025 07:21:07.76 [2941:2973:0327/072107.759490:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Mar 27, 2025 07:24:58.66 [2941:2973:0327/072458.669216:ERROR:registration_request.cc(274)] Registration URL fetching failed.
